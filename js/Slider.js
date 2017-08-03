@@ -51,9 +51,7 @@ var getSlideOption=function(_slideitem,_btnnext,_btnprev,_speed,_auto,_autospeed
 
 	function nextSlide(){
 
-       $(btnnext).animate({
-           
-       })
+
 		$('.activeslide').removeClass('activeslide').addClass('oldActive');
 		if($('.oldActive').is(':last-child')){
 			 $(slide).first().addClass('activeslide');
