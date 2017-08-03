@@ -75,7 +75,6 @@ var getSlideOption=function(_slideitem,_btnnext,_btnprev,_speed,_auto,_autospeed
 			$('.oldActive').prev().addClass('activeslide');
 		}
         animate();
-        $(btnprev).removeClass("click");
 
 	}
 
