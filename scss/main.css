@@ -839,7 +839,6 @@ img {
       float: left;
       opacity: 0;
       height: 100%;
-      background-color: black;
       width: 50px; }
     .mySlider2 .controler .btnnext {
       float: right; }
@@ -849,7 +848,16 @@ img {
     left: 0;
     height: 800px;
     width: 50px;
-    background-color: black;
+    background: white;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, black, white);
+    /*Safari 5.1-6*/
+    background: -o-linear-gradient(right, black, white);
+    /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right, black, white);
+    /*Fx 3.6-15*/
+    background: linear-gradient(to right, black, white);
+    /*Standard*/
     opacity: 0;
     padding: 0;
     border: none; }
@@ -859,7 +867,16 @@ img {
     right: 0;
     height: 800px;
     width: 50px;
-    background-color: black;
+    background: white;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(right, black, white);
+    /*Safari 5.1-6*/
+    background: -o-linear-gradient(left, black, white);
+    /*Opera 11.1-12*/
+    background: -moz-linear-gradient(left, black, white);
+    /*Fx 3.6-15*/
+    background: linear-gradient(to left, black, white);
+    /*Standard*/
     opacity: 0;
     padding: 0;
     border: none; }

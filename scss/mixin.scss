@@ -106,6 +106,38 @@
    -moz-text-stroke-color: $color;
 }
 
+@mixin gradientlefttoright($firstcolor,$secondcolor){
+  background: $firstcolor;
+  background: -webkit-linear-gradient(left, $firstcolor , $secondcolor);
+  background: -o-linear-gradient(right,$firstcolor , $secondcolor);
+  background: -moz-linear-gradient(right, $firstcolor , $secondcolor); 
+  background: linear-gradient(to right, $firstcolor , $secondcolor);
+}
+
+@mixin gradient ($firstcolor,$secondcolor){
+    background: $firstcolor; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($firstcolor,$secondcolor); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($firstcolor,$secondcolor); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($firstcolor,$secondcolor); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($firstcolor,$secondcolor); /* Standard syntax */
+}
+
+@mixin gradienttransparencytoright($color){
+  background: $color; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left,black,$color); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right,black,$color); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right,black,$color); /*Fx 3.6-15*/
+  background: linear-gradient(to right, black,$color); /*Standard*/
+}
+
+@mixin gradienttransparencytoleft($color){
+  background: $color; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(right,black,$color); /*Safari 5.1-6*/
+  background: -o-linear-gradient(left,black,$color); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(left,black,$color); /*Fx 3.6-15*/
+  background: linear-gradient(to left, black,$color); /*Standard*/
+}
+
 
 @mixin for-phone-only {
   @media (max-width: 599px) { @content; }
