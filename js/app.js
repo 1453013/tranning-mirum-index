@@ -14,7 +14,7 @@ APP.slider = {
         
     },
     nextSlider: fuction () {
-
+        
     },
     prevSlider: function () {
 

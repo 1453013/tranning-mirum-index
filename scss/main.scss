@@ -1316,20 +1316,68 @@ $awardboxsizemobilde: 250px;
 	.controler {
 		z-index: 5;
 		position: absolute;
-		top:103%;
+		//width: 100%;
 		left:50%;
-		width: 88px;
+		height: 800px;
+		//width: 88px;
 		@include transformX(-50%);
 			.btnprev, .btnnext {
 				display: inline-block;
 				position: relative;
 				float:left;
-				opacity: 0.5;
+				opacity: 0;
+				height: 100%;
+				background-color: black;
+				width: 50px;
 				
 			}
 			.btnnext {
 				float: right;
 			}
+
+
+	}
+	.btnprev {
+		z-index: 5;
+		position: absolute;
+		left:0;
+		height: 800px;
+		width: 50px;
+		background-color: black;
+		opacity: 0;
+	}
+	.btnnext {
+		z-index: 5;
+		position: absolute;
+		right:0;
+		height: 800px;
+		width: 50px;
+		background-color: black;
+		opacity: 0;
+	}
+	.dots-nav {
+		position: absolute;
+		z-index: 5;
+		left: 50%;
+		@include transformX(-50%);
+		top: 97%;
+		ol {
+			padding: 0;
+			margin: 0;
+			li {
+				display: inline-block;
+				height: 21px;
+				width: 21px;
+				background-image: url(../img/prevbtn.png);
+				background-size: 100% 100%;
+				cursor: pointer;
+				margin-left: 8px;
+    			margin-right: 8px;
+			}
+			li.active {
+				background-image: url(../img/nextbtn.png);
+			}
+		}
 	}
 .main-slider{
 	width: 100%;

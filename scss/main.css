@@ -826,9 +826,8 @@ img {
   .mySlider2 .controler {
     z-index: 5;
     position: absolute;
-    top: 103%;
     left: 50%;
-    width: 88px;
+    height: 800px;
     transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
@@ -838,9 +837,52 @@ img {
       display: inline-block;
       position: relative;
       float: left;
-      opacity: 0.5; }
+      opacity: 0;
+      height: 100%;
+      background-color: black;
+      width: 50px; }
     .mySlider2 .controler .btnnext {
       float: right; }
+  .mySlider2 .btnprev {
+    z-index: 5;
+    position: absolute;
+    left: 0;
+    height: 800px;
+    width: 50px;
+    background-color: black;
+    opacity: 0; }
+  .mySlider2 .btnnext {
+    z-index: 5;
+    position: absolute;
+    right: 0;
+    height: 800px;
+    width: 50px;
+    background-color: black;
+    opacity: 0; }
+  .mySlider2 .dots-nav {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    top: 97%; }
+    .mySlider2 .dots-nav ol {
+      padding: 0;
+      margin: 0; }
+      .mySlider2 .dots-nav ol li {
+        display: inline-block;
+        height: 21px;
+        width: 21px;
+        background-image: url(../img/prevbtn.png);
+        background-size: 100% 100%;
+        cursor: pointer;
+        margin-left: 8px;
+        margin-right: 8px; }
+      .mySlider2 .dots-nav ol li.active {
+        background-image: url(../img/nextbtn.png); }
   .mySlider2 .main-slider {
     width: 100%;
     height: 100%;
