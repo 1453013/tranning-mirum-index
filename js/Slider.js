@@ -121,4 +121,4 @@ var getSlideOption=function(_slideitem,_btnnext,_btnprev,_dotsnav,_speed,_auto,_
 }
 
 
-getSlideOption("slide","btnnext","btnprev","dots-nav",500,false,8000,3,1);
+getSlideOption("slide","btnnext","btnprev","dots-nav",500,true,8000,3,1);
