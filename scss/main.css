@@ -850,7 +850,9 @@ img {
     height: 800px;
     width: 50px;
     background-color: black;
-    opacity: 0; }
+    opacity: 0;
+    padding: 0;
+    border: none; }
   .mySlider2 .btnnext {
     z-index: 5;
     position: absolute;
@@ -858,7 +860,9 @@ img {
     height: 800px;
     width: 50px;
     background-color: black;
-    opacity: 0; }
+    opacity: 0;
+    padding: 0;
+    border: none; }
   .mySlider2 .dots-nav {
     position: absolute;
     z-index: 5;
