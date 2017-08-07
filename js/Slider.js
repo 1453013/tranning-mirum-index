@@ -24,7 +24,7 @@ var getSlideOption=function(_slideitem,_btnnext,_btnprev,_dotsnav,_speed,_auto,_
 
     $(slide).first().addClass('activeslide');
 	
-	 $(slide).hide();
+	$(slide).hide();
 
     $('.activeslide').show();
     
