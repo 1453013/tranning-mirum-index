@@ -15,7 +15,26 @@
   -moz-transform:scale($scale);
 }
 
+@mixin transition($all,$time,$style){
+  -moz-transition: $all $time $style;
+  -webkit-transition: $all $time $style;
+  -o-transition: $all $time $style;
+  transition: $all $time $style;
+}
 
+@mixin translate3d ($tx,$ty,$tz){
+  -moz-transform: translate3d($tx,$ty,$tz);
+  -webkit-transform: translate3d($tx,$ty,$tz);
+  -o-transition: translate3d($tx,$ty,$tz);
+  transform: translate3d($tx,$ty,$tz);
+}
+
+@mixin transformscaleXY($scaleX,$scaleY) {
+  -moz-transform: scale($scaleX,$scaleY);
+  -webkit-transform: scale($scaleX,$scaleY);
+  -o-transition: scale($scaleX,$scaleY);
+  transform: scale($scaleX,$scaleY);
+}
 
 @mixin transformX ($xpercent){
 
