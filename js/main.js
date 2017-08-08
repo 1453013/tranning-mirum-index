@@ -186,16 +186,16 @@ $(".less-info").click(function(e){
 
 // hovereffect for 4 things section
 
-$('.fourthing-item').hover(function() {
+$('.four-thing-item').hover(function() {
     //var parent = $(this).parent();
-    var pngimg = $(this).find('.pngimg');
-    var gifimg = $(this).find('.gifimg');
+    var pngimg = $(this).find('.png-img');
+    var gifimg = $(this).find('.gif-img');
     pngimg.addClass('hide'); 
     gifimg.addClass('appear');
     }, function() {
     //var parent = $(this).parent();
-    var pngimg = $(this).find('.pngimg');
-    var gifimg = $(this).find('.gifimg');
+    var pngimg = $(this).find('.png-img');
+    var gifimg = $(this).find('.gif-img');
     pngimg.removeClass('hide'); 
     gifimg.removeClass('appear');
 });
@@ -211,8 +211,8 @@ $( ".winner-item" )
     $( this ).css('opacity','0.5');
   });
 
-$("#begintrain").click(function(e){
-  $("#shame-frame").fadeOut("slow");
+$(".begintrain").click(function(e){
+  $(".shame-frame").fadeOut("slow");
   //$("#fame-frame").addClass('appear');
 });
 
@@ -220,11 +220,11 @@ $("#begintrain").click(function(e){
 
 $('.mile-item').hover(function() {
     //var parent = $(this).parent();
-    var extrainfo = $(this).find('.extrainfo');
+    var extrainfo = $(this).find('.extra-info');
     extrainfo.addClass('appear');
     }, function() {
     //var parent = $(this).parent();
-    var extrainfo = $(this).find('.extrainfo');
+    var extrainfo = $(this).find('.extra-info');
     extrainfo.removeClass('appear');
 });
 
@@ -242,7 +242,19 @@ $('.partner-item').hover(function() {
 });
 
 
-
+$('.youtubeauto').hover(function() {
+    //var parent = $(this).parent();
+    var normal = $(this).find('.normal');
+    var hover = $(this).find('.hover');
+    normal.addClass('hide');
+    hover.addClass('appear');
+    }, function() {
+    //var parent = $(this).parent();
+     var normal = $(this).find('.normal');
+    var hover = $(this).find('.hover');
+    normal.removeClass('hide');
+    hover.removeClass('appear');
+});
 
 
 

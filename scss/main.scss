@@ -762,9 +762,9 @@ $awardboxsizemobilde: 250px;
 		width: 86%;
 		display: inline-block;
 		position: relative;
-		padding-top: 33px;
+		padding-top: 37px;
 
-		padding-bottom: 69px;
+		padding-bottom: 78px;
 		left: 50%;
 		@include transformX(-50%);
 		// @include for-snakktablet-portrait-only {
@@ -859,8 +859,11 @@ $awardboxsizemobilde: 250px;
 			font-size: 11px;
 		}
 	}
-	#address, #tel, #email {
-		margin-bottom: -22px;
+	.address {
+		margin-top: 23px;
+	}
+	.address, .tel, .email {
+		margin-bottom: -16px;
 		p {
 			letter-spacing: -1px;
 		}
@@ -1042,272 +1045,11 @@ $awardboxsizemobilde: 250px;
 	}
 
 
-.news-slider {
-	margin-top:100px;
-	height: 536px;
-}
-
-.news-slider {
-	.block-media {
-	width: 50%;
-	height: 100%;
-	display: inline-block;
-	float: left;
-	.slider-nav {
-		margin-left: 0px;
-		margin-top: 0px;
-	}
-
-	
-	}
-	.block-text {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	width: 50%;
-	height: 100%;
-	//background-color: $active-color;
-	display: inline-block;
-	float: left;
-	background-image: url(../img/lastestbanner.png);
-	
-	.slick-slide {
-		padding-bottom: 50px;
-	}
-	}
-	.carousel-images > .slick-list {
-	padding: 0 !important;
-	}
-	.carousel-images > .slick-list > .slick-slide {
-	width: 350px !important;
-	}
-	.carousel-images > .slick-prev {
-	left: 10px;
-	}
-	.carousel-images > .slick-next {
-	right: 10px;
-	}
-	.carousel-images > .slick-dots {
-	bottom: -10px;
-	}
-	.carousel-images > .slick-dots > li button:before {
-	font-size: 12px;
-	}
-	.carousel-text {
-	
-	//font-weight: 100;
-	//padding: 20px;
-	width: 100%;
-	padding-left:60px;
-	padding-top: 79px;
-	padding-right: 165px;
-	font-family: 'BrandonText-Regular';
-	padding-bottom: 50px;
-	}
-	.carousel-text .day {
-	color: white;
-	font-size: 22px;
-	display: block;
-	margin-bottom: 47px;
-	//font-weight: 300;
-	//text-transform: uppercase;
-	}
-	.carousel-text .title {
-	color: white;
-	font-size: 27px;
-	//font-weight: 300;
-	text-transform: uppercase;
-	font-weight: bold;
-	text-align: justify;
-	}
-	.carousel-text .headline {
-	color: #fff;
-	text-align: justify;
-	}
-	.slick-slider img {
-		max-height: 100%;
-		height: 536px;
-	}
-
-	.viewmore-button {
-		font-family: 'Raleway', sans-serif;
-		font-size: 14px;
-		font-weight: 700;
-		color: #fc5b3f;
-		border: 2px solid white;
-		background: white;
-		line-height: 14px;
-		display: inline-block;
-		letter-spacing: 0.05em;
-		padding: 13px 27px;
-		cursor: pointer;
-		position: relative;
-	}
-	.viewmore-button::after {
-		z-index: -1;
-		content: '';
-		border: 2px solid white;
-		position: absolute;
-		
-		//top: 4px;
-		//left: 4px;
-		right: -8px;
-		bottom:-8px;
-		width: 100%;
-		height: 100%;
-		transition: all 0.1s ease-in-out;
-	}
-	.viewmore-button:hover:after {
-		right: -2px;
-		bottom: -2px;
-	}
-	.viewmore-button:focus,
-	.viewmore-button:active {
-		//background: white;
-		color: $active-color;
-	}
-	.viewmore-button + .viewmore-button {
-		margin-left: 25px;
-	}
-
-}
 
 
-.mySlider {
-	position: relative;
-	margin-top: 100px;
-	//width: 100%;
-	height: 800px;
-	overflow: hidden;
-	.controler {
-		z-index: 5;
-		position: absolute;
-		top:90%;
-		left:50%;
-		width: 88px;
-		@include transformX(-50%);
-			.btnprev, .btnnext {
-				display: inline-block;
-				position: relative;
-				float:left;
-			}
-			.btnnext {
-				float: right;
-			}
-	}
-
-	ul {
-		position: relative;
-		margin: 0;
-		padding: 0;
-		height: 800px;
-		list-style: none;
-		
-		li {
-			background: red;
-			display: block;
-			height: 800px;
-			position: relative;
-			float: left;
-			
-			margin: 0;
-			  padding: 0;
-				width: (100%/3);
-				// /width: 1263px;
-				//width: 33.333%;
-			  //display: inline-block;
-				//width: (100%/3);
-
-				.item {		
-					.poster {
-						float: left;
-						width: 50%;
-						img {
-							width: 100%;
-							height: 800px;
-						}
-					}
-					.youtube {
-						float: left;
-						cursor: pointer;
-						width: 50%;
-						img {
-							width: 100%;
-							height: 800px;
-						}
-					}
-				}
-			
-		}
-	}
-}
-
-// .mySlider2 {
-// 	position: relative;
-// 	margin-top: 100px;
-// 	//width: 100%;
-// 	height: 800px;
-// 	overflow: hidden;
-// 	.controler {
-// 		z-index: 5;
-// 		position: absolute;
-// 		top:90%;
-// 		left:50%;
-// 		width: 88px;
-// 		@include transformX(-50%);
-// 			.btnprev, .btnnext {
-// 				display: inline-block;
-// 				position: relative;
-// 				float:left;
-// 			}
-// 			.btnnext {
-// 				float: right;
-// 			}
-// 	}
-
-// 	.main-slider {
-// 		position: relative;
-// 		margin: 0;
-// 		padding: 0;
-// 		height: 800px;
-// 		list-style: none;
-// 		.slide {
-		
-// 			background: red;
-// 			display: block;
-// 			height: 800px;
-// 			position: relative;
-// 			float: left;
-			
-// 			margin: 0;
-// 			padding: 0;
 
 
-// 				.item {		
-// 					.poster {
-// 						float: left;
-// 						width: 50%;
-// 						img {
-// 							width: 100%;
-// 							height: 800px;
-// 						}
-// 					}
-// 					.youtube {
-// 						float: left;
-// 						cursor: pointer;
-// 						width: 50%;
-// 						img {
-// 							width: 100%;
-// 							height: 800px;
-// 						}
-// 					}
-// 				}
-		
-// 		}
-// 	}
-// }
-
-.mySlider2 {
+.big-slider {
 	width: 100%;
 	margin-top: 100px;
 	overflow: hidden;
@@ -1401,12 +1143,35 @@ $awardboxsizemobilde: 250px;
 						}
 					}
 					.youtube {
-						float: left;
-						cursor: pointer;
+						float: left;				
 						width: 50%;
+						position: relative;
+						.youtube-preview-img {
 						img {
 							width: 100%;
 							height: 800px;
+						}
+						}
+						.youtubeauto {
+							cursor: pointer;
+							left: 50%;
+							@include transformX(-50%);
+							top: 42%;
+							@include transformY(-50%);
+							position: absolute;
+							img {
+								height: 127px;
+								width: 127px;
+							}
+							.normal.hide {
+								display: none;
+							}
+							.hover {
+								display: none;
+							}
+							.hover.appear{
+								display: block;
+							}
 						}
 					}
 				}
@@ -1452,61 +1217,10 @@ $awardboxsizemobilde: 250px;
 
 
 
-.big-slider {
-	margin-top: 100px;
-	width: 100%;
-	height: 800px;
-	//background: black;
-	//background-image: url(../img/slider1.png);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-
-	.carousel-inner>.item>a>img, .carousel-inner>.item>img {
-    	line-height: 1;
-   		height: 800px;
-	}
-	.carousel-control {
-		display: none;
-	}
-
-	.poster {
-		float: left;
-		width: 50%;
-		img {
-			width: 100%;
-			height: 800px;
-		}
-	}
-	.youtube {
-		float: left;
-		cursor: pointer;
-		width: 50%;
-		img {
-			width: 100%;
-			height: 800px;
-		}
-	}
-
-	.slick-fade {
-	width: 100%; height: 800px; 
-	//margin: 10px auto;
-	img {
-		height: 800px;
-		width: 100%;
-	}}
-	.slick-slider {
-		margin: 0 0 0 0 ;
-		img {
-			max-height: 1000px;
-		}
-	}
-	.slick-initialized .slick-slide {
-		height: 798px;
-	}
-}
 
 
-.fourthing {
+
+.four-thing {
 	
 	h1{
 		font-size: 50px;
@@ -1520,7 +1234,7 @@ $awardboxsizemobilde: 250px;
 		color: $active-color;
 	}
 	
-	.fourthing-item {
+	.four-thing-item {
 		display: inline-block;
 		margin: 0 0 0 0;
 		padding: 0;
@@ -1534,23 +1248,23 @@ $awardboxsizemobilde: 250px;
 			height: 360px;
 		}
 
-		.pngimg.hide {
+		.png-img.hide {
 			display: none;
 		}
-		.gifimg {
+		.gif-img {
 			display: none;
 		}
-		.gifimg.appear {
+		.gif-img.appear {
 			display: block;
 		}
-		.pngimg:hover{
+		.png-img:hover{
 			display: none;
 		}
 	}
 	.row {
 		margin-top: 96px;
 	}
-	.fourthing-container {
+	.four-thing-container {
 		display: inline-block;
 		margin-top: 64px;
 		position: relative;
@@ -1573,7 +1287,7 @@ $awardboxsizemobilde: 250px;
 		white-space: nowrap;
 		letter-spacing: -2px;
 		margin-top: 0;
-    	padding-top: 98px;		
+    	padding-top: 93px;	
 	}
 	.row {
 		padding-left: 75px;
@@ -1608,7 +1322,7 @@ $awardboxsizemobilde: 250px;
 	}
 }
 
-.milestone {
+.mile-stone {
 	height: 1095px;
 	position: relative;
 	h1 {
@@ -1628,7 +1342,7 @@ $awardboxsizemobilde: 250px;
 		line-height: 24px;
 		padding-top: 4px;
 	}
-	.milestone-line {
+	.mile-stone-line {
 		position: absolute;
 		top: 6%;
 		margin: 0 auto;
@@ -1654,7 +1368,7 @@ $awardboxsizemobilde: 250px;
 					position: absolute;
 				}
 
-				.extrainfo {
+				.extra-info {
 					//display: none;
 					height: 150px;
 					width: 150px;
@@ -1668,29 +1382,29 @@ $awardboxsizemobilde: 250px;
 						font-size: 14px;
 					}
 				}
-				.extrainfo.appear {
+				.extra-info.appear {
 					display: block;
 				}
 			}
-			#mile2 {
+			.mile2 {
 				margin-left: 12px;
 			}
-			#mile1 {
+			.mile1 {
 				margin-left: 71px;
 			}
-			#mile4 {
+			.mile4 {
 				margin-left: -42px
 			}
-			#mile5 {
+			.mile5 {
 				margin-left: 47px
 			}
-			#mile6 {
+			.mile6 {
 				margin-left: 23px;
 			}
 		}
 		
 	}
-	.formoreinfo {
+	.for-more-info {
 		position: absolute;
 		top: 78%;
 		left: 50%;
@@ -1699,13 +1413,13 @@ $awardboxsizemobilde: 250px;
 			padding-top: 6px;
 		}
 		
-		.directregis {
+		.direct-regis {
 			position: absolute;
 			left: 50%;
 			@include transformX(-50%);
 			width: 700px;
 			display: inline-block;
-			margin-top: -2px;
+			margin-top: -6px;
 			text-align: center;
 		p{
 			display: inline-block;
@@ -1734,8 +1448,8 @@ $awardboxsizemobilde: 250px;
 			position: absolute;
 			top: 5px;
 			left: 5px;
-			width: 100%;
-			height: 100%;
+			width: 97%;
+    		height: 90%;
 			transition: all 0.1s ease-in-out;
 		}
 		.viewmore-button:hover:after {
@@ -1755,7 +1469,7 @@ $awardboxsizemobilde: 250px;
 	}
 }
 
-.joinus {
+.join-us {
 	position: relative;
 	width: 100%;
 	height: 550px;
@@ -1763,7 +1477,7 @@ $awardboxsizemobilde: 250px;
 	margin: 0 0 0 0;
 	display: inline-block;
 	margin-top: -30px;
-	.joinus-container {
+	.join-us-container {
 		display: inline-block;
 		position: relative;
 		width: 100%;
@@ -1781,25 +1495,25 @@ $awardboxsizemobilde: 250px;
 			
 		}
 		position: relative;
-		#shame-frame, #fame-frame {
+		.shame-frame, .fame-frame {
 			position: absolute;
 			width: 100%;
 		}
-		#shame-frame {
+		.shame-frame {
 			z-index: 1;
 		}
-		#shame-frame.hide {
+		.shame-frame.hide {
 			display: none;
 		}
-		#fame-frame {
+		.fame-frame {
 			//display: none;
 			float: left;
 		}
-		#fame-frame.appear {
+		.fame-frame.appear {
 			display: block;
 		}
 	}
-	.joinus-state {
+	.join-us-state {
 		padding: 0;
 		margin: 0 0 0 0;
 		background-image: url(../img/joinusbg.png);
@@ -1810,20 +1524,20 @@ $awardboxsizemobilde: 250px;
 		display: inline-block;
 		float: left;
 		width: 50%;
-		.joinus-content-container {
+		.join-us-content-container {
 			left: 15%;
 			position: relative;
 			
-		.joinus-content {
+		.join-us-content {
 			margin-top: 70px;
 			position: relative;
-			#jonfb{
+			.jonfb{
 				position: absolute;
 				margin: 0 0 0 0;
 				font-size: 27px;
 				line-height: 30px;
 			}
-			#feel {
+			.feel {
 				position: absolute;
 				margin: 0 0 0 0;
 				font-family: 'iCielBrawls1';
@@ -1831,7 +1545,7 @@ $awardboxsizemobilde: 250px;
 				margin-top: 48px;
 				//line-height: 0px;
 			}
-			#the {
+			.the {
 				position: absolute;
 				margin: 0 0 0 0;
 				font-family: 'iCielBrawls1';
@@ -1839,7 +1553,7 @@ $awardboxsizemobilde: 250px;
 				margin-top: 181px;
 
 			}
-			#win{
+			.win{
 				position: absolute;
 				margin: 0 0 0 0;
 				font-family: 'iCielBrawls1';
@@ -1848,7 +1562,7 @@ $awardboxsizemobilde: 250px;
     			margin-left: 73px;
 
 			}
-			#slogan {
+			.slogan {
 				position: absolute;
 				margin: 0 0 0 0;
 				font-size: 20px;
@@ -1880,8 +1594,8 @@ $awardboxsizemobilde: 250px;
 			position: absolute;
 			top: 5px;
 			left: 5px;
-			width: 100%;
-			height: 100%;
+			width: 98%;
+    		height: 93%;
 			transition: all 0.1s ease-in-out;
 		}
 		.viewmore-button:hover:after {
@@ -1913,7 +1627,7 @@ $awardboxsizemobilde: 250px;
 		width: 70%;
 		padding-left: 40px;
 		padding-top: 68px;
-		padding-bottom: 90px;
+		padding-bottom: 87px;
 		h1 {
 			font-size: 50px;
 			font-family: 'iCielBrawls1';
@@ -1988,7 +1702,7 @@ $awardboxsizemobilde: 250px;
 			position: absolute;
 			height: 320px ;
 			.jury-name {
-				
+				padding-top: 10px;
 				h3{
 				font-size: 30px;
 				font-family: 'BrandonText-Bold';
@@ -2000,7 +1714,7 @@ $awardboxsizemobilde: 250px;
 			
 			}
 			.jury-pos {
-				margin-top: -33px; 
+				margin-top: -26px; 
 				h4{
 				font-size: 20px;
 				font-family: 'BrandonText-Regular';
@@ -2008,7 +1722,7 @@ $awardboxsizemobilde: 250px;
 			}
 			}
 			.jury-desc { 
-				margin-top: -6px;
+				margin-top: -3px;
 				p{
 				font-size: 20px;
 				font-family: 'BrandonText-Regular';
@@ -2148,12 +1862,12 @@ $awardboxsizemobilde: 250px;
 		overflow: auto;
 		
 	}
-	#yearfirst {
+	.year-first {
 			background-image: url(../img/archivebg.png);
 			background-size: 100% 100%;
 
 		}
-	#yearsecond {
+	.year-second {
 			background-image: url(../img/archivebg2.png);
 			background-size: 100% 100%;
 
@@ -2259,14 +1973,14 @@ $awardboxsizemobilde: 250px;
 	}
 
 	
-	.remarknumber{
+	.remark-number{
 		height: 447px;
 		background-color: $cream-color;
 		//margin-top: -54px;
 		z-index: -2;
 		margin-top: -54px;
-		.remarknumber-title {
-			padding-top: 97px;
+		.remark-number-title {
+			padding-top: 94px;
     		padding-left: 118px;
 			h2 {
 				letter-spacing: -1px;
@@ -2274,7 +1988,7 @@ $awardboxsizemobilde: 250px;
 				font-family: 'iCielBrawls1';
 			}
 		}
-		.remarknumber-wrapper {
+		.remark-number-wrapper {
 			
 			//padding-left: 118px;
 			margin-top: 10px;
@@ -2285,7 +1999,7 @@ $awardboxsizemobilde: 250px;
 			left: 50%;
 			@include transformX(-50%);
 			
-			.remarknumber-item {
+			.remark-number-item {
 				
 				display: inline-block;
 				position: relative;
@@ -2309,7 +2023,7 @@ $awardboxsizemobilde: 250px;
 				}
 				
 			}
-			.remarknumber-item:before{
+			.remark-number-item:before{
 					content : "";
 					position: absolute;
 					left    : 0;
@@ -2408,17 +2122,23 @@ $awardboxsizemobilde: 250px;
 
 			.sponsor-title {
 				background: $active-color; 
-				height: 38px;
+				height: 45px;
 				width: 260px;
 				color: white;
 				margin: 0 auto;
 				font-size: 22px;
 				font-family: 'BrandonText-Bold';
 				letter-spacing: -1px;
-				margin-top: 15px;
+				margin-top: 22px;
 				margin-bottom: 28px;
 				justify-content: center;
-				padding-top: 7px
+				//padding-top: 7px
+			}
+			.sponsor-title:before {
+				content: ' ';
+				display: inline-block;
+				vertical-align: middle;  /* vertical alignment of the inline element */
+				height: 100%;
 			}
 		}
 	}
@@ -2427,7 +2147,7 @@ $awardboxsizemobilde: 250px;
 		width: 92%;
 		position: absolute;
 		background-color: $active-color;
-		margin-top: 84px;
+		margin-top: 87px;
 		z-index: -1000;
 		left:50%;
 		@include transformX(-50%);
@@ -2437,10 +2157,10 @@ $awardboxsizemobilde: 250px;
 		position: relative;
 		margin-top: -5px;
 		.title-button {
-			padding: 7px 78px;
+			padding: 10px 78px;
 			//z-index: 10;
 			position: absolute;
-			top: 0;
+			top: 5px;
 			z-index: 5;
 			background-color: white;
 		}
@@ -2459,7 +2179,7 @@ $awardboxsizemobilde: 250px;
 			letter-spacing: 0px;
 			left: 50%;
 			@include transformX(-50%);
-			margin-top: 18px;
+			margin-top: 27px;
 		}
 		.viewmore-button:after {
 			content: '';
@@ -2467,8 +2187,8 @@ $awardboxsizemobilde: 250px;
 			position: absolute;
 			top: 5px;
 			left: 5px;
-			width: 100%;
-			height: 100%;
+			width: 98%;
+    		height: 91%;
 			transition: all 0.1s ease-in-out;
 		}
 		.viewmore-button:hover:after {
@@ -2555,11 +2275,10 @@ $awardboxsizemobilde: 250px;
 		position: relative;
 		margin-top: 27px;
 		.title-button {
-			padding: 7px 67px;
-			//z-index: 10;
-			position: absolute;
-			top: 0;
-			z-index: 5;
+			padding: 11px 72px;
+    		position: absolute;
+    		top: 3px;
+    		z-index: 5;
 			background-color: white;
 		}
 		.viewmore-button {
@@ -2585,8 +2304,8 @@ $awardboxsizemobilde: 250px;
 			position: absolute;
 			top: 5px;
 			left: 5px;
-			width: 100%;
-			height: 100%;
+			width: 98%;
+    		height: 91%;
 			transition: all 0.1s ease-in-out;
 		}
 		.viewmore-button:hover:after {
@@ -2605,7 +2324,7 @@ $awardboxsizemobilde: 250px;
 			text-align: center;
 			width: 94%;
 			margin: 0 auto;
-			margin-top: 145px;
+			margin-top:  154px;
 			display: inline-block;
 			position: relative;
 			left: 50%;
@@ -2635,3 +2354,54 @@ $awardboxsizemobilde: 250px;
 	}
 }
 
+.news-slider-container {
+	margin-top: 100px;
+	width: 100%;
+	height: 535px;
+	overflow-y: hidden;
+	.news-slider {
+		height: 100%;
+		.slide-holder {
+			position: relative;
+			height: 100%;
+			.image-block {
+				display: inline-block;
+				float: left;
+				width: 50%;
+				height: 100%;
+				img {
+					height: 100%;
+				}
+			}
+			.text-block {
+				display: inline-block;
+				float: left;
+				background-image: url(../img/lastestbanner.png);
+				width: 50%;
+				height: 100%;
+				max-height: 100%;
+				background-size: 100% 100%;
+				.text-item {
+					height: 100%;
+				}
+			}
+		}
+		.slide-nav {
+			position: absolute;
+			ol {
+				margin: 0px;
+				padding: 0px;
+				li {
+					display: inline-block;
+					border-radius: 50%;
+					background-color: black;
+					width: 9px;
+					height: 9px;
+				}
+				li.active {
+					background-color: $yellow-dot-color;
+				}
+			}
+		}
+	}
+}

@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 var App = {
 	init : function(){
-		this.slider.init("mySlider2","main-slider","slide","btnnext","btnprev","dots-nav",500,false,8000,3,1);
+    this.slider.init("big-slider","main-slider","slide","btnnext","btnprev","dots-nav",500,false,8000,3,1);
 	}
 }
 
@@ -121,6 +121,5 @@ App.slider = {
             //$("#slide_" + index).addClass("activeslide");
         }
 }
-
 
 
