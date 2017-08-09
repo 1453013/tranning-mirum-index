@@ -800,34 +800,39 @@ footer {
       .mile-stone .for-more-info .direct-regis p {
         display: inline-block;
         margin-right: 10px; }
-      .mile-stone .for-more-info .direct-regis .viewmore-button {
-        font-size: 22px;
-        text-align: center;
-        color: white;
-        background: #e95154;
-        display: inline-block;
-        padding: 16px 32px;
-        cursor: pointer;
-        position: relative;
-        letter-spacing: 0px; }
-      .mile-stone .for-more-info .direct-regis .viewmore-button:after {
-        content: '';
-        border: 2px solid #e95154;
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        width: 97%;
-        height: 90%;
-        transition: all 0.1s ease-in-out; }
-      .mile-stone .for-more-info .direct-regis .viewmore-button:hover:after {
-        top: 0px;
-        left: 0px; }
-      .mile-stone .for-more-info .direct-regis .viewmore-button:focus,
-      .mile-stone .for-more-info .direct-regis .viewmore-button:active {
-        background: #e95154;
-        color: #e95154; }
-      .mile-stone .for-more-info .direct-regis .viewmore-button + .viewmore-button {
-        margin-left: 25px; }
+
+.viewmore-button {
+  font-size: 22px;
+  text-align: center;
+  color: white;
+  background: #e95154;
+  display: inline-block;
+  padding: 16px 32px;
+  cursor: pointer;
+  position: relative;
+  letter-spacing: 0px; }
+
+.viewmore-button:after {
+  content: '';
+  border: 2px solid #e95154;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 97%;
+  height: 90%;
+  transition: all 0.1s ease-in-out; }
+
+.viewmore-button:hover:after {
+  top: 0px;
+  left: 0px; }
+
+.viewmore-button:focus,
+.viewmore-button:active {
+  background: #e95154;
+  color: #e95154; }
+
+.viewmore-button + .viewmore-button {
+  margin-left: 25px; }
 
 .join-us {
   position: relative;
@@ -913,33 +918,16 @@ footer {
             margin-left: -4px; }
         .join-us .join-us-container .join-us-state .join-us-content-container .viewmore-button {
           margin-top: 350px;
-          font-size: 22px;
-          text-align: center;
           color: #e95154;
           background: white;
-          display: inline-block;
-          padding: 16px 24px;
-          cursor: pointer;
-          position: relative;
-          letter-spacing: 0px; }
+          padding: 16px 24px; }
         .join-us .join-us-container .join-us-state .join-us-content-container .viewmore-button:after {
-          content: '';
           border: 2px solid white;
-          position: absolute;
-          top: 5px;
-          left: 5px;
           width: 98%;
-          height: 93%;
-          transition: all 0.1s ease-in-out; }
-        .join-us .join-us-container .join-us-state .join-us-content-container .viewmore-button:hover:after {
-          top: 0px;
-          left: 0px; }
+          height: 93%; }
         .join-us .join-us-container .join-us-state .join-us-content-container .viewmore-button:focus,
         .join-us .join-us-container .join-us-state .join-us-content-container .viewmore-button:active {
-          background: white;
-          color: #e95154; }
-        .join-us .join-us-container .join-us-state .join-us-content-container .viewmore-button + .viewmore-button {
-          margin-left: 25px; }
+          background: white; }
 
 .jury {
   height: 1866px;
@@ -1362,15 +1350,7 @@ footer {
       z-index: 5;
       background-color: white; }
     .company .partner .viewmore-button {
-      font-size: 22px;
-      text-align: center;
-      color: white;
-      background: #e95154;
-      display: inline-block;
       padding: 16px 48px;
-      cursor: pointer;
-      position: relative;
-      letter-spacing: 0px;
       left: 50%;
       transform: translateX(-50%);
       -ms-transform: translateX(-50%);
@@ -1379,23 +1359,8 @@ footer {
       -moz-transform: translateX(-50%);
       margin-top: 27px; }
     .company .partner .viewmore-button:after {
-      content: '';
-      border: 2px solid #e95154;
-      position: absolute;
-      top: 5px;
-      left: 5px;
       width: 98%;
-      height: 91%;
-      transition: all 0.1s ease-in-out; }
-    .company .partner .viewmore-button:hover:after {
-      top: 0px;
-      left: 0px; }
-    .company .partner .viewmore-button:focus,
-    .company .partner .viewmore-button:active {
-      background: #e95154;
-      color: #e95154; }
-    .company .partner .viewmore-button + .viewmore-button {
-      margin-left: 25px; }
+      height: 91%; }
     .company .partner .logos-container {
       text-align: center;
       width: 94%;
@@ -1449,15 +1414,7 @@ footer {
       z-index: 5;
       background-color: white; }
     .company .supporter .viewmore-button {
-      font-size: 22px;
-      text-align: center;
-      color: white;
-      background: #e95154;
-      display: inline-block;
       padding: 16px 48px;
-      cursor: pointer;
-      position: relative;
-      letter-spacing: 0px;
       left: 50%;
       transform: translateX(-50%);
       -ms-transform: translateX(-50%);
@@ -1466,23 +1423,8 @@ footer {
       -moz-transform: translateX(-50%);
       margin-top: 22px; }
     .company .supporter .viewmore-button:after {
-      content: '';
-      border: 2px solid #e95154;
-      position: absolute;
-      top: 5px;
-      left: 5px;
       width: 98%;
-      height: 91%;
-      transition: all 0.1s ease-in-out; }
-    .company .supporter .viewmore-button:hover:after {
-      top: 0px;
-      left: 0px; }
-    .company .supporter .viewmore-button:focus,
-    .company .supporter .viewmore-button:active {
-      background: #e95154;
-      color: #e95154; }
-    .company .supporter .viewmore-button + .viewmore-button {
-      margin-left: 25px; }
+      height: 91%; }
     .company .supporter .logos-container {
       text-align: center;
       width: 94%;

@@ -1036,48 +1036,51 @@ footer {
 			margin-right: 10px;
 			
 		}
-		.viewmore-button {
-			font-size: 22px;
-			text-align: center;
-			color: white;
-			//border: 2px solid #fc7058;
-			background: $active-color;
-			
-			display: inline-block;
-			
-			padding: 16px 32px;
-			cursor: pointer;
-			position: relative;
-			letter-spacing: 0px;
-			
-			
-		}
-		.viewmore-button:after {
-			content: '';
-			border: 2px solid $active-color;
-			position: absolute;
-			top: 5px;
-			left: 5px;
-			width: 97%;
-    		height: 90%;
-			transition: all 0.1s ease-in-out;
-		}
-		.viewmore-button:hover:after {
-			top: 0px;
-			left: 0px;
-		}
-		.viewmore-button:focus,
-		.viewmore-button:active {
-			background: $active-color;
-			color: $active-color;
-		}
-		.viewmore-button + .viewmore-button {
-			margin-left: 25px;
-		}
+
 		}
 		
 	}
 }
+
+
+.viewmore-button {
+	font-size: 22px;
+	text-align: center;
+	color: white;
+	//border: 2px solid #fc7058;
+	background: $active-color;
+			
+	display: inline-block;
+	
+	padding: 16px 32px;
+	cursor: pointer;
+	position: relative;
+	letter-spacing: 0px;					
+	}
+.viewmore-button:after {
+	content: '';
+	border: 2px solid $active-color;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 97%;
+    height: 90%;
+	transition: all 0.1s ease-in-out;
+	}
+.viewmore-button:hover:after {
+	top: 0px;
+	left: 0px;
+	}
+.viewmore-button:focus,
+.viewmore-button:active {
+	background: $active-color;
+	color: $active-color;
+	}
+.viewmore-button + .viewmore-button {
+	margin-left: 25px;
+	}
+
+	
 
 .join-us {
 	position: relative;
@@ -1182,43 +1185,21 @@ footer {
 			}
 		}
 
-
 		.viewmore-button {
 			margin-top: 350px;
-			font-size: 22px;
-			text-align: center;
 			color: $active-color;
-			//border: 2px solid #fc7058;
-			background: white;
-			
-			display: inline-block;
-			
+			background: white;						
 			padding: 16px 24px;
-			cursor: pointer;
-			position: relative;
-			letter-spacing: 0px;
 		}
 		.viewmore-button:after {
-			content: '';
 			border: 2px solid white;
-			position: absolute;
-			top: 5px;
-			left: 5px;
 			width: 98%;
     		height: 93%;
-			transition: all 0.1s ease-in-out;
-		}
-		.viewmore-button:hover:after {
-			top: 0px;
-			left: 0px;
 		}
 		.viewmore-button:focus,
 		.viewmore-button:active {
 			background: white;
-			color: $active-color;
-		}
-		.viewmore-button + .viewmore-button {
-			margin-left: 25px;
+			
 		}
 		}
 	}
@@ -1775,44 +1756,15 @@ footer {
 			z-index: 5;
 			background-color: white;
 		}
-		.viewmore-button {
-			font-size: 22px;
-			text-align: center;
-			color: white;
-			//border: 2px solid #fc7058;
-			background: $active-color;
-			
-			display: inline-block;
-			
+		.viewmore-button {				
 			padding: 16px 48px;
-			cursor: pointer;
-			position: relative;
-			letter-spacing: 0px;
 			left: 50%;
 			@include transformX(-50%);
 			margin-top: 27px;
 		}
 		.viewmore-button:after {
-			content: '';
-			border: 2px solid $active-color;
-			position: absolute;
-			top: 5px;
-			left: 5px;
 			width: 98%;
     		height: 91%;
-			transition: all 0.1s ease-in-out;
-		}
-		.viewmore-button:hover:after {
-			top: 0px;
-			left: 0px;
-		}
-		.viewmore-button:focus,
-		.viewmore-button:active {
-			background: $active-color;
-			color: $active-color;
-		}
-		.viewmore-button + .viewmore-button {
-			margin-left: 25px;
 		}
 		.logos-container {
 			text-align: center;
@@ -1893,43 +1845,14 @@ footer {
 			background-color: white;
 		}
 		.viewmore-button {
-			font-size: 22px;
-			text-align: center;
-			color: white;
-			//border: 2px solid #fc7058;
-			background: $active-color;
-			
-			display: inline-block;
-			
 			padding: 16px 48px;
-			cursor: pointer;
-			position: relative;
-			letter-spacing: 0px;
 			left: 50%;
 			@include transformX(-50%);
 			margin-top: 22px;
 		}
 		.viewmore-button:after {
-			content: '';
-			border: 2px solid $active-color;
-			position: absolute;
-			top: 5px;
-			left: 5px;
 			width: 98%;
     		height: 91%;
-			transition: all 0.1s ease-in-out;
-		}
-		.viewmore-button:hover:after {
-			top: 0px;
-			left: 0px;
-		}
-		.viewmore-button:focus,
-		.viewmore-button:active {
-			background: $active-color;
-			color: $active-color;
-		}
-		.viewmore-button + .viewmore-button {
-			margin-left: 25px;
 		}
 		.logos-container {
 			text-align: center;
@@ -2074,3 +1997,5 @@ footer {
   opacity: 1;
 	@include transformscaleXY(1,1);
 }
+
+
