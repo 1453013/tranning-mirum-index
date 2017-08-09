@@ -59,19 +59,6 @@ App.slider = {
           setInterval (self.nextSlide,_autospeed);
         }
 
-          
-        $(self.btnnext).hover(function() {
-              $( this ).css('opacity','0.2');
-        }, function() {
-              $( this ).css('opacity','0');
-        });
-
-        $(self.btnprev).hover(function() {
-              $( this ).css('opacity','0.2');
-        }, function() {
-              $( this ).css('opacity','0');
-        });  
-
         },
 
 

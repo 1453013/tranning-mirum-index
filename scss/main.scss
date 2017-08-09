@@ -700,6 +700,9 @@ footer {
 		padding: 0;
 		border: none;
 	}
+	.btnprev:hover {
+		opacity: 0.2;
+	}
 	.btnnext {
 		z-index: 5;
 		position: absolute;
@@ -710,6 +713,9 @@ footer {
 		opacity: 0;
 		padding: 0;
 		border: none;
+	}
+	.btnnext:hover {
+		opacity: 0.2;
 	}
 	.dots-nav {
 		position: absolute;

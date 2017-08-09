@@ -515,6 +515,8 @@ footer {
     opacity: 0;
     padding: 0;
     border: none; }
+  .big-slider .btnprev:hover {
+    opacity: 0.2; }
   .big-slider .btnnext {
     z-index: 5;
     position: absolute;
@@ -534,6 +536,8 @@ footer {
     opacity: 0;
     padding: 0;
     border: none; }
+  .big-slider .btnnext:hover {
+    opacity: 0.2; }
   .big-slider .dots-nav {
     position: absolute;
     z-index: 5;
