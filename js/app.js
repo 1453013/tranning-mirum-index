@@ -7,12 +7,8 @@ var App = {
 	init : function(){
     this.slider.init("big-slider","main-slider","slide","btnnext","btnprev","dots-nav",500,false,8000,3,1);
     this.jurymorinfobtn.init();
-    this.fourthinghover.init();
     this.winneritemmousehold.init();
     this.begintrainingbtn.init();
-    this.mileitemhover.init();
-    this.partneritemhover.init();
-    this.playbuttonhover.init();
     this.archivetabbedtable.init();
     this.scrollto.init();
     jQuery(function(){
@@ -204,24 +200,6 @@ App.jurymorinfobtn = {
   }
 }
 
-App.fourthinghover = {
-  _target:{},
-  init:function(){
-    this._target=$('.four-thing-item');
-    this._target.hover(function(){
-      var pngimg = $(this).find('.png-img');
-      var gifimg = $(this).find('.gif-img');
-      pngimg.addClass('hide'); 
-      gifimg.addClass('appear');
-      }, function() {
-      //var parent = $(this).parent();
-      var pngimg = $(this).find('.png-img');
-      var gifimg = $(this).find('.gif-img');
-      pngimg.removeClass('hide'); 
-      gifimg.removeClass('appear');
-    })
-  }
-}
 
 App.winneritemmousehold = {
   _target:{},
@@ -246,54 +224,10 @@ App.begintrainingbtn = {
   }
 }
 
-App.mileitemhover = {
-  _target:{},
-  init:function(){
-    this._target=$('.mile-item'); 
-    this._target.hover(function() {
-    var extrainfo = $(this).find('.extra-info');
-    extrainfo.addClass('appear');
-    }, function() {
-    var extrainfo = $(this).find('.extra-info');
-    extrainfo.removeClass('appear');
-  })
-  }
-}
 
-App.partneritemhover = {
-  _target:{},
-  init:function(){
-    this._target=$('.partner-item');
-    this._target.hover(function() { 
-    var partnerpos= $(this).find('.partner-pos');
-    partnerpos.addClass('appear');
-    }, function() {
-    //var parent = $(this).parent();
-    var partnerpos= $(this).find('.partner-pos');
-    partnerpos.removeClass('appear');
-    })
-  }
-}
 
-App.playbuttonhover = {
-  _target:{},
-  init:function(){
-    this._target=$('.youtubeauto');
-    this._target.hover(function() {
-    //var parent = $(this).parent();
-    var normal = $(this).find('.normal');
-    var hover = $(this).find('.hover');
-    normal.addClass('hide');
-    hover.addClass('appear');
-    }, function() {
-    //var parent = $(this).parent();
-     var normal = $(this).find('.normal');
-    var hover = $(this).find('.hover');
-    normal.removeClass('hide');
-    hover.removeClass('appear');
-  })
-  }
-}
+
+
 
 
 

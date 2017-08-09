@@ -565,7 +565,8 @@ footer {
     overflow: hidden;
     float: left; }
     .big-slider .main-slider .slide {
-      position: absolute; }
+      position: absolute;
+      width: 100%; }
       .big-slider .main-slider .slide .poster {
         float: left;
         width: 50%; }
@@ -597,12 +598,12 @@ footer {
           .big-slider .main-slider .slide .youtube .youtubeauto img {
             height: 127px;
             width: 127px; }
-          .big-slider .main-slider .slide .youtube .youtubeauto .normal.hide {
-            display: none; }
           .big-slider .main-slider .slide .youtube .youtubeauto .hover {
             display: none; }
-          .big-slider .main-slider .slide .youtube .youtubeauto .hover.appear {
-            display: block; }
+        .big-slider .main-slider .slide .youtube .youtubeauto:hover .normal {
+          display: none; }
+        .big-slider .main-slider .slide .youtube .youtubeauto:hover .hover {
+          display: block; }
   .big-slider #slider img {
     width: 940px;
     height: 350px; }
@@ -647,22 +648,23 @@ footer {
   margin-bottom: -12px; }
   .four-thing .four-thing-item img {
     width: 360px;
-    height: 360px; }
-  .four-thing .four-thing-item .png-img.hide {
-    display: none; }
+    height: 360px;
+    max-width: 100%;
+    max-height: 100%; }
   .four-thing .four-thing-item .gif-img {
     display: none; }
-  .four-thing .four-thing-item .gif-img.appear {
-    display: block; }
-  .four-thing .four-thing-item .png-img:hover {
-    display: none; }
+.four-thing .four-thing-item:hover .png-img {
+  display: none; }
+.four-thing .four-thing-item:hover .gif-img {
+  display: block; }
 .four-thing .row {
   margin-top: 96px; }
 .four-thing .four-thing-container {
   display: inline-block;
   margin-top: 51px;
   position: relative;
-  margin-bottom: 6px; }
+  margin-bottom: 6px;
+  width: 100%; }
 
 .red {
   color: #e95154; }
@@ -762,8 +764,8 @@ footer {
           display: none; }
           .mile-stone .mile-stone-line ul li .extra-info p {
             font-size: 14px; }
-        .mile-stone .mile-stone-line ul li .extra-info.appear {
-          display: block; }
+      .mile-stone .mile-stone-line ul li:hover .extra-info {
+        display: block; }
       .mile-stone .mile-stone-line ul .mile2 {
         margin-left: 12px; }
       .mile-stone .mile-stone-line ul .mile1 {
@@ -1397,8 +1399,8 @@ footer {
             font-size: 20px;
             padding-top: 18%;
             color: white; }
-        .company .partner .logos-container .partner-item .partner-pos.appear {
-          display: block; }
+      .company .partner .logos-container .partner-item:hover .partner-pos {
+        display: block; }
       .company .partner .logos-container .partner-item:before {
         content: ' ';
         display: inline-block;
