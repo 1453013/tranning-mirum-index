@@ -6,11 +6,11 @@ $(document).ready(function(){
 var App = {
 	init : function(){
     this.slider.init("big-slider","main-slider","slide","btnnext","btnprev","dots-nav",500,false,8000,3,1);
-    this.jurymorinfobtn.init();
-    this.winneritemmousehold.init();
-    this.begintrainingbtn.init();
-    this.archivetabbedtable.init();
-    this.scrollto.init();
+    this.juryMoreInfoButton.init();
+    this.winnerItemMouseHold.init();
+    this.beginTrainingButton.init();
+    this.archiveTabbedTable.init();
+    this.scrollTo.init();
     jQuery(function(){
 			jQuery("a.youtubedefault").YouTubePopUp();
 			jQuery("a.youtubeauto").YouTubePopUp( { autoplay: 1 } ); 
@@ -22,130 +22,126 @@ App.slider = {
   _this: {},
   main:{},
   slide:{},
-  btnnext:{},
-  btnprev:{},
-  curslide: 1,
-  maxslide: 3,
+  btnNext:{},
+  btnPrev:{},
+  curSlide: 1,
+  maxSlide: 3,
   _speed:100,
-  _autospeed: 5000,
+  _autoSpeed: 5000,
   _auto: false,
-     init: function (_slider,_main_slider,_slideitem,_btnnext,_btnprev,_dotsnav,_speed,_auto,_autospeed,totalslide,firstslide) {
+     init: function (_slider,_mainSlider,_slideItem,_btnNext,_btnPrev,_dotsNav,_speed,_auto,_autoSpeed,totalslide,firstslide) {
         var self = this;
         self._this = $('.'+_slider);
-        self.main= self._this.find('.'+_main_slider);
-        self.slide= self.main.find('.'+_slideitem);
-        self.btnnext= self._this.find('.'+_btnnext);
-        self.btnprev= self._this.find('.'+_btnprev);
-        self.dotsnav=self._this.find('.'+_dotsnav);
-        self.ol= self.dotsnav.find('ol');
+        self.main= self._this.find('.'+_mainSlider);
+        self.slide= self.main.find('.'+_slideItem);
+        self.btnNext= self._this.find('.'+_btnNext);
+        self.btnPrev= self._this.find('.'+_btnPrev);
+        self.dotsNav=self._this.find('.'+_dotsNav);
+        self.ol= self.dotsNav.find('ol');
         self.li=self.ol.find('li');
         self._speed=_speed;
-        self._autospeed=_autospeed;
+        self._autoSpeed=_autoSpeed;
         self._auto=_auto;
         
 
-        $(self.slide).first().addClass('activeslide');
+        $(self.slide).first().addClass('activeSlide');
 	
         $(self.slide).hide();
 
-        $('.activeslide').show();
+        $('.activeSlide').show();
         
-        self.btnnext.on('click',self.nextSlide);
-        self.btnprev.on('click',self.prevSlide);
+        self.btnNext.on('click',self.nextSlide);
+        self.btnPrev.on('click',self.prevSlide);
         self.li.on('click',self.toDotsNav);
 
 
         if (_auto == true){
           setInterval (self.nextSlide,_autospeed);
         }
-
         },
-
-
 
         nextSlide:function(){
           var self= App.slider;
           self.li.removeClass("active");
-          $('.activeslide').removeClass('activeslide').addClass('oldActive');
+          $('.activeSlide').removeClass('activeSlide').addClass('oldActive');
           if($('.oldActive').is(':last-child')){
-                  $(self.slide).first().addClass('activeslide');
-                  self.curslide =  1;
-                  self.li.eq(self.curslide-1).addClass("active");
+                  $(self.slide).first().addClass('activeSlide');
+                  self.curSlide =  1;
+                  self.li.eq(self.curSlide-1).addClass("active");
           }
           else {
-                  $('.oldActive').next().addClass('activeslide');
-                  self.curslide = self.curslide + 1;
+                  $('.oldActive').next().addClass('activeSlide');
+                  self.curSlide = self.curSlide + 1;
                   self.li.eq(self.curslide-1).addClass("active");
             }
           $('.oldActive').removeClass('oldActive');
           $(self.slide).fadeOut(self._speed);
-          $('.activeslide').fadeIn(self._speed);
+          $('.activeSlide').fadeIn(self._speed);
         },
 
         prevSlide:function(){
           var self= App.slider;
           self.li.removeClass("active");
 
-          $('.activeslide').removeClass('activeslide').addClass('oldActive');
+          $('.activeSlide').removeClass('activeSlide').addClass('oldActive');
           if($('.oldActive').is(':first-child')){
-                  $(self.slide).last().addClass('activeslide');
-                  self.curslide =  self.maxslide;
+                  $(self.slide).last().addClass('activeSlide');
+                  self.curSlide =  self.maxSlide;
                   self.li.eq(self.curslide-1).addClass("active");
           }
           else {
-                  $('.oldActive').prev().addClass('activeslide');
-                  self.curslide = self.curslide - 1;
+                  $('.oldActive').prev().addClass('activeSlide');
+                  self.curSlide = self.curSlide - 1;
                   self.li.eq(self.curslide-1).addClass("active");
           }
           $('.oldActive').removeClass('oldActive');
           $(self.slide).fadeOut(self._speed);
-          $('.activeslide').fadeIn(self._speed);
+          $('.activeSlide').fadeIn(self._speed);
         },
         
         toDotsNav: function (){
           var self= App.slider;
             var index = $(this).index() + 1;
-            self.curslide = index;
+            self.curSlide = index;
             self.li.removeClass("active");
             self.li.eq(index-1).addClass("active");
             //$("#dots_"+ index).addClass("active");
-            $('.activeslide').fadeOut(self._speed);
+            $('.activeSlide').fadeOut(self._speed);
             self.slide.eq(index-1).fadeIn(self._speed);   
             //$("#slide_" + index).fadeIn(500);        
-            $(".slide").removeClass("activeslide");
-            self.slide.eq(index-1).addClass("activeslide");
+            $(".slide").removeClass("activeSlide");
+            self.slide.eq(index-1).addClass("activeSlide");
             //$("#slide_" + index).addClass("activeslide");
         }
 }
 
 
-App.jurymorinfobtn = {
+App.juryMoreInfoButton = {
   _target: {},
   _target1:{},
+  self: {},
   init: function(){
     this._target=$('.more-info');
     this._target1=$('.less-info');
 
+    var parent = $(this) ;
+    
 
     this._target.on('click',function(){
 
-      var parent =$(this).parent();
+      parent =$(this).parent();
 
       var viewmorebtn = parent.find('.more-info');
-
-      var viewlessbtn = parent.find('.less-info') 
-
+      var viewlessbtn = parent.find('.less-info'); 
       viewmorebtn.addClass('hide');
 
       viewlessbtn.addClass('appear');
 
       var juryinfo = parent.find ('.jury-info');
 
-      var jurydesc= juryinfo.find('.jury-desc');
+      var jurydescshort= juryinfo.find('.jury-desc').find('.jury-desc-short');
 
-      var jurydescshort= jurydesc.find('.jury-desc-short');
-
-      var jurydescfull= jurydesc.find('.jury-desc-full');
+      var jurydescfull= juryinfo.find('.jury-desc').find('.jury-desc-full');
 
       jurydescshort.addClass('hide');
     
@@ -157,23 +153,18 @@ App.jurymorinfobtn = {
 
     this._target1.on('click',function(){
 
-        var parent =$(this).parent();
-
+        parent =$(this).parent();
         var viewmorebtn = parent.find('.more-info');
-
-        var viewlessbtn = parent.find('.less-info') 
-
+        var viewlessbtn = parent.find('.less-info'); 
         viewmorebtn.removeClass('hide');
 
         viewlessbtn.removeClass('appear');
 
         var juryinfo = parent.find ('.jury-info');
 
-        var jurydesc= juryinfo.find('.jury-desc');
+        var jurydescshort= juryinfo.find('.jury-desc').find('.jury-desc-short');
 
-        var jurydescshort= jurydesc.find('.jury-desc-short');
-
-        var jurydescfull= jurydesc.find('.jury-desc-full');
+        var jurydescfull= juryinfo.find('.jury-desc').find('.jury-desc-full');
 
         jurydescshort.removeClass('hide');
       
@@ -183,12 +174,11 @@ App.jurymorinfobtn = {
           jurydescfull.removeClass('appear');
 
     })
-
   }
 }
 
 
-App.winneritemmousehold = {
+App.winnerItemMouseHold = {
   _target:{},
   init:function(){
     this._target=$('.winner-item');
@@ -201,7 +191,7 @@ App.winneritemmousehold = {
   }
 }
 
-App.begintrainingbtn = {
+App.beginTrainingButton = {
   _target:{},
   init:function(){
     this._target=$('.begintrain');
@@ -211,16 +201,8 @@ App.begintrainingbtn = {
   }
 }
 
-
-
-
-
-
-
-
-App.scrollto = {
+App.scrollTo = {
   _target: {},
-
   init: function() {
     this._target = $('a.scrollTo');
 
@@ -236,7 +218,7 @@ App.scrollto = {
   }
 }
 
-App.archivetabbedtable = {
+App.archiveTabbedTable = {
    _target: {},
    init:function(){
      this.target= $('.tab_content');
