@@ -722,7 +722,7 @@ footer {
 		z-index: 5;
 		left: 50%;
 		@include transformX(-50%);
-		top: 97%;
+		margin-top: 750px;
 		ol {
 			padding: 0;
 			margin: 0;
@@ -1231,7 +1231,7 @@ footer {
 		padding-left: 40px;
 		padding-top: 68px;
 		padding-bottom: 90px;
-		h1 {
+		h2 {
 			font-size: 50px;
 			font-family: 'iCielBrawls1';
 			letter-spacing: -2px;

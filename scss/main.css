@@ -547,7 +547,7 @@ footer {
     -webkit-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
-    top: 97%; }
+    margin-top: 750px; }
     .big-slider .dots-nav ol {
       padding: 0;
       margin: 0; }
@@ -946,7 +946,7 @@ footer {
     padding-left: 40px;
     padding-top: 68px;
     padding-bottom: 90px; }
-    .jury .jury-title h1 {
+    .jury .jury-title h2 {
       font-size: 50px;
       font-family: 'iCielBrawls1';
       letter-spacing: -2px;
