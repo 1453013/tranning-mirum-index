@@ -53,7 +53,7 @@ html, body {
 
 
 
-.header {
+header {
 	@include for-phone-only {
 		display: none;
 	}
@@ -85,7 +85,7 @@ html, body {
 		width: 10%
 	}
 
-	#top-nav {
+	.top-nav {
 		text-align: left;
 		display: inline-block;
 		padding-left: 134px;
@@ -104,7 +104,7 @@ html, body {
 			a{	
 				//padding: 20px;
 				display: block;
-				font-weight: 700px;
+				font-weight: 700;
 				//margin: 40px 40px 40px 40px;
 				color: black;
 				padding-right: 20px;
@@ -135,231 +135,8 @@ html, body {
 		}
 		}
 
-	// .row {
-	// 	margin-left: 0px;
-	// 	margin-right: 0px;
-	// 	margin-bottom: -1px;
-	// }
-	// .navbar-nav {
-		
-	// 	margin: 0 0 0 0;
-	// 	.nav {
-	// 		width: 100%;
-	// 	}
-	// 	text-align: center;
-	// 	.active {
-	// 		a {
-	// 			color: white;
-	// 		}
-	// 		color: white;
-	// 		background: $active-color;
-	// 		   :hover {
-	// 			   color: white;
-   	// 				background: $active-color;
-	// 		   }
-	// 	}
-	// 	.big {
-	// 		width: 15%;
-	// 	}
-
-	// 	li {
-	// 		white-space: nowrap;
-	// 		color: black;
-	// 		width: (85%/7);
-	// 		font-size: 14px;
-	// 		float: left;
-	// 		height: 100px;
-			
-	// 		@include for-big-desktop-up {
-	// 			font-size: 18px;
-	// 		}
-	// 		@include for-tablet-landscape-only {
-	// 			font-size: 10px;
-	// 		}
-	// 		@include for-snakktablet-portrait-only {
-	// 			font-size: 8px;
-				
-	// 		}
-	// 		a{	
-	// 			padding-top: 40px;
-	// 			padding-bottom: 40px;
-	// 			color: black;
-	// 			padding-left: 0px;
-	// 			padding-right: 0px;
-	// 			@include for-big-desktop-up {
-	// 				padding-top: 35px;
-	// 				padding-bottom: 35px;
-	// 			}
-	// 		}
-	// 		:hover {
-	// 			background: transparent;
-	// 			color: $active-color;
-	// 		}
-	// 	}
-	// }
-	// .logo{
-	// 	text-align: center;
-	// 	padding-top: 20px;
-	// 	padding-top: 26px;
-    // 	padding-left: 1px;
-	// 	@include for-snakktablet-portrait-only {
-	// 		padding-top: 25px;
-	// 	}
-	// 	img {
-	// 		max-height: 50px;
-	// 		@include for-big-desktop-up {
-	// 			max-height: 42px;
-	// 		};
-	// 		max-width: auto;
-	// 		height: auto;
-	// 		width: auto;
-
-	// 	}
-	// }
-	// .org {
-	// 	text-align: center;
-	// 	p{
-	// 		margin: 0;
-	// 		font-family: 'BrandonText-Regular';
-	// 		font-size: 12px;
-	// 		@include for-big-desktop-up {
-	// 			font-size: 15px;
-	// 		}
-			
-	// 	}
-	// 	padding-top: 24px;
-	// 	padding-bottom: 10px;
-	// 	img {
-	// 		position: absolute;
-	// 		//max-height: 35px;
-	// 		@include for-big-desktop-up {
-	// 			max-height: 42px;
-	// 		};
-	// 		//margin-left: -12px;
-	// 		max-width: auto;
-	// 		height: auto;
-	// 		width: auto;
-	// 		left: 61px;
-   	// 		top: 31px;
-
-	// 	}
-		
-	// }
 }
 
-
-.navbar {
-	margin-bottom: 0px;
-	border:none;
-}
-
-
-.header-mobile {
-	display: none;
-	@include for-phone-only {
-		display: block;
-	}
-	height: 70px;
-	position: fixed;
-	top:0;
-	background: white;
-	width: 100%;
-	z-index: 1000;
-	.navbar-inverse {
-		background: transparent;
-	}
-	.container-fluid > .navbar-header {
-		margin-right: 0px;
-		margin-left: 0px;
-	}
-	.navbar-toggle {
-		padding-left: 6px;
-		padding-right: 6px;
-	}
-	img {
-		max-height: 22px;
-	}
-	.navbar-brand {
-		height: 70px;
-		img {
-			padding: 0 0 0 0;
-		}
-	}
-	.logo {
-		padding-top: 25px;
-	}
-	p{
-		font-size: 12px;
-		margin-bottom: 0px;
-	}
-	.org {
-		img {
-			padding: 0 0 0 0;
-		}
-	}
-	button {
-		height: 35px;
-		width: 50px;
-		margin-top: 20px;
-		background-color: white !important;
-		.icon-bar {
-			width: 38px;
-			background-color: black !important;
-		}
-
-	}
-	#myNavbar{
-		background-color: white;
-		//margin-top: 20px;
-		.active {
-			a {
-				background-color: $active-color;
-			}
-		}
-	}
-}
-
-
-// .navbar-brand>img {
-//   height: 100%;
-//   padding: 15px;
-//   width: auto;
-// }
-
-
-.navbar-brand {
-	display: inline-block;
-}
-
-
-.navbar-brand>img {
-  padding: 7px 15px;
-}
-
-.navbar-default {
-	background-color: transparent;
-	border-color: transparent;
-}
-
-.navbar-default .navbar-collapse .navbar-nav > .active{
-	color: $active-color;
-   background: $active-color;
- }
-
-
-.navbar-default .navbar-nav>.active>a , .navbar-default .navbar-nav>.active>a:hover {
-	color: white;
-	background-color: transparent;
-}
-
-
-
-.navbar-default .navbar-nav>li>a {
-	color: black;
-}
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
-	color: $active-color;
-}
 
 
 .banner {
@@ -418,169 +195,6 @@ html, body {
 			font-size: 13px;
 		}
 	}
-}
-
-.nav-tabs>li {
-	width: 33.333%;
-	border-radius: 0px;
-	height: 85px;
-}
-
-.nav-tabs>li>a {
-	color: black;
-	font-family: "iCielBrawls1";
-	text-align: center;
-	font-size: 30px;
-	border:none;
-	height: 85px;
-	padding-left: 37px;
-	padding-top: 23px;
-	letter-spacing: 5px;
-	margin-right: 0px;
-}
-.nav-tabs>li.active {
-	border-radius: 0px;
-
-}
-
-
-.nav-tabs{
-	background-color: transparent;
-	border-color: transparent;
-	
-	
-}
-.nav-tabs>li.active>a {
-	color: white;
-}
-.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-	background-color: transparent;
-	border:none;
-	color: white;
-}
-.nav-tabs > .active{
-	color: $active-color;
-   background-color: $active-color;
- }
-
-
-.nav-tabs>.active>a , .nav-tabs>.active>a:hover {
-	color: white;
-	background-color: $active-color;
-}
-
-
-
-.nav-tabs>li>a {
-	color: black;
-}
-.nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
-	color: $active-color;
-}
-
-$widththumb : 150px;
-
-/*  */
-
-.tab-content {
-	background-color: #ebebeb;
-	height: 768px;
-}
-
-.wrapper { 
-	padding-top:52px; 
-	padding-bottom: 50px; 
-	max-width:78%;
-	@include for-snakktablet-portrait-only {
-		max-width: 600px;
-	}
-	@include for-phone-only {
-		max-width: 310px;
-	} 
-	margin: 0 auto; }
-img { 
-	max-width:100%; 
-	height:auto; }
-.portfolio-thumb-slider .slick-slider-item { padding: 5px; }
-.portfolio-thumb-slider { margin: 0 -5px 5px -5px; }
-.portfolio-thumb-slider .slick-active img { outline: 6px solid transparent; }
-.portfolio-thumb-slider .slick-current img { 
-	outline-color: $active-color;
-	filter: brightness(100%); }
-.slick-slider { 
-	margin-bottom: 0px; 
-	margin-left: 4px;
-	margin-top: -5px; }
-.slick-slide img {
-	margin: 0 auto;
-	max-height: 442px;
-	max-width: auto;
-	height: 442px;
-	width: auto;
-}
-.slick-prev:before,
-    .slick-next:before {
-        color: black;
-    }
-.thumb-item img {
-	//height: auto !important;
-	// max-width: auto;
-	// max-height: ;
-	height: 120px;
-	width: 213px;
-	filter: brightness(50%);
-}
-
-.slick-item-caption {
-	text-align: center;
-	font-family: 'BrandonText-Regular';
-	padding-top: 15px;
-	padding-bottom: 45px;
-	font-size: 20px;
-	padding-top: 16px;
-    margin-right: 3px;
-	@include for-big-desktop-up {
-		font-size: 18px;
-		white-space: nowrap;
-	}
-}
-
-.slick-next, .slick-prev {
-	width: 31px;
-	height: 31px;
-	top: 110%;
-}
-
-.slick-prev {
-	left: -40px;
-}
-
-.slick-next {
-	right: -40px;
-}
-// .slick-prev {
-// 	background: url('../img/left-arrow.png');
-// 	background-size: 100% 100%;
-// 	display: block;
-//       height: 28px;
-// 	  width: 28px;
-// 	  z-index: 2;
-// }
-
-// .slick-next {
-
-// }
-
-#detail {
-	//padding-bottom: 65px;
-	//height: 1485px;
-	margin-bottom: 90px;
-}
-.award {
-	padding-top: 57px;
-	    //padding-left: 10px;
-	//height: 30%;
-	position: relative;
 }
 
 
@@ -752,7 +366,7 @@ $awardboxsizemobilde: 250px;
 }
 
 
-.footer {
+footer {
 	background-color: $footer-color;
 	color: white;
 	font-family: 'BrandonText-Regular';
@@ -764,7 +378,7 @@ $awardboxsizemobilde: 250px;
 		position: relative;
 		padding-top: 37px;
 
-		padding-bottom: 78px;
+		padding-bottom: 77px;
 		left: 50%;
 		@include transformX(-50%);
 		// @include for-snakktablet-portrait-only {
@@ -859,19 +473,15 @@ $awardboxsizemobilde: 250px;
 			font-size: 11px;
 		}
 	}
-	.address {
-		margin-top: 23px;
-	}
-	.address, .tel, .email {
-		margin-bottom: -16px;
-		p {
-			letter-spacing: -1px;
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		margin-top: 24px;
+		li {
+			font-size: 18px;
 		}
-	#tel {
-		p{
-			letter-spacing: 1px;
-		}
-	}
 	}
 }
 
@@ -1133,7 +743,6 @@ $awardboxsizemobilde: 250px;
 	float: left;
 	.slide{
 	position: absolute;
-	.item {		
 					.poster {
 						float: left;
 						width: 50%;
@@ -1174,7 +783,7 @@ $awardboxsizemobilde: 250px;
 							}
 						}
 					}
-				}
+				
 	}
 }
 
@@ -1222,7 +831,7 @@ $awardboxsizemobilde: 250px;
 
 .four-thing {
 	
-	h1{
+	h2{
 		font-size: 50px;
 		text-align: center;
 		font-family: 'iCielBrawls1';
@@ -1230,7 +839,7 @@ $awardboxsizemobilde: 250px;
 		letter-spacing: -2px;
 		margin-top: 57px;
 	}
-	h1.red {
+	h2.red {
 		color: $active-color;
 	}
 	
@@ -1266,8 +875,9 @@ $awardboxsizemobilde: 250px;
 	}
 	.four-thing-container {
 		display: inline-block;
-		margin-top: 64px;
+		margin-top: 51px;
 		position: relative;
+		margin-bottom: 6px;
 	}
 }
 
@@ -1280,7 +890,7 @@ $awardboxsizemobilde: 250px;
 	height: 700px;
 	background-color: $cream-color;
 	position: relative;
-	h1{
+	h2{
 		font-size: 50px;
 		text-align: center;
 		font-family: 'iCielBrawls1';
@@ -1302,7 +912,7 @@ $awardboxsizemobilde: 250px;
 		padding-left: 85px;
 		padding-right: 85px;
 		margin: 0 auto;
-		padding-top: 64px;
+		padding-top: 50px;
 		display: inline-block;
 		position: relative;
 		width: 87%;
@@ -1325,7 +935,7 @@ $awardboxsizemobilde: 250px;
 .mile-stone {
 	height: 1095px;
 	position: relative;
-	h1 {
+	h2 {
 		margin-top: 50px;
 		font-family: 'iCielBrawls1';
 		font-size: 50px;
@@ -1340,7 +950,7 @@ $awardboxsizemobilde: 250px;
 		font-family: 'BrandonText-Regular';
 		font-size: 20px;
 		line-height: 24px;
-		padding-top: 4px;
+		margin-top:-5px;
 	}
 	.mile-stone-line {
 		position: absolute;
@@ -1406,7 +1016,7 @@ $awardboxsizemobilde: 250px;
 	}
 	.for-more-info {
 		position: absolute;
-		top: 78%;
+		top: 80%;
 		left: 50%;
 		@include transformX(-50%);
 		p{
@@ -1419,7 +1029,7 @@ $awardboxsizemobilde: 250px;
 			@include transformX(-50%);
 			width: 700px;
 			display: inline-block;
-			margin-top: -6px;
+			margin-top: 5px;
 			text-align: center;
 		p{
 			display: inline-block;
@@ -1542,7 +1152,7 @@ $awardboxsizemobilde: 250px;
 				margin: 0 0 0 0;
 				font-family: 'iCielBrawls1';
 				font-size: 163px;
-				margin-top: 48px;
+				margin-top: 36px;
 				//line-height: 0px;
 			}
 			.the {
@@ -1550,7 +1160,7 @@ $awardboxsizemobilde: 250px;
 				margin: 0 0 0 0;
 				font-family: 'iCielBrawls1';
 				font-size: 45px;
-				margin-top: 181px;
+				margin-top: 177px;
 
 			}
 			.win{
@@ -1558,7 +1168,7 @@ $awardboxsizemobilde: 250px;
 				margin: 0 0 0 0;
 				font-family: 'iCielBrawls1';
 				font-size: 147px;
-				margin-top: 163px;
+				margin-top: 153px;
     			margin-left: 73px;
 
 			}
@@ -1626,9 +1236,9 @@ $awardboxsizemobilde: 250px;
 	.jury-title {
 		width: 70%;
 		padding-left: 40px;
-		padding-top: 68px;
+		padding-top: 60px;
 		padding-bottom: 87px;
-		h1 {
+		h2 {
 			font-size: 50px;
 			font-family: 'iCielBrawls1';
 			letter-spacing: -2px;
@@ -1637,7 +1247,7 @@ $awardboxsizemobilde: 250px;
 		}
 		p {
 			margin-left: -6px;
-			margin-top: 12px;
+			margin-top: -3px;
 			line-height: 25px;
 			font-size: 20px;
 			font-family: 'BrandonText-Regular';
@@ -1785,7 +1395,7 @@ $awardboxsizemobilde: 250px;
 }
 
 .archive {
-	h1 {
+	h2 {
 		font-family: 'iCielBrawls1';
 		font-size: 50px;
 		text-align: center;
@@ -1793,7 +1403,7 @@ $awardboxsizemobilde: 250px;
 		letter-spacing: -2px;
 	}
 	p{	
-		margin-top: -23px;
+		margin-top: -32px;
 		text-align: center;
 		font-family: 'BrandonText-Regular';
 		font-size: 20px;
@@ -1954,6 +1564,7 @@ $awardboxsizemobilde: 250px;
 					cursor: pointer;
 					z-index: 10;
 					text-decoration: none;
+					margin-top: 9px;
 					a{
 						text-decoration: none;
 					}
@@ -1980,18 +1591,19 @@ $awardboxsizemobilde: 250px;
 		z-index: -2;
 		margin-top: -54px;
 		.remark-number-title {
-			padding-top: 94px;
+			padding-top: 86px;
     		padding-left: 118px;
-			h2 {
+			h3 {
 				letter-spacing: -1px;
 				font-size: 36px;
 				font-family: 'iCielBrawls1';
+				text-align: left;
 			}
 		}
 		.remark-number-wrapper {
 			
 			//padding-left: 118px;
-			margin-top: 10px;
+			margin-top: 2px;
 			text-align: center;
 			display: inline-block;
 			position: relative;
@@ -2043,12 +1655,12 @@ $awardboxsizemobilde: 250px;
 }
 
 .company {
-	height: 1683px;
-	h1 {
+	height: 1687px;
+	h2 {
 		font-family: 'iCielBrawls1';
 		font-size: 50px;
 		text-align: center;
-		margin-top: 110px;
+		margin-top: 107px;
 		letter-spacing: -1px;
 		line-height: 0;
 		
@@ -2057,14 +1669,13 @@ $awardboxsizemobilde: 250px;
 		color: $active-color;
 		font-size: 22px;
 		letter-spacing: -1px;
-		
 		border: $active-color 3px solid;
-		padding: 7px 28px;
+		padding: 10px 28px;
 		display: inline-block;
 		position: relative;
 		left: 50%;
 		@include transformX(-50%);
-		margin-top: 60px;
+		margin-top: 53px;
 		
     	
 	}
@@ -2129,7 +1740,7 @@ $awardboxsizemobilde: 250px;
 				font-size: 22px;
 				font-family: 'BrandonText-Bold';
 				letter-spacing: -1px;
-				margin-top: 22px;
+				margin-top: 18px;
 				margin-bottom: 28px;
 				justify-content: center;
 				//padding-top: 7px
@@ -2160,7 +1771,7 @@ $awardboxsizemobilde: 250px;
 			padding: 10px 78px;
 			//z-index: 10;
 			position: absolute;
-			top: 5px;
+			top: 11px;
 			z-index: 5;
 			background-color: white;
 		}
@@ -2277,7 +1888,7 @@ $awardboxsizemobilde: 250px;
 		.title-button {
 			padding: 11px 72px;
     		position: absolute;
-    		top: 3px;
+    		top: 10px;
     		z-index: 5;
 			background-color: white;
 		}

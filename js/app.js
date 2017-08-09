@@ -6,6 +6,19 @@ $(document).ready(function(){
 var App = {
 	init : function(){
     this.slider.init("big-slider","main-slider","slide","btnnext","btnprev","dots-nav",500,false,8000,3,1);
+    this.jurymorinfobtn.init();
+    this.fourthinghover.init();
+    this.winneritemmousehold.init();
+    this.begintrainingbtn.init();
+    this.mileitemhover.init();
+    this.partneritemhover.init();
+    this.playbuttonhover.init();
+    this.archivetabbedtable.init();
+    this.scrollto.init();
+    jQuery(function(){
+			jQuery("a.youtubedefault").YouTubePopUp();
+			jQuery("a.youtubeauto").YouTubePopUp( { autoplay: 1 } ); 
+    });
 	}
 }
 
@@ -122,4 +135,238 @@ App.slider = {
         }
 }
 
+
+App.jurymorinfobtn = {
+  _target: {},
+  _target1:{},
+  init: function(){
+    this._target=$('.more-info');
+    this._target1=$('.less-info');
+
+
+    this._target.on('click',function(){
+
+      var parent =$(this).parent();
+
+      var viewmorebtn = parent.find('.more-info');
+
+      var viewlessbtn = parent.find('.less-info') 
+
+      viewmorebtn.addClass('hide');
+
+      viewlessbtn.addClass('appear');
+
+      var juryinfo = parent.find ('.jury-info');
+
+      var jurydesc= juryinfo.find('.jury-desc');
+
+      var jurydescshort= jurydesc.find('.jury-desc-short');
+
+      var jurydescfull= jurydesc.find('.jury-desc-full');
+
+      jurydescshort.addClass('hide');
+    
+      juryinfo.animate({
+          top:"0"
+      },1500);
+        jurydescfull.addClass('appear');
+    })
+
+    this._target1.on('click',function(){
+
+        var parent =$(this).parent();
+
+        var viewmorebtn = parent.find('.more-info');
+
+        var viewlessbtn = parent.find('.less-info') 
+
+        viewmorebtn.removeClass('hide');
+
+        viewlessbtn.removeClass('appear');
+
+        var juryinfo = parent.find ('.jury-info');
+
+        var jurydesc= juryinfo.find('.jury-desc');
+
+        var jurydescshort= jurydesc.find('.jury-desc-short');
+
+        var jurydescfull= jurydesc.find('.jury-desc-full');
+
+        jurydescshort.removeClass('hide');
+      
+        juryinfo.animate({
+            top:"50%"
+        },1500);
+          jurydescfull.removeClass('appear');
+
+    })
+
+  }
+}
+
+App.fourthinghover = {
+  _target:{},
+  init:function(){
+    this._target=$('.four-thing-item');
+    this._target.hover(function(){
+      var pngimg = $(this).find('.png-img');
+      var gifimg = $(this).find('.gif-img');
+      pngimg.addClass('hide'); 
+      gifimg.addClass('appear');
+      }, function() {
+      //var parent = $(this).parent();
+      var pngimg = $(this).find('.png-img');
+      var gifimg = $(this).find('.gif-img');
+      pngimg.removeClass('hide'); 
+      gifimg.removeClass('appear');
+    })
+  }
+}
+
+App.winneritemmousehold = {
+  _target:{},
+  init:function(){
+    this._target=$('.winner-item');
+    this._target.mouseup(function(){
+      $( this ).css('opacity','1');
+    })
+    .mousedown(function(){
+      $( this ).css('opacity','0.5');
+    })
+  }
+}
+
+App.begintrainingbtn = {
+  _target:{},
+  init:function(){
+    this._target=$('.begintrain');
+    this._target.on('click',function(){
+      $(".shame-frame").fadeOut("slow");
+    })
+  }
+}
+
+App.mileitemhover = {
+  _target:{},
+  init:function(){
+    this._target=$('.mile-item'); 
+    this._target.hover(function() {
+    var extrainfo = $(this).find('.extra-info');
+    extrainfo.addClass('appear');
+    }, function() {
+    var extrainfo = $(this).find('.extra-info');
+    extrainfo.removeClass('appear');
+  })
+  }
+}
+
+App.partneritemhover = {
+  _target:{},
+  init:function(){
+    this._target=$('.partner-item');
+    this._target.hover(function() { 
+    var partnerpos= $(this).find('.partner-pos');
+    partnerpos.addClass('appear');
+    }, function() {
+    //var parent = $(this).parent();
+    var partnerpos= $(this).find('.partner-pos');
+    partnerpos.removeClass('appear');
+    })
+  }
+}
+
+App.playbuttonhover = {
+  _target:{},
+  init:function(){
+    this._target=$('.youtubeauto');
+    this._target.hover(function() {
+    //var parent = $(this).parent();
+    var normal = $(this).find('.normal');
+    var hover = $(this).find('.hover');
+    normal.addClass('hide');
+    hover.addClass('appear');
+    }, function() {
+    //var parent = $(this).parent();
+     var normal = $(this).find('.normal');
+    var hover = $(this).find('.hover');
+    normal.removeClass('hide');
+    hover.removeClass('appear');
+  })
+  }
+}
+
+
+
+App.scrollto = {
+  _target: {},
+
+  init: function() {
+    this._target = $('a.scrollTo');
+
+    this._target.on('click', function() {
+
+      var scrollTo = $(this).attr('data-scrollTo');
+
+      $("body, html").animate({ 
+        scrollTop: $('#'+scrollTo).offset().top
+      }, 800);
+      return false;
+    })
+  }
+}
+
+App.archivetabbedtable = {
+   _target: {},
+   init:function(){
+     this.target= $('.tab_content');
+     this.target.hide();
+     this.target.first().show();
+     $("ul.tabs li").click(function() {
+		
+      $(".tab_content").hide();
+      var activeTab = $(this).attr("rel"); 
+      $("#"+activeTab).fadeIn();		
+		
+      $("ul.tabs li").removeClass("active");
+      $(this).addClass("active");
+
+	  $(".tab_drawer_heading").removeClass("d_active");
+	  $(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
+	  
+    });
+   }
+}
+
+/*****************************************/
+//animate on scroll
+
+var $animation_elements = $('.animation-element');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+ 
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+ 
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+        (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view');
+    } else {
+      $element.removeClass('in-view');
+    }
+  });
+}
+
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll');
+
+
+/*****************************************/
 
