@@ -117,61 +117,67 @@ App.slider = {
 
 
 App.juryMoreInfoButton = {
-  _target: {},
-  _target1:{},
+  _plusbutton: {},
+  _minusbutton:{},
   self: {},
   init: function(){
-    this._target=$('.more-info');
-    this._target1=$('.less-info');
+    this._plusbutton=$('.more-info');
+    this._minusbutton=$('.less-info');
 
-    var parent = $(this) ;
-    
+    var parent;
+    var viewMoreBtn;
+    var viewLessBtn;
+    var juryInfo;
+    var juryDescShort;
+    var juryDescFull;
 
-    this._target.on('click',function(){
+
+    this._plusbutton.on('click',function(){
 
       parent =$(this).parent();
 
-      var viewmorebtn = parent.find('.more-info');
-      var viewlessbtn = parent.find('.less-info'); 
-      viewmorebtn.addClass('hide');
+      viewMoreBtn = parent.find('.more-info');
+      viewLessBtn = parent.find('.less-info'); 
 
-      viewlessbtn.addClass('appear');
+      viewMoreBtn.addClass('hide');
 
-      var juryinfo = parent.find ('.jury-info');
+      viewLessBtn.addClass('appear');
 
-      var jurydescshort= juryinfo.find('.jury-desc').find('.jury-desc-short');
+      juryInfo = parent.find ('.jury-info');
 
-      var jurydescfull= juryinfo.find('.jury-desc').find('.jury-desc-full');
+      juryDescShort= juryInfo.find('.jury-desc').find('.jury-desc-short');
 
-      jurydescshort.addClass('hide');
+      juryDescFull= juryInfo.find('.jury-desc').find('.jury-desc-full');
+
+      juryDescShort.addClass('hide');
     
-      juryinfo.animate({
+      juryInfo.animate({
           top:"0"
       },1500);
-        jurydescfull.addClass('appear');
+        juryDescFull.addClass('appear');
     })
 
-    this._target1.on('click',function(){
+    this._minusbutton.on('click',function(){
 
         parent =$(this).parent();
-        var viewmorebtn = parent.find('.more-info');
-        var viewlessbtn = parent.find('.less-info'); 
-        viewmorebtn.removeClass('hide');
+        viewMoreBtn = parent.find('.more-info');
+        viewLessBtn = parent.find('.less-info'); 
+        viewMoreBtn.removeClass('hide');
 
-        viewlessbtn.removeClass('appear');
+        viewLessBtn.removeClass('appear');
 
-        var juryinfo = parent.find ('.jury-info');
+        juryInfo = parent.find ('.jury-info');
 
-        var jurydescshort= juryinfo.find('.jury-desc').find('.jury-desc-short');
+        juryDescShort= juryInfo.find('.jury-desc').find('.jury-desc-short');
 
-        var jurydescfull= juryinfo.find('.jury-desc').find('.jury-desc-full');
+        juryDescFull= juryInfo.find('.jury-desc').find('.jury-desc-full');
 
-        jurydescshort.removeClass('hide');
+        juryDescShort.removeClass('hide');
       
-        juryinfo.animate({
+        juryInfo.animate({
             top:"50%"
         },1500);
-          jurydescfull.removeClass('appear');
+          juryDescFull.removeClass('appear');
 
     })
   }
@@ -219,11 +225,11 @@ App.scrollTo = {
 }
 
 App.archiveTabbedTable = {
-   _target: {},
+   _self: {},
    init:function(){
-     this.target= $('.tab_content');
-     this.target.hide();
-     this.target.first().show();
+     this._self= $('.tab_content');
+     this._self.hide();
+     this._self.first().show();
      $("ul.tabs li").click(function() {
 		
       $(".tab_content").hide();
