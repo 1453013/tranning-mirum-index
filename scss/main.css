@@ -653,7 +653,8 @@ footer {
   display: inline-block;
   position: relative;
   float: left;
-  margin-bottom: -12px; }
+  margin-bottom: -12px;
+  text-align: center; }
   .four-thing .four-thing-item img {
     width: 360px;
     height: 360px;
@@ -1402,11 +1403,19 @@ footer {
           position: absolute;
           top: 13%;
           display: none; }
-          .company .partner .logos-container .partner-item .partner-pos p {
+          .company .partner .logos-container .partner-item .partner-pos span {
             text-align: center;
             font-size: 20px;
-            padding-top: 18%;
-            color: white; }
+            white-space: nowrap;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%); }
       .company .partner .logos-container .partner-item:hover .partner-pos {
         display: block; }
       .company .partner .logos-container .partner-item:before {

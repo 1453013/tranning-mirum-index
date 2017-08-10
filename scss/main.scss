@@ -861,6 +861,7 @@ footer {
 		position: relative;
 		float: left;
 		margin-bottom: -12px;
+		text-align: center;
 		img {
 			width: 360px;
 			height: 360px;
@@ -1818,12 +1819,17 @@ footer {
 					position: absolute;
 					top: 13%;
 					display: none;
-					p {
+					span {
 						text-align: center;
 						font-size: 20px;
-						padding-top: 18%;
+						white-space: nowrap;
 						color: white;
 						//opacity: 1;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						@include transformXY(-50%,-50%);
+
 					}
 				}
 			}
