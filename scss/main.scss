@@ -53,7 +53,7 @@ html, body {
 
 
 
-header {
+.header {
 	@include for-phone-only {
 		display: none;
 	}
@@ -122,6 +122,24 @@ header {
 				color: $active-color;
 			}
 			}
+		.mechanic {
+			margin-left:3px;
+		}
+		.jury-nav {
+			margin-left:-3px;
+		}
+		.archive{
+			margin-left:-1px;
+		}
+		.partners{
+			margin-left:5px;
+		}
+		.news {
+			margin-left:3px;
+		}
+		.register {
+			margin-left:12px;
+		}
 		.active {
 			a {
 				color: white;
@@ -366,7 +384,7 @@ $awardboxsizemobilde: 250px;
 }
 
 
-footer {
+.footer {
 	background-color: $footer-color;
 	color: white;
 	font-family: 'BrandonText-Regular';
@@ -834,7 +852,9 @@ footer {
 
 
 
-
+h2 span {
+	color: $active-color;
+}
 
 
 
@@ -848,9 +868,7 @@ footer {
 		letter-spacing: -2px;
 		margin-top: 57px;
 	}
-	h2.red {
-		color: $active-color;
-	}
+
 	
 	.four-thing-item {
 		display: inline-block;
@@ -893,9 +911,7 @@ footer {
 	}
 }
 
-.red {
-	color: $active-color;
-}
+
 
 
 .previous-winner {
@@ -1004,6 +1020,21 @@ footer {
 					p{
 						font-size: 14px;
 					}
+				}
+				.mile2 {
+				left:-40%
+				}
+				.mile1 {
+					left:-46%
+				}
+				.mile4 {
+					left:-40%
+				}
+				.mile5 {
+					left:-38%
+				}
+				.mile6 {
+					left:-28%
 				}
 			}
 			li:hover .extra-info {
@@ -1230,13 +1261,13 @@ footer {
 	.jury-title {
 		width: 70%;
 		padding-left: 40px;
-		padding-top: 68px;
+		padding-top: 59px;
 		padding-bottom: 90px;
 		h2 {
 			font-size: 50px;
 			font-family: 'iCielBrawls1';
 			letter-spacing: -2px;
-			margin-bottom: 15px;
+			margin-bottom: 12px;
 			
 		}
 		p {
@@ -1310,9 +1341,7 @@ footer {
 			padding-left: 39px;
 			padding-right: 20px;
 			position: absolute;
-			height: 320px ;
-			.jury-name {
-				
+			height: 320px ;			
 				h3{
 				font-size: 30px;
 				font-family: 'BrandonText-Bold';
@@ -1320,19 +1349,16 @@ footer {
 				font-weight: bold;
 				letter-spacing: 1px;
 				text-transform: uppercase;
-				}
-			
-			}
-			.jury-pos {
-				margin-top: -33px; 
+				margin-top: 40px;
+				}				
 				h4{
+				margin-top: -26px; 
 				font-size: 20px;
 				font-family: 'BrandonText-Regular';
 				text-transform: uppercase;
 			}
-			}
 			.jury-desc { 
-				margin-top: -6px;
+				margin-top: -3px;
 				p{
 				font-size: 20px;
 				font-family: 'BrandonText-Regular';
@@ -1361,7 +1387,14 @@ footer {
 				background-image: url(../img/moreinfo.png);
 				bottom: -5px;
 				z-index: 100;
+				background-color: transparent;
+				border: none !important;
+				outline:none;
 			}
+		.more-info:active {
+			border: none !important;
+			outline:none;
+		}
 		.less-info {
 				position: absolute;
 				left: 50%;
@@ -1373,6 +1406,13 @@ footer {
 				bottom: -5px;
 				z-index: 100;
 				display: none;
+				background-color: transparent;
+				border: none !important;
+				outline:none;
+		}
+		.less-info:active {
+			border: none !important;
+			outline:none;
 		}
 		.more-info.hide {
 			display: none;
@@ -1549,7 +1589,7 @@ footer {
 					text-align: center;
 					margin: 0 auto;
 					margin-top: -7px;
-					height: 159px;
+					height: 136px;
 				
 					p{
 						font-size: 15px !important;
@@ -1564,16 +1604,20 @@ footer {
 					cursor: pointer;
 					z-index: 10;
 					text-decoration: none;
-					margin-top: 9px;
+					position: relative;
+					
 					a{
 						text-decoration: none;
 					}
-					p {
-						
+					span {
+						position: absolute;
+						top:50%;
+						left: 50%;
+						@include transformXY(-50%,-50%);
 						color: white;
 						font-size: 18px;
 						text-transform: uppercase;
-						padding-top: 15px;
+						
 						font-family: 'BrandonText-Bold';
 					}
 				}

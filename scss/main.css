@@ -32,7 +32,7 @@ html, body {
   margin: 0 0 0 0;
   padding: 0; }
 
-header {
+.header {
   position: fixed;
   top: 0;
   background: white;
@@ -41,25 +41,25 @@ header {
   height: 100px;
   white-space: nowrap; }
   @media (max-width: 599px) {
-    header {
+    .header {
       display: none; } }
-  header .logo {
+  .header .logo {
     float: left;
     position: relative;
     margin: 24px 0 0 120px;
     display: inline-block;
     width: 15%; }
     @media (max-width: 1439px) {
-      header .logo {
+      .header .logo {
         margin-left: 80px; } }
-  header .org {
+  .header .org {
     float: right;
     position: relative;
     display: inline-block;
     margin-top: 30px;
     padding-right: 3px;
     width: 10%; }
-  header .top-nav {
+  .header .top-nav {
     text-align: left;
     display: inline-block;
     padding-left: 134px;
@@ -67,13 +67,13 @@ header {
     width: 75%;
     letter-spacing: -1px; }
     @media (max-width: 1439px) {
-      header .top-nav {
+      .header .top-nav {
         padding-left: 2%; } }
-    header .top-nav li {
+    .header .top-nav li {
       color: black;
       display: inline-block;
       position: relative; }
-      header .top-nav li a {
+      .header .top-nav li a {
         display: block;
         font-weight: 700;
         color: black;
@@ -82,15 +82,27 @@ header {
         padding-bottom: 41px;
         padding-left: 20px;
         text-decoration: none; }
-      header .top-nav li :hover {
+      .header .top-nav li :hover {
         background: transparent;
         color: #e95154; }
-    header .top-nav .active {
+    .header .top-nav .mechanic {
+      margin-left: 3px; }
+    .header .top-nav .jury-nav {
+      margin-left: -3px; }
+    .header .top-nav .archive {
+      margin-left: -1px; }
+    .header .top-nav .partners {
+      margin-left: 5px; }
+    .header .top-nav .news {
+      margin-left: 3px; }
+    .header .top-nav .register {
+      margin-left: 12px; }
+    .header .top-nav .active {
       color: white;
       background: #e95154; }
-      header .top-nav .active a {
+      .header .top-nav .active a {
         color: white; }
-      header .top-nav .active :hover {
+      .header .top-nav .active :hover {
         color: white;
         background: #e95154; }
 
@@ -278,12 +290,12 @@ header {
         #shortlist-teams .shorteaminfo p {
           font-size: 20px; } }
 
-footer {
+.footer {
   background-color: #464646;
   color: white;
   font-family: 'BrandonText-Regular';
   height: 400px; }
-  footer .container {
+  .footer .container {
     width: 86%;
     display: inline-block;
     position: relative;
@@ -295,25 +307,25 @@ footer {
     -webkit-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     -moz-transform: translateX(-50%); }
-    footer .container .footer-item {
+    .footer .container .footer-item {
       float: left;
       display: inline-block;
       width: 33.33333%; }
-    footer .container .edge {
+    .footer .container .edge {
       width: 25%; }
-    footer .container .middle {
+    .footer .container .middle {
       width: 50%; }
-  footer hr {
+  .footer hr {
     width: 90%; }
-  footer .representatives {
+  .footer .representatives {
     text-align: center;
     margin-left: 81px;
     margin-right: 80px;
     margin-top: 37px; }
-    footer .representatives p {
+    .footer .representatives p {
       font-size: 20px;
       line-height: 0; }
-    footer .representatives img {
+    .footer .representatives img {
       margin-right: 10px;
       margin-left: 10px;
       max-height: 39px;
@@ -321,12 +333,12 @@ footer {
       width: auto;
       height: auto; }
       @media (min-width: 1800px) {
-        footer .representatives img {
+        .footer .representatives img {
           max-width: 180px; } }
       @media (max-width: 599px) {
-        footer .representatives img {
+        .footer .representatives img {
           max-width: 110px; } }
-    footer .representatives .representatives-logo {
+    .footer .representatives .representatives-logo {
       margin-top: 23px; }
 
 .contact {
@@ -636,6 +648,9 @@ footer {
     background: black;
     background: rgba(0, 0, 0, 0.5); }
 
+h2 span {
+  color: #e95154; }
+
 .four-thing h2 {
   font-size: 50px;
   text-align: center;
@@ -643,8 +658,6 @@ footer {
   white-space: nowrap;
   letter-spacing: -2px;
   margin-top: 57px; }
-.four-thing h2.red {
-  color: #e95154; }
 .four-thing .four-thing-item {
   display: inline-block;
   margin: 0 0 0 0;
@@ -674,9 +687,6 @@ footer {
   position: relative;
   margin-bottom: 6px;
   width: 100%; }
-
-.red {
-  color: #e95154; }
 
 .previous-winner {
   height: 700px;
@@ -773,6 +783,16 @@ footer {
           display: none; }
           .mile-stone .mile-stone-line ul li .extra-info p {
             font-size: 14px; }
+        .mile-stone .mile-stone-line ul li .mile2 {
+          left: -40%; }
+        .mile-stone .mile-stone-line ul li .mile1 {
+          left: -46%; }
+        .mile-stone .mile-stone-line ul li .mile4 {
+          left: -40%; }
+        .mile-stone .mile-stone-line ul li .mile5 {
+          left: -38%; }
+        .mile-stone .mile-stone-line ul li .mile6 {
+          left: -28%; }
       .mile-stone .mile-stone-line ul li:hover .extra-info {
         display: block; }
       .mile-stone .mile-stone-line ul .mile2 {
@@ -949,13 +969,13 @@ footer {
   .jury .jury-title {
     width: 70%;
     padding-left: 40px;
-    padding-top: 68px;
+    padding-top: 59px;
     padding-bottom: 90px; }
     .jury .jury-title h2 {
       font-size: 50px;
       font-family: 'iCielBrawls1';
       letter-spacing: -2px;
-      margin-bottom: 15px; }
+      margin-bottom: 12px; }
     .jury .jury-title p {
       margin-left: -6px;
       margin-top: 12px;
@@ -1001,21 +1021,21 @@ footer {
       padding-right: 20px;
       position: absolute;
       height: 320px; }
-      .jury .jury-item .jury-info .jury-name h3 {
+      .jury .jury-item .jury-info h3 {
         font-size: 30px;
         font-family: 'BrandonText-Bold';
         color: #e95154;
         font-weight: bold;
         letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 40px; }
+      .jury .jury-item .jury-info h4 {
+        margin-top: -26px;
+        font-size: 20px;
+        font-family: 'BrandonText-Regular';
         text-transform: uppercase; }
-      .jury .jury-item .jury-info .jury-pos {
-        margin-top: -33px; }
-        .jury .jury-item .jury-info .jury-pos h4 {
-          font-size: 20px;
-          font-family: 'BrandonText-Regular';
-          text-transform: uppercase; }
       .jury .jury-item .jury-info .jury-desc {
-        margin-top: -6px; }
+        margin-top: -3px; }
         .jury .jury-item .jury-info .jury-desc p {
           font-size: 20px;
           font-family: 'BrandonText-Regular';
@@ -1039,7 +1059,13 @@ footer {
       width: 76px;
       background-image: url(../img/moreinfo.png);
       bottom: -5px;
-      z-index: 100; }
+      z-index: 100;
+      background-color: transparent;
+      border: none !important;
+      outline: none; }
+    .jury .jury-item .more-info:active {
+      border: none !important;
+      outline: none; }
     .jury .jury-item .less-info {
       position: absolute;
       left: 50%;
@@ -1054,7 +1080,13 @@ footer {
       background-image: url(../img/lessinfo.png);
       bottom: -5px;
       z-index: 100;
-      display: none; }
+      display: none;
+      background-color: transparent;
+      border: none !important;
+      outline: none; }
+    .jury .jury-item .less-info:active {
+      border: none !important;
+      outline: none; }
     .jury .jury-item .more-info.hide {
       display: none; }
     .jury .jury-item .less-info.appear {
@@ -1179,7 +1211,7 @@ footer {
           text-align: center;
           margin: 0 auto;
           margin-top: -7px;
-          height: 159px; }
+          height: 136px; }
           .archive .tab_content .archive-item-container .archive-item-wrapper .archive-item .archive-item-desc p {
             font-size: 15px !important;
             margin: 0 0 0 0;
@@ -1191,14 +1223,21 @@ footer {
           cursor: pointer;
           z-index: 10;
           text-decoration: none;
-          margin-top: 9px; }
+          position: relative; }
           .archive .tab_content .archive-item-container .archive-item-wrapper .archive-item .archive-item-seemore a {
             text-decoration: none; }
-          .archive .tab_content .archive-item-container .archive-item-wrapper .archive-item .archive-item-seemore p {
+          .archive .tab_content .archive-item-container .archive-item-wrapper .archive-item .archive-item-seemore span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
             color: white;
             font-size: 18px;
             text-transform: uppercase;
-            padding-top: 15px;
             font-family: 'BrandonText-Bold'; }
 .archive .remark-number {
   height: 447px;
