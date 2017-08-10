@@ -48,11 +48,11 @@
 
 @mixin transformY ($ypercent){
 
-  transform:transformY($ypercent);
-	-ms-transform:transformY($ypercent);
-	-webkit-transform:transformY($ypercent);
-	-o-transform:transformY($ypercent);
-	-moz-transform:transformY($ypercent);
+  transform:translateY($ypercent);
+	-ms-transform:translateY($ypercent);
+	-webkit-transform:translateY($ypercent);
+	-o-transform:translateY($ypercent);
+	-moz-transform:translateY($ypercent);
 }
 
 

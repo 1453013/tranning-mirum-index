@@ -436,41 +436,50 @@ footer {
       .organized img {
         max-width: 85px; } }
 
-.side-menu {
+.side-nav {
   position: fixed;
   right: 0;
-  top: 48%;
-  z-index: 1000; }
-
-.side-menu-item {
-  text-align: center;
-  height: 60px;
-  width: 60px;
-  background: white;
-  margin-top: 1px; }
-  .side-menu-item img {
-    margin: 0 auto;
-    padding-top: 15px;
-    height: auto;
-    width: auto; }
-  .side-menu-item p {
-    font-size: 10px;
-    text-align: center;
-    font-family: 'BrandonText-Bold';
-    color: white;
-    text-transform: uppercase; }
-  .side-menu-item #socialchat img, .side-menu-item #socialyoutube img {
-    max-height: auto;
-    height: auto;
-    width: auto; }
-  .side-menu-item #socialfb img {
-    max-width: auto;
-    height: auto;
-    width: auto; }
-
-.side-menu-item > .active {
-  background: #e95154;
-  height: 100%; }
+  top: 51%;
+  z-index: 5;
+  cursor: pointer; }
+  .side-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .side-nav ul li {
+      height: 60px;
+      width: 60px;
+      background-color: white;
+      position: relative;
+      border: solid 1px white;
+      color: white;
+      font-size: 11px;
+      text-align: center; }
+      .side-nav ul li img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%); }
+      .side-nav ul li span {
+        position: absolute;
+        top: 0;
+        top: 34px;
+        left: 50%;
+        transform: translateX(-50%); }
+    .side-nav ul li.active {
+      background-color: #e95154;
+      border: solid 1px #e95154; }
+    .side-nav ul li.active:hover {
+      border: solid 1px white; }
+    .side-nav ul li.special img {
+      top: 35%;
+      left: 55%; }
+    .side-nav ul li:hover {
+      border: solid 1px #e95154; }
 
 .big-slider {
   width: 100%;
@@ -587,17 +596,12 @@ footer {
         .big-slider .main-slider .slide .youtube .youtubeauto {
           cursor: pointer;
           left: 50%;
-          transform: translateX(-50%);
-          -ms-transform: translateX(-50%);
-          -webkit-transform: translateX(-50%);
-          -o-transform: translateX(-50%);
-          -moz-transform: translateX(-50%);
-          top: 42%;
-          transform: transformY(-50%);
-          -ms-transform: transformY(-50%);
-          -webkit-transform: transformY(-50%);
-          -o-transform: transformY(-50%);
-          -moz-transform: transformY(-50%);
+          top: 50%;
+          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
           position: absolute; }
           .big-slider .main-slider .slide .youtube .youtubeauto img {
             height: 127px;

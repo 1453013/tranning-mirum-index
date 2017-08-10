@@ -600,59 +600,59 @@ footer {
 	}
 }
 
-
-.side-menu {
+.side-nav {
 	position: fixed;
 	right: 0;
-	top:48%;
-	z-index: 1000;
+	top: 51%;
+	z-index: 5;
+	cursor: pointer;
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			height: 60px;
+			width: 60px;
+			background-color: white;
+			position: relative;
+			border: solid 1px white;
+			img {
+				position: absolute;
+				left: 50%;
+				top:50%;
+				@include transformXY ( -50%,-50%);
+			}
+			color: white;
+			font-size: 11px;
+			text-align: center;
+			span {
+				position: absolute;
+				top: 0;
+				top: 34px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+		li.active {
+			background-color: $active-color;
+			border: solid 1px $active-color;
+		}
+		li.active:hover {
+			border: solid 1px white;
+		}
+		li.special {
+			img{
+			top:35%;
+			left: 55%;
+			}
+		}
+		li:hover {
+			border: solid 1px $active-color;
+		}
+	}
 
 }
 
-.side-menu-item {
-	text-align: center;
-	height: 60px;
-	width: 60px;
-	background: white;
-	margin-top: 1px;
-	//border-radius: 5px;
-	img {
-		margin: 0 auto;
-		padding-top: 15px;
-		//max-width: 40px;
-		//max-height: 40px;
-		height: auto;
-		width: auto;
-		}
-	p{
-		font-size: 10px;
-		text-align: center;
-		font-family: 'BrandonText-Bold';
-		color: white;
-		text-transform: uppercase;
-	}
-	#socialchat, #socialyoutube {
-		img {
-			//max-width: 45px;
-			max-height: auto;
-			height: auto;
-			width: auto;
-		}
-	}
-	#socialfb {
-		img {
-			//max-height: 40px;
-			max-width: auto;
-			height: auto;
-			width: auto;
-		}
-	}
-}
-.side-menu-item > .active {
-	//border-radius: 5px;
-	background: $active-color;
-	height: 100%;
-	}
 
 
 
@@ -771,9 +771,9 @@ footer {
 						.youtubeauto {
 							cursor: pointer;
 							left: 50%;
-							@include transformX(-50%);
-							top: 42%;
-							@include transformY(-50%);
+							
+							top: 50%;
+							@include transformXY(-50%,-50%);
 							position: absolute;
 							img {
 								height: 127px;
