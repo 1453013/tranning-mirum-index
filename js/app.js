@@ -5,16 +5,14 @@ $(document).ready(function(){
 
 var App = {
 	init : function(){
-    this.slider.init("big-slider","main-slider","slide","btnnext","btnprev","dots-nav",500,false,8000,3,1);
+    this.slider.init("big-slider","main-slider","slide","btnnext","btnprev",500,false,8000,3,1);
     this.juryMoreInfoButton.init();
     this.winnerItemMouseHold.init();
     this.beginTrainingButton.init();
     this.archiveTabbedTable.init();
     this.scrollTo.init();
-    jQuery(function(){
-			jQuery("a.youtubedefault").YouTubePopUp();
-			jQuery("a.youtubeauto").YouTubePopUp( { autoplay: 1 } ); 
-    });
+    this.youTuBePopUp.init(1);
+    //1 =  autoplay, 0 = none;
 	}
 }
 
@@ -29,16 +27,15 @@ App.slider = {
   _speed:100,
   _autoSpeed: 5000,
   _auto: false,
-     init: function (_slider,_mainSlider,_slideItem,_btnNext,_btnPrev,_dotsNav,_speed,_auto,_autoSpeed,totalslide,firstslide) {
+     init: function (_slider,_mainSlider,_slideItem,_btnNext,_btnPrev,_speed,_auto,_autoSpeed,totalslide,firstslide) {
         var self = this;
         self._this = $('.'+_slider);
         self.main= self._this.find('.'+_mainSlider);
         self.slide= self.main.find('.'+_slideItem);
         self.btnNext= self._this.find('.'+_btnNext);
         self.btnPrev= self._this.find('.'+_btnPrev);
-        self.dotsNav=self._this.find('.'+_dotsNav);
-        self.ol= self.dotsNav.find('ol');
-        self.li=self.ol.find('li');
+        self.dotsNav=self._this.find('ol');
+        self.li=self.dotsNav.find('li');
         self._speed=_speed;
         self._autoSpeed=_autoSpeed;
         self._auto=_auto;
@@ -67,13 +64,13 @@ App.slider = {
           if($('.oldActive').is(':last-child')){
                   $(self.slide).first().addClass('activeSlide');
                   self.curSlide =  1;
-                  self.li.eq(self.curSlide-1).addClass("active");
+                  
           }
           else {
                   $('.oldActive').next().addClass('activeSlide');
                   self.curSlide = self.curSlide + 1;
-                  self.li.eq(self.curslide-1).addClass("active");
             }
+          self.li.eq(self.curSlide-1).addClass("active");
           $('.oldActive').removeClass('oldActive');
           $(self.slide).fadeOut(self._speed);
           $('.activeSlide').fadeIn(self._speed);
@@ -87,16 +84,16 @@ App.slider = {
           if($('.oldActive').is(':first-child')){
                   $(self.slide).last().addClass('activeSlide');
                   self.curSlide =  self.maxSlide;
-                  self.li.eq(self.curslide-1).addClass("active");
           }
           else {
                   $('.oldActive').prev().addClass('activeSlide');
                   self.curSlide = self.curSlide - 1;
-                  self.li.eq(self.curslide-1).addClass("active");
           }
+          self.li.eq(self.curSlide-1).addClass("active");
           $('.oldActive').removeClass('oldActive');
           $(self.slide).fadeOut(self._speed);
           $('.activeSlide').fadeIn(self._speed);
+          
         },
         
         toDotsNav: function (){
@@ -116,79 +113,141 @@ App.slider = {
 }
 
 
-App.juryMoreInfoButton = {
-  _plusbutton: {},
-  _minusbutton:{},
-  self: {},
-  init: function(){
-    this._plusbutton=$('.more-info');
-    this._minusbutton=$('.less-info');
+// App.juryMoreInfoButton = {
+//   _plusbutton: {},
+//   _minusbutton:{},
+//   self: {},
+//   init: function(){
+//     this._plusbutton=$('.more-info');
+//     this._minusbutton=$('.less-info');
 
-    var parent;
-    var viewMoreBtn;
-    var viewLessBtn;
-    var juryInfo;
-    var juryDescShort;
-    var juryDescFull;
+//     var parent;
+//     var viewMoreBtn;
+//     var viewLessBtn;
+//     var juryInfo;
+//     var juryDescShort;
+//     var juryDescFull;
 
 
-    this._plusbutton.on('click',function(){
+//     this._plusbutton.on('click',function(){
 
-      parent =$(this).parent();
+//       parent =$(this).parent();
 
-      viewMoreBtn = parent.find('.more-info');
-      viewLessBtn = parent.find('.less-info'); 
+//       viewMoreBtn = parent.find('.more-info');
+//       viewLessBtn = parent.find('.less-info'); 
 
-      viewMoreBtn.addClass('hide');
+//       viewMoreBtn.addClass('hide');
 
-      viewLessBtn.addClass('appear');
+//       viewLessBtn.addClass('appear');
 
-      juryInfo = parent.find ('.jury-info');
+//       juryInfo = parent.find ('.jury-info');
 
-      juryDescShort= juryInfo.find('.jury-desc').find('.jury-desc-short');
+//       juryDescShort= juryInfo.find('.jury-desc').find('.jury-desc-short');
 
-      juryDescFull= juryInfo.find('.jury-desc').find('.jury-desc-full');
+//       juryDescFull= juryInfo.find('.jury-desc').find('.jury-desc-full');
 
-      juryDescShort.addClass('hide');
+//       juryDescShort.addClass('hide');
     
-      juryInfo.animate({
-          top:"0"
-      },1500);
-        juryDescFull.addClass('appear');
-    })
+//       juryInfo.animate({
+//           top:"0"
+//       },1500);
+//         juryDescFull.addClass('appear');
+//     })
 
-    this._minusbutton.on('click',function(){
+//     this._minusbutton.on('click',function(){
 
-        parent =$(this).parent();
-        viewMoreBtn = parent.find('.more-info');
-        viewLessBtn = parent.find('.less-info'); 
+//         parent =$(this).parent();
+//         viewMoreBtn = parent.find('.more-info');
+//         viewLessBtn = parent.find('.less-info'); 
+//         viewMoreBtn.removeClass('hide');
+
+//         viewLessBtn.removeClass('appear');
+
+//         juryInfo = parent.find ('.jury-info');
+
+//         juryDescShort= juryInfo.find('.jury-desc').find('.jury-desc-short');
+
+//         juryDescFull= juryInfo.find('.jury-desc').find('.jury-desc-full');
+
+//         juryDescShort.removeClass('hide');
+      
+//         juryInfo.animate({
+//             top:"50%"
+//         },1500);
+//           juryDescFull.removeClass('appear');
+
+//     })
+//   }
+// }
+
+
+
+App.juryMoreInfoButton = {
+    init: function(){
+
+
+      var viewMoreBtn;
+      var viewLessBtn;
+      var juryInfo;
+      var juryDescShort;
+      var juryDescFull;
+
+      $(".jury-item").hover(
+      function() {
+        viewMoreBtn = $(this).find('.more-info');
+        viewLessBtn = $(this).find('.less-info'); 
+        viewMoreBtn.addClass('hide');
+        viewLessBtn.addClass('appear');
+        juryInfo = $(this).find ('.jury-info');
+        juryDescShort= juryInfo.find('.jury-desc').find('.jury-desc-short');
+        juryDescFull= juryInfo.find('.jury-desc').find('.jury-desc-full');
+        //juryDescShort.addClass('hide');  
+           
+        juryInfo.animate({
+            top:"0",
+            height:"100%",
+        },1500);
+          //juryDescFull.addClass('appear');
+
+          juryDescFull.fadeIn(1500, function() {
+          juryDescFull.addClass('show');
+        });
+
+
+
+
+      }, 
+      function() {
+        viewMoreBtn = $(this).find('.more-info');
+        viewLessBtn = $(this).find('.less-info'); 
         viewMoreBtn.removeClass('hide');
 
         viewLessBtn.removeClass('appear');
 
-        juryInfo = parent.find ('.jury-info');
+        juryInfo = $(this).find ('.jury-info');
 
         juryDescShort= juryInfo.find('.jury-desc').find('.jury-desc-short');
 
         juryDescFull= juryInfo.find('.jury-desc').find('.jury-desc-full');
 
-        juryDescShort.removeClass('hide');
-      
         juryInfo.animate({
-            top:"50%"
+            top:"50%",
+            height:"320px",
         },1500);
-          juryDescFull.removeClass('appear');
 
-    })
-  }
+        juryDescFull.fadeOut(1500, function() {
+          juryDescFull.addClass('hide');
+        });
+      }
+);
+
+
+    }
 }
 
-
 App.winnerItemMouseHold = {
-  _target:{},
   init:function(){
-    this._target=$('.winner-item');
-    this._target.mouseup(function(){
+    $('.winner-item').mouseup(function(){
       $( this ).css('opacity','1');
     })
     .mousedown(function(){
@@ -198,24 +257,17 @@ App.winnerItemMouseHold = {
 }
 
 App.beginTrainingButton = {
-  _target:{},
   init:function(){
-    this._target=$('.begintrain');
-    this._target.on('click',function(){
+    $('.begintrain').on('click',function(){
       $(".shame-frame").fadeOut("slow");
     })
   }
 }
 
 App.scrollTo = {
-  _target: {},
   init: function() {
-    this._target = $('a.scrollTo');
-
-    this._target.on('click', function() {
-
+    $('a.scrollTo').on('click', function() {
       var scrollTo = $(this).attr('data-scrollTo');
-
       $("body, html").animate({ 
         scrollTop: $('#'+scrollTo).offset().top
       }, 800);
@@ -225,15 +277,13 @@ App.scrollTo = {
 }
 
 App.archiveTabbedTable = {
-   _self: {},
    init:function(){
-     this._self= $('.tab_content');
-     this._self.hide();
-     this._self.first().show();
+     $('.tab_content').hide();
+     $('.tab_content').first().show();
      $("ul.tabs li").click(function() {
 		
       $(".tab_content").hide();
-      var activeTab = $(this).attr("rel"); 
+      var activeTab = $(this).attr("data-rel"); 
       $("#"+activeTab).fadeIn();		
 		
       $("ul.tabs li").removeClass("active");
@@ -245,6 +295,8 @@ App.archiveTabbedTable = {
     });
    }
 }
+
+
 
 /*****************************************/
 //animate on scroll
@@ -278,3 +330,60 @@ $window.trigger('scroll');
 
 
 /*****************************************/
+
+
+App.youTuBePopUp = {
+  init:function(_state){
+    $("a.youtubepopup").on('click',function(){
+    var link= $(this).attr('data-youtube');
+    $("body").append(
+      $('<div/>',{'class':'popup_overlay'}).append (
+        $('<div/>',{'class':'popup'}).append (
+          $("<a />", {
+            href: "#",
+            "class": "popup_close",
+          }),
+          $("<iframe/>",{
+            src: link + "?autoplay=" + _state,
+            frameborder: 0,
+            //allowfullscreen:0,
+          })
+      )
+    ));
+      $("a.popup_close").on('click',function(){
+      $(".popup_overlay").remove();
+    });
+  })
+  $(document).mouseup(function(e) 
+  {
+    var container = $(".popup");
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
+    {
+        $(".popup_overlay").remove();
+    }
+  })
+  },
+    toggleVideo:function(){
+      var div = document.getElementById("popupVid");
+      var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+      //div.style.display = state == 'hide' ? 'none' : '';
+      func = state == 'hide' ? 'pauseVideo' : 'playVideo';
+      iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+    },   
+}
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+

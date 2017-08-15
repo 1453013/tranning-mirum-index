@@ -555,7 +555,7 @@ $awardboxsizemobilde: 250px;
 			margin-top: 15px;
 			margin-left: 15px;
 		}
-		p {
+		span {
 			margin: 0 0 0 0;
 			
     		vertical-align: middle;
@@ -621,8 +621,9 @@ $awardboxsizemobilde: 250px;
 .side-nav {
 	position: fixed;
 	right: 0;
-	top: 51%;
+	top: 50%;
 	z-index: 5;
+	@include transformY(-50%);
 	cursor: pointer;
 	ul {
 		list-style: none;
@@ -735,15 +736,14 @@ $awardboxsizemobilde: 250px;
 	.btnnext:hover {
 		opacity: 0.2;
 	}
-	.dots-nav {
-		position: absolute;
-		z-index: 5;
-		left: 50%;
-		@include transformX(-50%);
-		margin-top: 750px;
 		ol {
 			padding: 0;
 			margin: 0;
+			position: absolute;
+			z-index: 5;
+			left: 50%;
+			@include transformX(-50%);
+			margin-top: 750px;
 			li {
 				display: inline-block;
 				height: 21px;
@@ -758,7 +758,6 @@ $awardboxsizemobilde: 250px;
 				background-image: url(../img/nextbtn.png);
 			}
 		}
-	}
 .main-slider{
 	width: 100%;
 	height: 100%;
@@ -786,29 +785,22 @@ $awardboxsizemobilde: 250px;
 							height: 800px;
 						}
 						}
-						.youtubeauto {
+						.youtubepopup {
 							cursor: pointer;
 							left: 50%;
 							
 							top: 50%;
+							height: 127px;
+							width: 127px;
 							@include transformXY(-50%,-50%);
 							position: absolute;
-							img {
-								height: 127px;
-								width: 127px;
-							}
+							background-image: url(../img/play-btn.png);
+							background-size: 100% 100%;		
+						}
+						.youtubepopup:hover{
+							background-image: url(../img/play-btn-red.png);
+						}
 
-							.hover {
-								display: none;
-							}
-
-						}
-						.youtubeauto:hover .normal {
-							display: none;
-						}
-						.youtubeauto:hover .hover {
-							display: block;
-						}
 					}
 				
 	}
@@ -1021,19 +1013,19 @@ h2 span {
 						font-size: 14px;
 					}
 				}
-				.mile2 {
+				.extra2 {
 				left:-40%
 				}
-				.mile1 {
+				.extra1 {
 					left:-46%
 				}
-				.mile4 {
+				.extra4 {
 					left:-40%
 				}
-				.mile5 {
+				.extra5 {
 					left:-38%
 				}
-				.mile6 {
+				.extra6 {
 					left:-28%
 				}
 			}
@@ -1341,7 +1333,8 @@ h2 span {
 			padding-left: 39px;
 			padding-right: 20px;
 			position: absolute;
-			height: 320px ;			
+			height: 320px ;
+			overflow: hidden;
 				h3{
 				font-size: 30px;
 				font-family: 'BrandonText-Bold';
@@ -1359,6 +1352,7 @@ h2 span {
 			}
 			.jury-desc { 
 				margin-top: -3px;
+
 				p{
 				font-size: 20px;
 				font-family: 'BrandonText-Regular';
@@ -1366,15 +1360,7 @@ h2 span {
 				}
 				.jury-desc-full {
 					display: none;
-				}
-				.jury-desc-full.appear {
-					display: block;
-				}
-				.jury-desc-short.hide {
-					display: none;
-				}
-			
-		
+				}	
 			}
 		}
 		.more-info {
@@ -2051,6 +2037,62 @@ h2 span {
 .animation-element.zoom-in.in-view {
   opacity: 1;
 	@include transformscaleXY(1,1);
+}
+
+
+// youtubepopup
+
+
+.popup_overlay {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background:  rgba(0,0,0,.5);
+  text-align: center;
+  z-index: 100;
+  .popup {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 640px;
+	max-height: 480px;
+	padding: 20px;
+	border: 1px solid black;
+	background: black;
+	color: white;
+	vertical-align: middle;
+	.popup_close {
+		display: block;
+		position: absolute;
+		top: 1px;
+		right: 1px;
+		width: 12px;
+		height: 12px;
+		padding: 8px;
+		cursor: pointer;
+		background-image: url(../img/close.png);
+		background-size: 100% 100%;
+		font-weight: bold;
+		}
+
+
+	iframe {
+		width: 100%;
+		height: 100%;
+		}
+	}	
+}
+
+.popup_overlay:after {
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  vertical-align: middle;
+  content: '';
 }
 
 

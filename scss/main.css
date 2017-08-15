@@ -401,7 +401,7 @@ html, body {
         width: auto;
         margin-top: 15px;
         margin-left: 15px; } }
-    .follow .facebook-link p, .follow .web-link p {
+    .follow .facebook-link span, .follow .web-link span {
       margin: 0 0 0 0;
       vertical-align: middle;
       font-size: 18px;
@@ -409,13 +409,13 @@ html, body {
       display: inline-block;
       margin-right: -9px;
       margin-top: -28px; }
-      .follow .facebook-link p :hover, .follow .web-link p :hover {
+      .follow .facebook-link span :hover, .follow .web-link span :hover {
         color: white; }
       @media (min-width: 1800px) {
-        .follow .facebook-link p, .follow .web-link p {
+        .follow .facebook-link span, .follow .web-link span {
           font-size: 20px; } }
       @media (max-width: 599px) {
-        .follow .facebook-link p, .follow .web-link p {
+        .follow .facebook-link span, .follow .web-link span {
           display: none; } }
     @media (min-width: 1800px) {
       .follow .facebook-link h4, .follow .web-link h4 {
@@ -451,8 +451,13 @@ html, body {
 .side-nav {
   position: fixed;
   right: 0;
-  top: 51%;
+  top: 50%;
   z-index: 5;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
   cursor: pointer; }
   .side-nav ul {
     list-style: none;
@@ -559,7 +564,9 @@ html, body {
     border: none; }
   .big-slider .btnnext:hover {
     opacity: 0.2; }
-  .big-slider .dots-nav {
+  .big-slider ol {
+    padding: 0;
+    margin: 0;
     position: absolute;
     z-index: 5;
     left: 50%;
@@ -569,20 +576,17 @@ html, body {
     -o-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     margin-top: 750px; }
-    .big-slider .dots-nav ol {
-      padding: 0;
-      margin: 0; }
-      .big-slider .dots-nav ol li {
-        display: inline-block;
-        height: 21px;
-        width: 21px;
-        background-image: url(../img/prevbtn.png);
-        background-size: 100% 100%;
-        cursor: pointer;
-        margin-left: 8px;
-        margin-right: 8px; }
-      .big-slider .dots-nav ol li.active {
-        background-image: url(../img/nextbtn.png); }
+    .big-slider ol li {
+      display: inline-block;
+      height: 21px;
+      width: 21px;
+      background-image: url(../img/prevbtn.png);
+      background-size: 100% 100%;
+      cursor: pointer;
+      margin-left: 8px;
+      margin-right: 8px; }
+    .big-slider ol li.active {
+      background-image: url(../img/nextbtn.png); }
   .big-slider .main-slider {
     width: 100%;
     height: 100%;
@@ -605,25 +609,22 @@ html, body {
         .big-slider .main-slider .slide .youtube .youtube-preview-img img {
           width: 100%;
           height: 800px; }
-        .big-slider .main-slider .slide .youtube .youtubeauto {
+        .big-slider .main-slider .slide .youtube .youtubepopup {
           cursor: pointer;
           left: 50%;
           top: 50%;
+          height: 127px;
+          width: 127px;
           transform: translate(-50%, -50%);
           -ms-transform: translate(-50%, -50%);
           -webkit-transform: translate(-50%, -50%);
           -o-transform: translate(-50%, -50%);
           -moz-transform: translate(-50%, -50%);
-          position: absolute; }
-          .big-slider .main-slider .slide .youtube .youtubeauto img {
-            height: 127px;
-            width: 127px; }
-          .big-slider .main-slider .slide .youtube .youtubeauto .hover {
-            display: none; }
-        .big-slider .main-slider .slide .youtube .youtubeauto:hover .normal {
-          display: none; }
-        .big-slider .main-slider .slide .youtube .youtubeauto:hover .hover {
-          display: block; }
+          position: absolute;
+          background-image: url(../img/play-btn.png);
+          background-size: 100% 100%; }
+        .big-slider .main-slider .slide .youtube .youtubepopup:hover {
+          background-image: url(../img/play-btn-red.png); }
   .big-slider #slider img {
     width: 940px;
     height: 350px; }
@@ -783,15 +784,15 @@ h2 span {
           display: none; }
           .mile-stone .mile-stone-line ul li .extra-info p {
             font-size: 14px; }
-        .mile-stone .mile-stone-line ul li .mile2 {
+        .mile-stone .mile-stone-line ul li .extra2 {
           left: -40%; }
-        .mile-stone .mile-stone-line ul li .mile1 {
+        .mile-stone .mile-stone-line ul li .extra1 {
           left: -46%; }
-        .mile-stone .mile-stone-line ul li .mile4 {
+        .mile-stone .mile-stone-line ul li .extra4 {
           left: -40%; }
-        .mile-stone .mile-stone-line ul li .mile5 {
+        .mile-stone .mile-stone-line ul li .extra5 {
           left: -38%; }
-        .mile-stone .mile-stone-line ul li .mile6 {
+        .mile-stone .mile-stone-line ul li .extra6 {
           left: -28%; }
       .mile-stone .mile-stone-line ul li:hover .extra-info {
         display: block; }
@@ -1020,7 +1021,8 @@ h2 span {
       padding-left: 39px;
       padding-right: 20px;
       position: absolute;
-      height: 320px; }
+      height: 320px;
+      overflow: hidden; }
       .jury .jury-item .jury-info h3 {
         font-size: 30px;
         font-family: 'BrandonText-Bold';
@@ -1041,10 +1043,6 @@ h2 span {
           font-family: 'BrandonText-Regular';
           line-height: 25px; }
         .jury .jury-item .jury-info .jury-desc .jury-desc-full {
-          display: none; }
-        .jury .jury-item .jury-info .jury-desc .jury-desc-full.appear {
-          display: block; }
-        .jury .jury-item .jury-info .jury-desc .jury-desc-short.hide {
           display: none; }
     .jury .jury-item .more-info {
       position: absolute;
@@ -1660,5 +1658,50 @@ h2 span {
   -webkit-transform: scale(1, 1);
   -o-transition: scale(1, 1);
   transform: scale(1, 1); }
+
+.popup_overlay {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 100; }
+  .popup_overlay .popup {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 640px;
+    max-height: 480px;
+    padding: 20px;
+    border: 1px solid black;
+    background: black;
+    color: white;
+    vertical-align: middle; }
+    .popup_overlay .popup .popup_close {
+      display: block;
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      width: 12px;
+      height: 12px;
+      padding: 8px;
+      cursor: pointer;
+      background-image: url(../img/close.png);
+      background-size: 100% 100%;
+      font-weight: bold; }
+    .popup_overlay .popup iframe {
+      width: 100%;
+      height: 100%; }
+
+.popup_overlay:after {
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  vertical-align: middle;
+  content: ''; }
 
 /*# sourceMappingURL=main.css.map */
