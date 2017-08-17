@@ -268,8 +268,11 @@ App.scrollTo = {
   init: function() {
     $('a.scrollTo').on('click', function() {
       var scrollTo = $(this).attr('data-scrollTo');
+      if ($(window).width()<900) {
+        scrollTo = scrollTo + "-mobile";
+      }
       $("body, html").animate({ 
-        scrollTop: $('#'+scrollTo).offset().top
+        scrollTop: $('#'+scrollTo).offset().top - 50
       }, 800);
       return false;
     })

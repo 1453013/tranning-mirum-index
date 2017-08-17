@@ -50,6 +50,8 @@ html, body {
 
 @import 'color';
 @import 'mixin';
+@import 'style';
+
 
 
 
@@ -399,10 +401,9 @@ $awardboxsizemobilde: 250px;
 		padding-bottom: 77px;
 		left: 50%;
 		@include transformX(-50%);
-		// @include for-snakktablet-portrait-only {
-		// 	margin-left: 60px;
-		// 	margin-right: 60px;
-		// }
+		@include for-snakktablet-portrait-only {
+			padding-bottom: 38px;
+		}
 		// @include for-phone-only {
 		// 	padding-top: 20px;
 		// 	margin-left: 10px;
@@ -545,9 +546,12 @@ $awardboxsizemobilde: 250px;
 				width: 150px;
 			}
 		@include for-snakktablet-portrait-only {
-			display: block !important;
-			width: auto;
-			margin-top: 15px;
+			    display: block !important;
+				width: 100%;
+				margin-top: 15px;
+				left: 0;
+				text-align: left;
+				margin-left: 25px;
 		}
 		@include for-phone-only {
 			display: block !important;
@@ -683,6 +687,10 @@ $awardboxsizemobilde: 250px;
 	margin-top: 100px;
 	overflow: hidden;
 	height: 800px;
+	position: relative;
+	@include for-tablet-and-phone-only {
+		
+							}
 	
 	.controler {
 		z-index: 5;
@@ -712,7 +720,7 @@ $awardboxsizemobilde: 250px;
 		z-index: 5;
 		position: absolute;
 		left:0;
-		height: 800px;
+		height: 100%;
 		width: 50px;
 		@include gradienttransparencytoright(white);
 		opacity: 0;
@@ -726,7 +734,7 @@ $awardboxsizemobilde: 250px;
 		z-index: 5;
 		position: absolute;
 		right:0;
-		height: 800px;
+		height: 100%;
 		width: 50px;
 		@include gradienttransparencytoleft(white);
 		opacity: 0;
@@ -744,10 +752,17 @@ $awardboxsizemobilde: 250px;
 			left: 50%;
 			@include transformX(-50%);
 			margin-top: 750px;
+			@include for-tablet-and-phone-only {
+				margin-top: 45%;
+			}
 			li {
 				display: inline-block;
 				height: 21px;
 				width: 21px;
+				@include for-tablet-and-phone-only {
+					height: 15px;
+					width: 15px;
+				}
 				background-image: url(../img/prevbtn.png);
 				background-size: 100% 100%;
 				cursor: pointer;
@@ -773,6 +788,10 @@ $awardboxsizemobilde: 250px;
 						img {
 							width: 100%;
 							height: 800px;
+							@include for-tablet-and-phone-only {
+								width: 100%;
+								height: auto;
+							}
 						}
 					}
 					.youtube {
@@ -783,6 +802,10 @@ $awardboxsizemobilde: 250px;
 						img {
 							width: 100%;
 							height: 800px;
+							@include for-tablet-and-phone-only {
+								width: 100%;
+								height: auto;
+							}
 						}
 						}
 						.youtubepopup {
@@ -792,6 +815,10 @@ $awardboxsizemobilde: 250px;
 							top: 50%;
 							height: 127px;
 							width: 127px;
+							@include for-tablet-and-phone-only {
+								height: 50px;
+								width: 50px;
+							}
 							@include transformXY(-50%,-50%);
 							position: absolute;
 							background-image: url(../img/play-btn.png);
@@ -859,6 +886,12 @@ h2 span {
 		white-space: nowrap;
 		letter-spacing: -2px;
 		margin-top: 57px;
+		@include for-snakktablet-portrait-only {
+			margin-top: 15px;
+		}
+		@include for-phone-only {
+			margin-top: 10px;
+		}
 	}
 
 	
@@ -873,8 +906,8 @@ h2 span {
 		margin-bottom: -12px;
 		text-align: center;
 		img {
-			width: 360px;
-			height: 360px;
+			width: 100%;
+    		height: auto;
 			max-width: 100%;
 			max-height: 100%;
 		}
@@ -900,6 +933,12 @@ h2 span {
 		position: relative;
 		margin-bottom: 6px;
 		width: 100%;
+		@include for-snakktablet-portrait-only {
+			margin-top: 0;
+		}
+		@include for-phone-only {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -910,6 +949,12 @@ h2 span {
 	height: 700px;
 	background-color: $cream-color;
 	position: relative;
+	@include for-snakktablet-portrait-only {
+		height: 400px;
+	}
+	@include for-phone-only {
+		height: 215px;
+	}
 	h2{
 		font-size: 50px;
 		text-align: center;
@@ -917,7 +962,13 @@ h2 span {
 		white-space: nowrap;
 		letter-spacing: -2px;
 		margin-top: 0;
-    	padding-top: 93px;	
+		padding-top: 93px;
+		@include for-snakktablet-portrait-only {
+		padding-top: 35px;
+		}	
+		@include for-phone-only {
+			padding-top: 20px;
+		}
 	}
 	.row {
 		padding-left: 75px;
@@ -936,6 +987,12 @@ h2 span {
 		display: inline-block;
 		position: relative;
 		width: 87%;
+		@include for-snakktablet-portrait-only {
+			padding-top: 0;
+		}
+		@include for-phone-only {
+			padding-top: 0;
+		}
 		//padding-left: 15px;
 	}
 	.winner-item {
@@ -948,6 +1005,8 @@ h2 span {
 		img {
 			display: block;
 			margin: 0 auto;
+			height: auto;
+    		width: 90%;
 		}
 	}
 
@@ -956,6 +1015,12 @@ h2 span {
 .mile-stone {
 	height: 1095px;
 	position: relative;
+	@include for-snakktablet-portrait-only {
+		height: 720px;
+	}
+	@include for-phone-only {
+		height: 800px;
+	}
 	h2 {
 		margin-top: 50px;
 		font-family: 'iCielBrawls1';
@@ -964,6 +1029,9 @@ h2 span {
 		margin-top: 110px;
 		letter-spacing: -2px;
 		line-height: 0;
+		@include for-phone-only {
+			margin-top: 50px;
+		}
 	}
 	p{	
 		//margin-top: 10px;
@@ -972,6 +1040,12 @@ h2 span {
 		font-size: 20px;
 		line-height: 24px;
 		margin-top:-5px;
+		@include for-snakktablet-portrait-only {
+			font-size: 16px;
+		}
+		@include for-phone-only {
+			font-size: 14px;
+		}
 	}
 	.mile-stone-line {
 		position: absolute;
@@ -981,6 +1055,11 @@ h2 span {
 		height: 881px;
 		background-image: url(../img/milebg.png);
 		left: 50%;
+		@include for-snakktablet-portrait-only {
+			@include transformscale (0.5);
+			left: -31%;
+			top: -15%;
+		}
 		@include transformX(-50%);
 		ul {
 			padding-left: 168px;
@@ -1057,8 +1136,20 @@ h2 span {
 		@include transformX(-50%);
 		p{
 			padding-top: 6px;
+			span {
+				color: $active-color;
+				@include for-phone-only {
+					font-weight: bold;
+				}
+			}
 		}
 		
+		@include for-snakktablet-portrait-only {
+				top: 72%;
+		}
+		@include for-phone-only {
+			top: 67%;
+		}
 		.direct-regis {
 			position: absolute;
 			left: 50%;
@@ -1067,9 +1158,15 @@ h2 span {
 			display: inline-block;
 			margin-top: 5px;
 			text-align: center;
+			@include for-phone-only {
+				margin-top: -6px;
+			}
 		p{
 			display: inline-block;
 			margin-right: 10px;
+			@include for-phone-only {
+				display: block;
+			}
 			
 		}
 
@@ -1141,12 +1238,16 @@ h2 span {
 		img {
 			height: 550px;
 			width: 100%;
+			@include for-tablet-and-phone-only { 
+				height: auto;
+			}
 			
 		}
 		position: relative;
 		.shame-frame, .fame-frame {
 			position: absolute;
 			width: 100%;
+			line-height: 0;
 		}
 		.shame-frame {
 			z-index: 1;
@@ -1167,7 +1268,10 @@ h2 span {
 		margin: 0 0 0 0;
 		background-image: url(../img/joinusbg.png);
 		background-size: 100% 100%;
-		height: 550px;;
+		height: 550px;
+		@include for-tablet-and-phone-only { 
+				height: auto;
+			}
 		color: white;
 		position: relative;
 		display: inline-block;
@@ -1176,10 +1280,28 @@ h2 span {
 		.join-us-content-container {
 			left: 15%;
 			position: relative;
+			@include for-snakktablet-portrait-only {
+				left:0;
+			}
+			@include for-phone-only {
+				left: 0;
+			}
 			
 		.join-us-content {
 			margin-top: 70px;
 			position: relative;
+			@include for-snakktablet-portrait-only {
+				@include transformscale(0.6);
+				margin-top: 38px;
+				left: -30px;
+				
+			}
+			@include for-phone-only {
+				@include transformscale(0.3);
+				margin-top: 8px;
+				left: -100px;
+    			width: 329px;
+			}
 			.jonfb{
 				position: absolute;
 				margin: 0 0 0 0;
@@ -1217,15 +1339,23 @@ h2 span {
 				font-size: 20px;
 				margin-top: 295px;
 				margin-left: -4px;
+				white-space: nowrap;
 
 			}
 		}
 
 		.viewmore-button {
-			margin-top: 350px;
+			margin-top: 190px;
 			color: $active-color;
 			background: white;						
 			padding: 16px 24px;
+			@include for-snakktablet-portrait-only {
+				@include transformscale(0.6);
+			}
+			@include for-phone-only {
+				@include transformscale(0.3);
+				margin-top: 70px;
+			}
 		}
 		.viewmore-button:after {
 			border: 2px solid white;
@@ -1242,7 +1372,7 @@ h2 span {
 }
 }
 
-.jury {
+.jury, .jury-mobile {
 
 	
 	height: 1866px;
@@ -1420,7 +1550,24 @@ h2 span {
 
 }
 
+.jury-mobile {
+	height: 100%;
+	.jury-title {
+		margin: 0 auto;
+	}
+	.jury-item {
+		margin: 0 auto;
+		margin-bottom: 37px;
+		max-width: 100%;
+	}
+	.jury-container {
+		max-width: 100%;
+		padding-left: 5px;
+		padding-right: 20px;
+	}
+}
 .archive {
+	position: relative;
 	h2 {
 		font-family: 'iCielBrawls1';
 		font-size: 50px;
@@ -1438,8 +1585,12 @@ h2 span {
 	}
 
 	.tabs-wrapper {
+		position: relative;
 		padding-top: 47px;
 		height: 628px;
+		@include for-phone-only {
+			height: 489px;
+		}
 	}
 	ul.tabs {
 	margin: 0;
@@ -1451,13 +1602,16 @@ h2 span {
 	width: 100%;
 	  //margin-left:50px
 	  padding-left: 88px;
+		@include for-phone-only {
+			padding-left: 30px;
+		}
 	}
 
 	ul.tabs li {
 		float: left;
 		margin: 0;
 		cursor: pointer;
-		padding: 0px 21px;
+		padding: 0px 12px;
 		height: 44px;
 		line-height: 44px;
 		width: 107px;
@@ -1470,6 +1624,10 @@ h2 span {
 		position: relative;
 		opacity: 0.5;
 		margin-right: 2px;
+		@include for-phone-only {
+			font-size: 15px;
+			width: 60px;	
+		}
 	}
 
 	// ul.tabs li::before {
@@ -1492,10 +1650,11 @@ h2 span {
 	}
 
 	.tab_container {
-		clear: both;
+		position: relative;
+		//clear: both;
 		float: left;
 		width: 100%;
-		overflow: auto;
+		//overflow: auto;
 		
 	}
 	.year-first {
@@ -1509,7 +1668,11 @@ h2 span {
 
 		}
 	.tab_content {
+		position: relative;
 		height: 531px;
+		@include for-phone-only {
+			height: 394px;
+		}
 		//padding: 20px;
 		display: none;
 		.archive-item-container {
@@ -1576,11 +1739,14 @@ h2 span {
 					margin: 0 auto;
 					margin-top: -7px;
 					height: 136px;
-				
+					overflow: hidden;
 					p{
 						font-size: 15px !important;
 						margin: 0 0 0 0;
 						line-height: 18px;
+						@include for-snakktablet-portrait-only {
+							font-size: 10px !important;
+						}
 					}
 				}
 				.archive-item-seemore {
@@ -1605,11 +1771,159 @@ h2 span {
 						text-transform: uppercase;
 						
 						font-family: 'BrandonText-Bold';
+						
 					}
 				}
 			}
 			}
 		}
+	.archive-item-container-mobile {
+			width: 89%;
+			//height: 100%;
+			position: absolute;
+			display: inline-block;
+			padding-top: 188px;
+			left: 50%;
+			@include for-phone-only {
+				padding-top: 50px;
+			}
+			.controler {
+				z-index: 5;
+				position: absolute;
+				top:30%;
+				left:50%;
+				width: 100%;
+				height: 50px;
+				@include transformX(-50%);
+					.btnprevmarchive, .btnnextmarchive,.btnmoreinfo {
+						display: inline-block;
+						position: relative;
+						float:left;
+						margin: 0 auto;
+						text-align: center;
+					}
+					.btnnextmarchive {
+						float:right;
+					}
+					.btnprevmarchive.inactive {
+						display: none;
+						}
+					.btnnextmarchive.inactive {
+						display: none;
+					}
+					.btnmoreinfo {
+						opacity: 0.7;
+					}
+			}
+			ul {
+				position: relative;
+				margin: 0;
+				padding: 0;
+				height: 800px;
+				list-style: none;
+				li {
+					//background: red;
+					display: block;
+					height: 800px;
+					position: relative;
+					float: left;			
+					margin: 0;
+					padding: 0;
+					width: (100%/4);
+				}
+			}
+			@include transformX(-50%);
+			.archive-item-wrapper {
+
+			.archive-item {
+				//margin-left: 8px;
+				//margin-right:8px;
+				background: white;
+				text-align: center;
+				padding-right: 0px;
+				padding-left: 0px;
+				//width: (95%/4);
+				height: 398px;
+				//width: 304px;
+				margin-left: 60px;
+    			margin-right: 60px;
+			
+				
+
+				//width: 23%;
+				
+				//width: 23%;
+				
+				
+				.archive-item-logo {
+					padding-top: 35px;
+					height: 104px;
+					
+					text-align: center;
+					img {
+						vertical-align: middle;
+						display: inline-block;
+					}
+				}
+				.archive-item-logo:before{
+					content: ' ';
+					display: inline-block;
+					vertical-align: middle;  /* vertical alignment of the inline element */
+					height: 100%;
+				}
+				.archive-item-title {
+					padding-top: 3px;
+					h3 {
+						line-height: 0;
+						font-size: 36px;
+						font-family: 'iCielBrawls1';
+					}
+				}
+				.archive-item-desc {
+					width: 80%;
+					text-align: center;
+					margin: 0 auto;
+					margin-top: -7px;
+					height: 136px;
+					overflow: hidden;
+					p{
+						font-size: 15px !important;
+						margin: 0 0 0 0;
+						line-height: 18px;
+						@include for-snakktablet-portrait-only {
+							font-size: 10px !important;
+						}
+					}
+				}
+				.archive-item-seemore {
+					height: 54px;
+					background-image: url(../img/seemore.png);
+					background-size: 100% 100%;
+					cursor: pointer;
+					z-index: 10;
+					text-decoration: none;
+					position: relative;
+					
+					a{
+						text-decoration: none;
+					}
+					span {
+						position: absolute;
+						top:50%;
+						left: 50%;
+						@include transformXY(-50%,-50%);
+						color: white;
+						font-size: 18px;
+						text-transform: uppercase;
+						
+						font-family: 'BrandonText-Bold';
+						
+					}
+				}
+			}
+			}
+		}
+
 
 	}
 
@@ -1622,12 +1936,18 @@ h2 span {
 		margin-top: -54px;
 		.remark-number-title {
 			padding-top: 86px;
-    		padding-left: 118px;
+			padding-left: 118px;
+			@include for-phone-only {
+				padding-left: 0;
+			}
 			h3 {
 				letter-spacing: -1px;
 				font-size: 36px;
 				font-family: 'iCielBrawls1';
 				text-align: left;
+				@include for-phone-only {
+					text-align: center;
+				}
 			}
 		}
 		.remark-number-wrapper {
@@ -1648,6 +1968,7 @@ h2 span {
 				float: left;
 				height: 150px;
 				width: 20%;
+				overflow: hidden;
 				.number {
 					margin-top: 62px;
 					color: $active-color;
@@ -1656,6 +1977,13 @@ h2 span {
 					display: block;
 					line-height: 0;
 					margin-bottom: 52px;
+					@include for-snakktablet-portrait-only {
+						font-size: 85px;
+					}
+					@include for-phone-only {
+						font-size: 20px;
+						
+					}
 				}
 				.desc {
 					line-height: 15px;
@@ -1751,6 +2079,10 @@ h2 span {
 				img {
 					vertical-align: middle;
 					display: inline-block;
+					@include for-snakktablet-portrait-only {
+						width: 80%;
+						height: auto;
+					}
 				}
 			}
 			.sponsor-logo:before {
@@ -1774,6 +2106,11 @@ h2 span {
 				margin-bottom: 28px;
 				justify-content: center;
 				//padding-top: 7px
+				@include for-snakktablet-portrait-only {
+						width: 80%;
+						height: auto;
+						padding: 5px;
+				}
 			}
 			.sponsor-title:before {
 				content: ' ';
@@ -1837,6 +2174,10 @@ h2 span {
 				img {
 					vertical-align: middle;
 					display: inline-block;
+					@include for-snakktablet-portrait-only {
+						width: 80%;
+						height: auto;
+					}
 				}
 
 				.partner-pos {
@@ -1917,6 +2258,10 @@ h2 span {
 				img {
 					vertical-align: middle;
 					display: inline-block;
+					@include for-snakktablet-portrait-only {
+						width: 80%;
+						height: auto;
+					}
 				}
 			}
 			.supporter-item:before {
@@ -2096,3 +2441,272 @@ h2 span {
 }
 
 
+.header-mobile {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+.nav-mobile-container {
+	width: 100%;
+	position: relative;
+	height: 100px;
+	background-color: white;
+}
+.logo {
+	float: left;
+		margin: 24px 0 0 0;
+		display: inline-block;
+		width: 45%;
+		text-align: center;	
+		img {
+			
+			max-width: 67%;
+			height: auto;
+		}
+	}
+
+.org {
+	float: left;
+		display: inline-block;
+		margin-top: 30px;
+		width: 40%;
+		text-align: center;
+		img {
+			max-width: 67%;
+			height: auto;
+		}
+	}
+
+
+.navigation-toggle {
+	float: left;
+  display: inline-block;
+  outline: 0;
+  height: 60px;
+  width: 60px;
+  overflow: hidden;
+  position: relative;
+  z-index: 11;
+  margin-top: 15px;
+  width: 15%;
+}
+.navigation-toggle .icon-bar {
+  background: #2e2230;
+  border-radius: 1px;
+  display: block;
+  height: 2px;
+  margin: 9px auto;
+  width: 35px;
+  transition: all 0.4s;
+}
+.navigation-toggle .icon-bar.middle {
+  /*transform: scale(1);*/
+}
+.navigation-toggle .icon-bar.last {
+  transform: scale(1);
+  box-sizing: border-box;
+  height: 0;
+  background-color: transparent;
+  border: 1px solid #2e2230;
+}
+.navigation-toggle .icon-bar:first-child {
+  margin-top: 20px;
+}
+.navigation-toggle .text {
+  display: block;
+  color: #fff;
+  line-height: 1;
+  text-transform: uppercase;
+  position: absolute;
+}
+.navigation-toggle.expanded .icon-bar.first {
+  transform: translate3d(0px, 11px, 0px) rotate3d(0, 0, 1, -135deg);
+}
+.navigation-toggle.expanded .icon-bar.last {
+  height: 46px;
+  width: 46px;
+  transform: translate3d(0px, -34px, 0px);
+}
+.navigation-toggle.expanded .icon-bar.middle {
+  margin-top: 0;
+  transform: translate3d(0px, -1px, 0px) rotate3d(0, 0, 1, 135deg);
+}
+
+.navigation {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.navigation ul {
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+.navigation li {
+  list-style-type: none;
+  font-size: 2em;
+  font-weight: 200;
+}
+.navigation li a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding: 15px 20px;
+}
+.navigation li a:hover {
+  text-decoration: underline;
+}
+.navigation.primary {
+  color: #4f5050;
+}
+.navigation.primary ul {
+  text-align: center;
+  border: 0;
+  padding-top: 80px;
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.94);
+  overflow-y: hidden;
+}
+.navigation.primary li {
+  text-transform: uppercase;
+  font-size: convert-px(30);
+  border: none;
+}
+.navigation.primary li.active {
+	background-color: $active-color;
+}
+.navigation.primary li.active a {
+  color: white;
+}
+.navigation.primary li a {
+  text-decoration: none;
+}
+.navigation.primary li a:hover {
+  color: #000;
+  background-color: #e8e8e8;
+}
+
+.navigation.primary li.active a:hover {
+  color: white;
+  background-color: $active-color;
+}
+
+
+}
+
+
+
+
+
+
+.mySlider {
+	position: relative;
+	margin-top: 20px;
+	//width: 100%;
+	height: 800px;
+	overflow: hidden;
+	.controler {
+		z-index: 5;
+		position: absolute;
+		top:30%;
+		left:50%;
+		width: 65%;
+		height: 50px;
+		@include transformX(-50%);
+			.btnprevm, .btnnextm,.btnmoreinfo {
+				display: inline-block;
+				position: relative;
+				float:left;
+				width: (100%/3);
+				margin: 0 auto;
+				text-align: center;
+			}
+			.btnprevm.inactive {
+				display: none;
+				}
+			.btnnextm.inactive {
+				display: none;
+			}
+			.btnmoreinfo {
+				opacity: 0.7;
+			}
+	}
+
+	ul {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		height: 800px;
+		list-style: none;		
+		li {
+			//background: red;
+			display: block;
+			height: 800px;
+			position: relative;
+			float: left;			
+			margin: 0;
+			padding: 0;
+			width: (100%/6);
+			img {
+				position: absolute;
+				    margin: auto;
+					left: 0;
+					right: 0;
+					width: 100%;
+					height: auto;
+			}
+			.extra-info {
+					//display: none;
+					height: 220px;
+					width: 275px;
+					background: $cream-color;
+					border: solid 2px $active-color;
+					position: absolute;
+					//top: 50%;
+					left: 0;
+					right: 0;
+					margin: auto;
+					display: none;
+					p{	
+						margin-top: 20px;
+						font-size: 14px;
+					}
+
+					@include transition(all,1s,ease);
+				}
+			.extra-info.appear {
+				display: block;
+			}
+		}
+	}
+}
+
+
+
+
+
+h2 {
+	@include for-snakktablet-portrait-only {
+		font-size: 40px !important;
+	}
+	@include for-phone-only {
+		font-size: 27px !important;
+	}
+}
+
+.tablet-brk {
+	display: none;
+	@include for-snakktablet-portrait-only {
+		display: block;
+	}
+	@include for-phone-only {
+		display: block;
+	}
+}
+
+
+
+@import 'style';

@@ -1,0 +1,33 @@
+
+@import 'mixin';
+
+.header-mobile {
+    display: none;
+}
+.jury-mobile {
+    display: none ;
+}
+.archive-item-container-mobile {
+    display: none;
+}
+
+@include for-tablet-and-phone-only {
+    .header {
+        display: none;
+    }
+    .header-mobile {
+        display: block;
+    }
+    .jury {
+        display: none ;
+    }
+    .jury-mobile {
+        display: block;
+    }
+    .archive-item-container {
+        display: none !important;
+    }
+    .archive-item-container-mobile {
+        display: block;
+    }
+}

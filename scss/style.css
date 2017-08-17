@@ -1,0 +1,29 @@
+.header-mobile {
+  display: none; }
+
+.jury-mobile {
+  display: none; }
+
+.archive-item-container-mobile {
+  display: none; }
+
+@media (max-width: 900px) and (orientation: portrait) {
+  .header {
+    display: none; }
+
+  .header-mobile {
+    display: block; }
+
+  .jury {
+    display: none; }
+
+  .jury-mobile {
+    display: block; }
+
+  .archive-item-container {
+    display: none !important; }
+
+  .archive-item-container-mobile {
+    display: block; } }
+
+/*# sourceMappingURL=style.css.map */
