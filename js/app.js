@@ -12,6 +12,9 @@ var App = {
     this.archiveTabbedTable.init();
     this.scrollTo.init();
     this.youTuBePopUp.init(1);
+    //_slider,_btnNext,_btnPrev,_speed,_auto,_autoSpeed,totalslider,loop
+    this.sliderarchive.init("archive-item-container-mobile","btnnextmarchive","btnprevmarchive",1000,false,1000,4,true);
+    this.slidermilestone.init("mile-stone-line-mobile","btnnextm","btnprevm","btnmoreinfo",1000,false,1000,6,false);
     //1 =  autoplay, 0 = none;
 	}
 }
@@ -59,6 +62,7 @@ App.slider = {
 
         nextSlide:function(){
           var self= App.slider;
+          console.log(self);
           self.li.removeClass("active");
           $('.activeSlide').removeClass('activeSlide').addClass('oldActive');
           if($('.oldActive').is(':last-child')){
@@ -377,6 +381,242 @@ App.youTuBePopUp = {
 
 
 
+App.sliderarchive = {
+  _this: {},
+  _speed:100,
+  _autoSpeed: 5000,
+  _auto: false,
+  init: function (_slider,_btnNext,_btnPrev,_speed,_auto,_autoSpeed,totalslider,loop){
+    var self = this;
+    self._this= $('.'+_slider);
+    self.ul=self._this.find('ul');
+    self.li = self._this.find('li');
+    self.btnNext=self._this.find('.'+_btnNext);
+    self.btnPrev= self._this.find('.'+_btnPrev);
+    self._speed=_speed;
+    self._autoSpeed=_autoSpeed;
+    self._auto=_auto;
+    self._slider = _slider;
+    var slideCount = self.li .length;
+    var slideWidth = window.innerWidth || document.body.clientWidth;
+    var slideHeight = self.li.height();
+    var sliderUlWidth = slideCount * slideWidth;
+    self.slideWidth = slideWidth;
+    self._this.css({ width: slideWidth, height: slideHeight });
+    self.ul.css({ width: sliderUlWidth, marginLeft: - slideWidth });
+    $('.'+self._slider+ ' ul li:last-child').prependTo(self.ul);
+
+
+    self.btnPrev.on('click',self.moveLeft);
+    self.btnNext.on('click',self.moveRight);
+    
+    if(_auto == true){
+      setInterval(self.moveRight,_autoSpeed);
+    }
+
+  },
+  moveLeft:function(){
+      var self=App.sliderarchive;
+      self.ul.animate({
+          left: + self.slideWidth
+        }, self._speed, function () {
+          $('.'+self._slider+ ' ul li:last-child').prependTo(self.ul);
+          self.ul.css('left','');
+      });
+    },
+  
+  moveRight:function(){
+      var self=App.sliderarchive;
+      self.ul.animate({
+          left: - self.slideWidth
+        }, self._speed, function () {
+          $('.'+self._slider+' ul li:first-child').appendTo(self.ul);
+          self.ul.css('left','');
+          
+      });
+    },
+    
+  }
+
+App.slidermilestone = {
+  _this: {},
+  _speed:100,
+  _autoSpeed: 5000,
+  _auto: false,
+  curSlide:0,
+  _maxSlide:99,
+  init: function (_slider,_btnNext,_btnPrev,_btnMore,_speed,_auto,_autoSpeed,totalslide,loop){
+  var self = this;
+    self._this= $('.'+_slider);
+    self.ul=self._this.find('ul');
+    self.li = self._this.find('li');
+    self.btnNext=self._this.find('.'+_btnNext);
+    self.btnPrev= self._this.find('.'+_btnPrev);
+    self.btnMore = self._this.find('.'+_btnMore);
+    self._speed=_speed;
+    self._autoSpeed=_autoSpeed;
+    self._auto=_auto;
+    self._slider = _slider;
+    var slideCount = self.li .length;
+    var slideWidth = window.innerWidth || document.body.clientWidth;
+    var slideHeight = self.li.height();
+    var sliderUlWidth = slideCount * slideWidth;
+    self.slideWidth = slideWidth;
+    self._this.css({ width: slideWidth, height: slideHeight });
+    self.ul.css({ width: sliderUlWidth, marginLeft: - slideWidth });
+    $('.'+self._slider+ ' ul li:last-child').prependTo(self.ul);
+    self.maxSlide = totalslide - 1;
+    self.btnPrev.css({'opacity':'0.5', 'pointer-events':'none'});
+    //self.curSlide = _curSlide;
+    
+    $('.extra-info').hide();
+
+    self.btnNext.on('click',self.moveRight);
+    self.btnPrev.on('click',self.moveLeft);
+    // self.btnMore.click(function(){
+		// if ($(".extra-info").hasClass('appear')){
+		// 		self.btnMore.css('opacity','0.6');
+		// 		self.hideextrainfo;
+		// 	}
+		// 	else {
+		// 		self.btnMore.css('opacity','1.0');
+		// 		self.showextrainfo;
+		// 	} 
+    // });
+    self.btnMore.on('click',self.moreinfo);
+    
+  },
+  // showextrainfo:function(){
+  //     var self=App.slidermilestone;
+  //     var curMilediv = self.li.eq(1);
+	// 		var extrainfo =  curMilediv.find(".extra-info");
+  //     extrainfo.addClass('appear');
+  // },
+  // hideextrainfo:function(){
+  //     var self=App.slidermilestone;
+  //     var curMilediv = self.li.eq(1);
+	// 		var extrainfo =  curMilediv.find(".extra-info");
+	// 		extrainfo.removeClass('appear');
+  // },
+  // checkcurMile:function(){
+  //     var self=App.slidermilestone;
+  //     if(self.curSlide == 0) {
+  //       self.btnPrev.css({'opacity':'0.5', 'pointer-events':'none'})
+  //     }
+	// 	  else if(self.curSlide == self.maxSlide) {
+	// 			self.btnNext.css({'opacity':'0.5', 'pointer-events':'none'})
+  //     }
+  //     else {
+  //       self.btnNext.css({'opacity':'1', 'pointer-events':'auto'})
+  //       self.btnPrev.css({'opacity':'1', 'pointer-events':'auto'})
+  //     }
+  // },
+  moveLeft:function(){
+        var self=App.slidermilestone;
+
+        function showextrainfo(){
+          var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
+			    var extrainfo =  curMilediv.find(".extra-info");
+          extrainfo.show();
+        }
+        function hideextrainfo(){
+          var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
+			    var extrainfo =  curMilediv.find(".extra-info");
+			    extrainfo.hide();
+        }
+        function checkcurMile(){
+          if(self.curSlide == 0) {
+          self.btnPrev.css({'opacity':'0.5', 'pointer-events':'none'})
+        }
+        else if(self.curSlide == self.maxSlide) {
+          self.btnNext.css({'opacity':'0.5', 'pointer-events':'none'})
+        }
+        else {
+          self.btnNext.css({'opacity':'1', 'pointer-events':'auto'})
+          self.btnPrev.css({'opacity':'1', 'pointer-events':'auto'})
+          }
+        }
+
+
+        self.curSlide = self.curSlide -1 ;
+        console.log(self.curSlide,self.maxSlide);
+				hideextrainfo();
+				checkcurMile();
+				self.btnMore.css('opacity','0.7');
+        self.ul.animate({
+            left: + self.slideWidth
+        }, 1000, function () {
+            $('.'+self._slider+' ul li:last-child').prependTo(self.ul);
+						self.ul.css('left', '');
+						
+        });
+        console.log(self.curSlide);
+    },
+  moveRight:function(){
+
+        var self=App.slidermilestone;
+        //console.log($('.'+self._slider+ ' ul li').eq(1));
+        function showextrainfo(){
+          var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
+			    var extrainfo =  curMilediv.find(".extra-info");
+          extrainfo.show();
+        }
+        function hideextrainfo(){
+          var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
+			    var extrainfo =  curMilediv.find(".extra-info");
+			    extrainfo.hide();
+        }
+        function checkcurMile(){
+          console.log(self.curSlide, self.maxSlide);
+          if(self.curSlide == 0) {
+          self.btnPrev.css({'opacity':'0.5', 'pointer-events':'none'})
+        }
+        else if(self.curSlide == self.maxSlide) {
+          self.btnNext.css({'opacity':'0.5', 'pointer-events':'none'})
+        }
+        else {
+          self.btnNext.css({'opacity':'1', 'pointer-events':'auto'})
+          self.btnPrev.css({'opacity':'1', 'pointer-events':'auto'})
+          }
+        }
+        self.curSlide = self.curSlide + 1;
+        checkcurMile();
+				self.btnMore.css('opacity','0.7');		
+        self.ul.animate({
+            left: - self.slideWidth
+        }, 1000, function () {
+            $('.'+self._slider+' ul li:first-child').appendTo(self.ul);
+						self.ul.css('left', '');
+        });
+        hideextrainfo();
+        console.log(self.curSlide);
+  },
+    moreinfo:function(){
+        var self=App.slidermilestone;
+        function showextrainfo(){
+          var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
+			    var extrainfo =  curMilediv.find(".extra-info");
+          extrainfo.show();
+          console.log("b");
+        }
+        function hideextrainfo(){
+          var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
+			    var extrainfo =  curMilediv.find(".extra-info");
+			    extrainfo.hide();
+        }
+        if ($(".extra-info").is(":visible")){
+          $('.btnmoreinfo').css('opacity','0.6');
+          hideextrainfo();
+        }
+        else {
+          $('.btnmoreinfo').css('opacity','1.0');
+          showextrainfo();
+        } 
+        console.log(self.curSlide);
+    }
+  
+}
+    
 
 
   

@@ -1,17 +1,26 @@
-.header-mobile {
-  display: none; }
+@media (min-width: 1200px) {
+  .header-mobile {
+    display: none; }
 
-.jury-mobile {
-  display: none; }
+  .jury-mobile {
+    display: none; }
 
-.archive-item-container-mobile {
-  display: none; }
+  .mile-stone-line-mobile {
+    display: none !important; }
 
+  .archive-item-container-mobile {
+    display: none !important; } }
 @media (max-width: 900px) and (orientation: portrait) {
   .header {
     display: none; }
 
   .header-mobile {
+    display: block; }
+
+  .mile-stone-line {
+    display: none; }
+
+  .mile-stone-line-mobile {
     display: block; }
 
   .jury {

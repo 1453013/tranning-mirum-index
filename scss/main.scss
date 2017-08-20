@@ -1087,10 +1087,11 @@ h2 span {
 					position: absolute;
 					//top: 50%;
 					left: -55%;
-					display: none;
+					//display: none;
 					p{
 						font-size: 14px;
 					}
+					@include transition(all,1s,ease);
 				}
 				.extra2 {
 				left:-40%
