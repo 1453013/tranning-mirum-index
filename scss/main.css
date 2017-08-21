@@ -1015,7 +1015,7 @@ h2 span {
         .mile-stone .mile-stone-line ul li .extra6 {
           left: -28%; }
       .mile-stone .mile-stone-line ul li:hover .extra-info {
-        display: block; }
+        display: block !important; }
       .mile-stone .mile-stone-line ul .mile2 {
         margin-left: 12px; }
       .mile-stone .mile-stone-line ul .mile1 {
@@ -1228,7 +1228,9 @@ h2 span {
         color: #e95154;
         background: white;
         padding: 16px 16px;
-        white-space: nowrap; }
+        white-space: nowrap;
+        top: 75%;
+        left: 15%; }
         @media (min-width: 600px) and (max-width: 1199px) {
           .join-us .join-us-container .join-us-state .viewmore-button {
             transform: scale(0.7);

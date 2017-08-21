@@ -700,14 +700,6 @@ App.setHeight = {
     $('.join-us').css("height",frameheight);
     $('.frame').css("height",frameheight);
     $('.join-us-state').css("height",frameheight);
-
-    // if (window.innerWidth < 600 || document.body.clientWidth <600) {
-    //   frameheight = frameheight * 2;
-    //   $('.shame-frame').css("height",frameheight);
-    //   $('.join-us').css("height",frameheight);
-    //   $('.frame').css("height",frameheight);
-    //   $('.join-us-state').css("height",frameheight);
-    // }
   }
 }
 

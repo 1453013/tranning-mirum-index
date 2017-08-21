@@ -1164,7 +1164,7 @@ h2 span {
 				}
 			}
 			li:hover .extra-info {
-				display: block;
+				display: block !important;
 			}
 			.mile2 {
 				margin-left: 12px;
@@ -1412,6 +1412,8 @@ h2 span {
 			background: white;						
 			padding: 16px 16px;
 			white-space: nowrap;
+			top: 75%;
+			left: 15%;
 			@include for-tablet-only {
 				@include transformscale(0.7);
 				top: 75%;
