@@ -444,10 +444,15 @@ $awardboxsizemobilde: 250px;
 		@include for-phone-only {
 			margin-left: 10px;
 			margin-right: 10px;
+			margin-top: 20px;
 		}
 		p {
 			font-size: 20px;
 			line-height: 0;
+			@include for-phone-only {
+				line-height: normal;
+				font-size: 18px;
+			}
 			// @include for-big-desktop-up {
 			// 	font-size: 20px;
 			// }
@@ -2002,6 +2007,9 @@ h2 span {
 		//margin-top: -54px;
 		z-index: -2;
 		margin-top: -54px;
+		@include for-phone-only {
+			padding-bottom: 10px;
+		}
 		.remark-number-title {
 			padding-top: 86px;
 			padding-left: 118px;
@@ -2651,13 +2659,13 @@ h2 span {
 }
 .logo {
 	float: left;
-		margin: 24px 0 0 0;
+		margin: 28px 0 0 0;
 		display: inline-block;
 		width: 45%;
 		text-align: center;	
 		img {
 			
-			max-width: 67%;
+			max-width: 90%;
 			height: auto;
 		}
 	}

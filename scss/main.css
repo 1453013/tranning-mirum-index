@@ -410,10 +410,15 @@ html, body {
     @media (max-width: 599px) {
       .footer .representatives {
         margin-left: 10px;
-        margin-right: 10px; } }
+        margin-right: 10px;
+        margin-top: 20px; } }
     .footer .representatives p {
       font-size: 20px;
       line-height: 0; }
+      @media (max-width: 599px) {
+        .footer .representatives p {
+          line-height: normal;
+          font-size: 18px; } }
     .footer .representatives img {
       margin-right: 10px;
       margin-left: 10px;
@@ -1689,6 +1694,9 @@ h2 span {
     background-color: #eeeeee;
     z-index: -2;
     margin-top: -54px; }
+    @media (max-width: 599px) {
+      .archive .remark-number {
+        padding-bottom: 10px; } }
     .archive .remark-number .remark-number-title {
       padding-top: 86px;
       padding-left: 118px; }
@@ -2303,12 +2311,12 @@ h2 span {
     background-color: white; }
   .header-mobile .logo {
     float: left;
-    margin: 24px 0 0 0;
+    margin: 28px 0 0 0;
     display: inline-block;
     width: 45%;
     text-align: center; }
     .header-mobile .logo img {
-      max-width: 67%;
+      max-width: 90%;
       height: auto; }
   .header-mobile .org {
     float: left;
