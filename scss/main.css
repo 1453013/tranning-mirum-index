@@ -43,6 +43,9 @@ html, body {
     display: none !important; }
 
   .archive-item-container-mobile {
+    display: none !important; }
+
+  .remark-number-wrapper-mobile {
     display: none !important; } }
 @media (min-width: 600px) and (max-width: 1199px) {
   .header {
@@ -1730,8 +1733,7 @@ h2 span {
         position: relative;
         float: left;
         height: 150px;
-        width: 20%;
-        overflow: hidden; }
+        width: 20%; }
         .archive .remark-number .remark-number-wrapper .remark-number-item .number {
           margin-top: 62px;
           color: #e95154;
@@ -1760,7 +1762,7 @@ h2 span {
         height: 125px;
         border-left: solid 2px black;
         border-left-style: dotted; }
-      .archive .remark-number .remark-number-wrapper .first-left:before {
+      .archive .remark-number .remark-number-wrapper .remark-number-item:first-child:before {
         border-left: none; }
     .archive .remark-number .remark-number-wrapper-mobile {
       margin-top: 2px;
@@ -2520,6 +2522,9 @@ h2 span {
     display: none !important; }
 
   .archive-item-container-mobile {
+    display: none !important; }
+
+  .remark-number-wrapper-mobile {
     display: none !important; } }
 @media (min-width: 600px) and (max-width: 1199px) {
   .header {

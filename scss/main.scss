@@ -2046,7 +2046,7 @@ h2 span {
 				float: left;
 				height: 150px;
 				width: 20%;
-				overflow: hidden;
+				//overflow: hidden;
 				.number {
 					margin-top: 62px;
 					color: $active-color;
@@ -2083,7 +2083,7 @@ h2 span {
 					border-left-style: dotted;
 					
 			}
-			.first-left:before {
+			.remark-number-item:first-child:before {
 				border-left: none;
 			}
 		}
