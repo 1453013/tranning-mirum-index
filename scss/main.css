@@ -802,6 +802,9 @@ h2 span {
   float: left;
   margin-bottom: -12px;
   text-align: center; }
+  @media (max-width: 599px) {
+    .four-thing .four-thing-item {
+      width: 50%; } }
   .four-thing .four-thing-item img {
     width: 100%;
     height: auto;
@@ -837,7 +840,7 @@ h2 span {
       height: 400px; } }
   @media (max-width: 599px) {
     .previous-winner {
-      height: 215px;
+      height: auto;
       padding-bottom: 10px; } }
   .previous-winner h2 {
     font-size: 50px;
@@ -886,11 +889,18 @@ h2 span {
     position: relative;
     float: left;
     width: 33.33333%; }
+    @media (max-width: 599px) {
+      .previous-winner .winner-item {
+        width: 100%;
+        padding-bottom: 10px; } }
     .previous-winner .winner-item img {
       display: block;
       margin: 0 auto;
       height: auto;
       width: 90%; }
+      @media (max-width: 599px) {
+        .previous-winner .winner-item img {
+          width: 50%; } }
 
 .mile-stone {
   height: 1095px;
@@ -1109,6 +1119,9 @@ h2 span {
       width: 50%;
       height: 550px;
       position: relative; }
+      @media (max-width: 599px) {
+        .join-us .join-us-container .frame {
+          width: 100%; } }
       .join-us .join-us-container .frame img {
         height: 550px;
         width: 100%; }
@@ -1141,6 +1154,9 @@ h2 span {
       @media (max-width: 900px) and (orientation: portrait) {
         .join-us .join-us-container .join-us-state {
           height: auto; } }
+      @media (max-width: 599px) {
+        .join-us .join-us-container .join-us-state {
+          width: 100%; } }
       .join-us .join-us-container .join-us-state .join-us-content-container {
         left: 15%;
         position: relative; }
@@ -1219,13 +1235,13 @@ h2 span {
             left: 15%; } }
         @media (max-width: 599px) {
           .join-us .join-us-container .join-us-state .viewmore-button {
-            transform: scale(0.3);
-            -ms-transform: scale(0.3);
-            -webkit-transform: scale(0.3);
-            -o-transform: scale(0.3);
-            -moz-transform: scale(0.3);
-            margin-top: 50%;
-            left: -15%; } }
+            margin-top: 56%;
+            left: 20%;
+            transform: scale(0.8);
+            -ms-transform: scale(0.8);
+            -webkit-transform: scale(0.8);
+            -o-transform: scale(0.8);
+            -moz-transform: scale(0.8); } }
       .join-us .join-us-container .join-us-state .viewmore-button:after {
         border: 2px solid white;
         width: 98%;

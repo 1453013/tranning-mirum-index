@@ -13,10 +13,11 @@ var App = {
     this.scrollTo.init();
     this.youTuBePopUp.init(1);
     //_slider,_btnNext,_btnPrev,_speed,_auto,_autoSpeed,totalslider,loop
-    this.sliderarchive.init("archive-item-container-mobile","btnnextmarchive","btnprevmarchive",1000,false,1000);
-    this.slidermilestone.init("mile-stone-line-mobile","btnnextm","btnprevm","btnmoreinfo",1000,false,1000,6);
-    this.slidernumber.init("remark-number-wrapper-mobile","btnnextnumber","btnprevnumber",1000,true,8000);
-    //1 =  autoplay, 0 = none;
+    this.sliderArchive.init("archive-item-container-mobile","btnnextmarchive","btnprevmarchive",1000,false,1000);
+    this.sliderMileStone.init("mile-stone-line-mobile","btnnextm","btnprevm","btnmoreinfo",1000,false,1000,6);
+    this.sliderNumber.init("remark-number-wrapper-mobile","btnnextnumber","btnprevnumber",1000,true,8000);
+    this.headerMobile.init();
+    this.setHeight.init();
 	}
 }
 
@@ -382,7 +383,7 @@ App.youTuBePopUp = {
 
 
 
-App.sliderarchive = {
+App.sliderArchive = {
   _this: {},
   _speed:100,
   _autoSpeed: 5000,
@@ -417,7 +418,7 @@ App.sliderarchive = {
 
   },
   moveLeft:function(){
-      var self=App.sliderarchive;
+      var self=App.sliderArchive;
       self.ul.animate({
           left: + self.slideWidth
         }, self._speed, function () {
@@ -427,7 +428,7 @@ App.sliderarchive = {
     },
   
   moveRight:function(){
-      var self=App.sliderarchive;
+      var self=App.sliderArchive;
       self.ul.animate({
           left: - self.slideWidth
         }, self._speed, function () {
@@ -440,7 +441,7 @@ App.sliderarchive = {
   }
 
 
-App.slidernumber = {
+App.sliderNumber = {
   _this: {},
   _speed:100,
   _autoSpeed: 5000,
@@ -475,7 +476,7 @@ App.slidernumber = {
 
   },
   moveLeft:function(){
-      var self=App.slidernumber;
+      var self=App.sliderNumber;
       self.ul.animate({
           left: + self.slideWidth
         }, self._speed, function () {
@@ -485,7 +486,7 @@ App.slidernumber = {
     },
   
   moveRight:function(){
-      var self=App.slidernumber;
+      var self=App.sliderNumber;
       self.ul.animate({
           left: - self.slideWidth
         }, self._speed, function () {
@@ -498,7 +499,7 @@ App.slidernumber = {
   }
 
 
-App.slidermilestone = {
+App.sliderMileStone = {
   _this: {},
   _speed:100,
   _autoSpeed: 5000,
@@ -537,7 +538,7 @@ App.slidermilestone = {
     
   },
   moveLeft:function(){
-        var self=App.slidermilestone;
+        var self=App.sliderMileStone;
 
         function hideextrainfo(){
           var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
@@ -573,7 +574,7 @@ App.slidermilestone = {
     },
   moveRight:function(){
 
-        var self=App.slidermilestone;
+        var self=App.sliderMileStone;
         function hideextrainfo(){
           var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
 			    var extrainfo =  curMilediv.find(".extra-info");
@@ -604,7 +605,7 @@ App.slidermilestone = {
         hideextrainfo();
   },
   moreinfo:function(){
-        var self=App.slidermilestone;
+        var self=App.sliderMileStone;
         function showextrainfo(){
           var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
 			    var extrainfo =  curMilediv.find(".extra-info");
@@ -628,10 +629,87 @@ App.slidermilestone = {
   
 }
     
+App.headerMobile = {
+  $menuToggle:{},
+  $menu:{},
+  $body:{},
+  menuToggleClass:{},
+  menuOpenedClass:{},
+  options:{},
+  init: function(){
+    $menuToggle = $('#navigation-toggle');
+		$menu = $('#navigation-primary > ul');
+    $body = $('body');
+    menuToggleClass = 'expanded';
+    menuOpenedClass = 'mobile-navigation-opened';
+		options = {
+			speed: 250
+    }
 
+		// show / hide top level mobile nav
+  $menuToggle.on('click', toggleMenuExpand);
+    
+  function menuOpen($el, speed) {
+      var duration = options.speed;
+      if (typeof speed === 'number') {
+        duration = speed;
+      }
+      $menu.slideDown(duration);
+      $el.addClass(menuToggleClass);
+      $body.addClass(menuOpenedClass);
+    }
+
+	function menuClose($el, speed) {
+		var duration = options.speed;
+		if (typeof speed === 'number') {
+			duration = speed;
+		}
+		$menu.slideUp(duration);
+		$el.removeClass(menuToggleClass);
+    $body.removeClass(menuOpenedClass);
+	}
+
+
+	function toggleMenuExpand(evt) {
+		/* jshint validthis: true */
+		var $this;
+
+		evt.preventDefault();
+
+		$this = $(this);
+		if ($this.hasClass(menuToggleClass)) {
+			menuClose($this);
+		} else {
+			menuOpen($this);
+		}
+	}
+
+  }
+  
+}
 
   
+App.setHeight = {
+  init:function(){   
+    var sliderheight = $('.slide').height();
+    $('.big-slider').css("height", sliderheight); 
+    $('.btnnext').css("height", sliderheight); 
+    $('.btnprev').css("height", sliderheight); 
 
+    var frameheight = $('.shame-frame').height();
+    $('.join-us').css("height",frameheight);
+    $('.frame').css("height",frameheight);
+    $('.join-us-state').css("height",frameheight);
+
+    // if (window.innerWidth < 600 || document.body.clientWidth <600) {
+    //   frameheight = frameheight * 2;
+    //   $('.shame-frame').css("height",frameheight);
+    //   $('.join-us').css("height",frameheight);
+    //   $('.frame').css("height",frameheight);
+    //   $('.join-us-state').css("height",frameheight);
+    // }
+  }
+}
 
 
 
