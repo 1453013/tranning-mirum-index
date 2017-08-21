@@ -1251,7 +1251,8 @@ h2 span {
             -ms-transform: scale(0.8);
             -webkit-transform: scale(0.8);
             -o-transform: scale(0.8);
-            -moz-transform: scale(0.8); } }
+            -moz-transform: scale(0.8);
+            top: 0; } }
       .join-us .join-us-container .join-us-state .viewmore-button:after {
         border: 2px solid white;
         width: 98%;
