@@ -15,7 +15,40 @@
         display: none !important;
     }
 }
-@include for-tablet-and-phone-only {
+@include for-tablet-only  {
+    .header {
+        display: none;
+    }
+    .header-mobile {
+        display: block;
+    }
+    .mile-stone-line {
+        display: block;
+    }
+    .mile-stone-line-mobile {
+        display: none;
+    }
+    .jury {
+        display: none ;
+    }
+    .jury-mobile {
+        display: block;
+    }
+    .archive-item-container {
+        display: block;
+    }
+    .archive-item-container-mobile {
+        display: none !important;
+    }
+    .remark-number-wrapper {
+        display: block;
+    }
+    .remark-number-wrapper-mobile {
+        display: none !important;
+    }
+}
+
+@include for-phone-only {
     .header {
         display: none;
     }
@@ -38,6 +71,12 @@
         display: none !important;
     }
     .archive-item-container-mobile {
+        display: block;
+    }
+    .remark-number-wrapper {
+        display: none !important;
+    }
+    .remark-number-wrapper-mobile {
         display: block;
     }
 }

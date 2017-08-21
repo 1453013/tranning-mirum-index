@@ -391,6 +391,10 @@ $awardboxsizemobilde: 250px;
 	color: white;
 	font-family: 'BrandonText-Regular';
 	height: 400px;
+	@include for-phone-only {
+		height: auto;
+		padding-bottom: 10px;
+	}
 	//bottom:0;
 	.container {
 		width: 86%;
@@ -399,6 +403,9 @@ $awardboxsizemobilde: 250px;
 		padding-top: 37px;
 
 		padding-bottom: 77px;
+		@include for-phone-only {
+			padding-bottom: 38px;
+		}
 		left: 50%;
 		@include transformX(-50%);
 		@include for-snakktablet-portrait-only {
@@ -420,6 +427,11 @@ $awardboxsizemobilde: 250px;
 		.middle {
 			width: 50%;
 		}
+		@include for-phone-only {
+			.footer-item {
+				width: 100%;
+			}
+		}
 	}
 	hr {
 		width: 90%;
@@ -429,12 +441,10 @@ $awardboxsizemobilde: 250px;
 		margin-left: 81px;
 		margin-right: 80px;
 		margin-top: 37px;
-		// /padding-bottom: 10px;
-		//padding-top: 5px;
-		// @include for-phone-only {
-		// 	margin-left: 15px;
-		// 	margin-right: 15px;
-		// }
+		@include for-phone-only {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
 		p {
 			font-size: 20px;
 			line-height: 0;
@@ -471,6 +481,10 @@ $awardboxsizemobilde: 250px;
 
 .contact {
 	margin-left: 113px;
+	@include for-phone-only {
+		margin: 0;
+		
+	}
 	//margin-left: 26px;
 	h4 {
 		font-size: 22px;
@@ -482,15 +496,15 @@ $awardboxsizemobilde: 250px;
 		// @include for-phone-only {
 		// 	font-size: 15px;
 		// }
+		@include for-phone-only {
+			text-align: center;
+		}
 	}
 	p{	
 		font-size: 18px;
 		@include for-big-desktop-up {
 				font-size: 20px;
 			}
-		@include for-phone-only {
-			font-size: 11px;
-		}
 	}
 
 	ul {
@@ -500,6 +514,9 @@ $awardboxsizemobilde: 250px;
 		margin-top: 24px;
 		li {
 			font-size: 18px;
+			@include for-phone-only {
+				text-align: center;
+			}
 		}
 	}
 }
@@ -515,6 +532,9 @@ $awardboxsizemobilde: 250px;
 	padding-right: 17px;
 	text-align: right;
 	white-space: nowrap;
+	@include for-phone-only {
+		padding: 0;
+	}
 	// @include for-snakktablet-portrait-only {
 	// 	text-align: left;
 	// }
@@ -531,10 +551,9 @@ $awardboxsizemobilde: 250px;
 		font-size: 22px;
 		font-weight: bold;
 			@include for-big-desktop-up {
-				font-size: 30px;
 			}
 			@include for-phone-only {
-				font-size: 15px;
+				text-align: center;
 			}
 		}
 	.facebook-link, .web-link {
@@ -554,10 +573,9 @@ $awardboxsizemobilde: 250px;
 				margin-left: 25px;
 		}
 		@include for-phone-only {
-			display: block !important;
-			width: auto;
-			margin-top: 15px;
-			margin-left: 15px;
+			width: 50%;
+			margin: 0;
+			text-align: center;
 		}
 		span {
 			margin: 0 0 0 0;
@@ -573,9 +591,6 @@ $awardboxsizemobilde: 250px;
 			}
 			@include for-big-desktop-up {
 				font-size: 20px;
-			}
-			@include for-phone-only {
-				display: none;
 			}
 		}
 		h4 {
@@ -594,6 +609,10 @@ $awardboxsizemobilde: 250px;
 
 .organized {
 	margin-left: 19px;
+	@include for-phone-only {
+		margin: 0;
+		height: 90px;
+	}
 	h4{
 		font-size: 22px;
 		font-weight: bold;
@@ -603,7 +622,8 @@ $awardboxsizemobilde: 250px;
 				font-size: 30px;
 			}
 	@include for-phone-only {
-				font-size: 15px;
+				position: relative;
+				text-align: center;
 			}
 	}
 	
@@ -612,12 +632,16 @@ $awardboxsizemobilde: 250px;
 		@include for-big-desktop-up {
 				max-width: 200px;
 			}
+		
 		max-height: auto;
 		width: auto;
 		height: auto;
 		margin-top: -12px;
 		@include for-phone-only {
-			max-width: 85px;
+			position: absolute;
+			left: 50%;
+			@include transformX(-50%);
+			
 		}  
 	}
 }
@@ -887,10 +911,14 @@ h2 span {
 		letter-spacing: -2px;
 		margin-top: 57px;
 		@include for-snakktablet-portrait-only {
-			margin-top: 15px;
+		}
+		@include for-tablet-only {
+			margin-left: 10px;
+			margin-right: 10px;
+			font-size: 48px;
 		}
 		@include for-phone-only {
-			margin-top: 10px;
+			margin-top: 15px;
 		}
 	}
 
@@ -954,6 +982,7 @@ h2 span {
 	}
 	@include for-phone-only {
 		height: 215px;
+		padding-bottom: 10px;
 	}
 	h2{
 		font-size: 50px;
@@ -1059,6 +1088,16 @@ h2 span {
 			@include transformscale (0.5);
 			left: -31%;
 			top: -15%;
+		}
+		@include for-tablet-portrait-only {
+			@include transformscale (0.7);
+			left: -13%;
+    		top: 3%;
+		}
+		@include for-tablet-landscape-only {
+			@include transformscale (0.7);
+			left: -13%;
+    		top: 3%;
 		}
 		@include transformX(-50%);
 		ul {
@@ -1298,7 +1337,7 @@ h2 span {
 				
 			}
 			@include for-phone-only {
-				@include transformscale(0.3);
+				@include transformscale(0.25);
 				margin-top: 8px;
 				left: -100px;
     			width: 329px;
@@ -1345,18 +1384,25 @@ h2 span {
 			}
 		}
 
+
+		}
 		.viewmore-button {
-			margin-top: 190px;
 			color: $active-color;
 			background: white;						
-			padding: 16px 24px;
-			@include for-snakktablet-portrait-only {
-				@include transformscale(0.6);
+			padding: 16px 16px;
+			white-space: nowrap;
+			@include for-tablet-only {
+				@include transformscale(0.7);
+				top: 75%;
+				left: 15%;
 			}
+			
 			@include for-phone-only {
 				@include transformscale(0.3);
-				margin-top: 70px;
+				margin-top: 50%;
+				left: -15%;
 			}
+			
 		}
 		.viewmore-button:after {
 			border: 2px solid white;
@@ -1367,7 +1413,6 @@ h2 span {
 		.viewmore-button:active {
 			background: white;
 			
-		}
 		}
 	}
 }
@@ -1583,6 +1628,11 @@ h2 span {
 		font-size: 20px;
 		line-height: 24px;
 		margin-left: 4px;
+		@include for-phone-only {
+			margin-top: 0;
+			margin-left: 10px;
+    		margin-right: 10px;
+		}
 	}
 
 	.tabs-wrapper {
@@ -2010,11 +2060,89 @@ h2 span {
 				border-left: none;
 			}
 		}
+
+		.remark-number-wrapper-mobile {
+			
+			//padding-left: 118px;
+			margin-top: 2px;
+			@include for-phone-only {
+				margin-top: -28px;
+			}
+			text-align: center;
+			position: absolute;
+			display: inline-block;
+			text-align: center;
+			.controler {
+				z-index: 5;
+				position: absolute;
+				top:30%;
+				left:50%;
+				width: 100%;
+				height: 50px;
+				@include transformX(-50%);
+				.btnprevnumber, .btnnextnumber, {
+						display: inline-block;
+						position: relative;
+						float:left;
+						margin: 0 auto;
+						text-align: center;
+					}
+					.btnnextnumber {
+						float:right;
+					}
+			}
+			ul{	
+				position: relative;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				li {
+					display: block;
+					position: relative;
+					float: left;
+					height: 150px;
+					width: (100%/5);
+					max-width: (100%/5);
+					margin: 0;
+					padding: 0;
+
+					.number {
+						margin: 0;
+						padding: 0;
+						margin-top: 62px;
+						color: $active-color;
+						font-size: 123px;
+						font-family: 'iCielBrawls1';
+						display: block;
+						line-height: 0;
+						margin-bottom: 52px;
+						
+						@include for-snakktablet-portrait-only {
+							font-size: 85px;
+						}
+					}
+					.desc {
+						margin: 0;
+						padding: 0;
+						line-height: 15px;
+						margin-top: 10px;
+						font-size: 24px;
+						font-family: 'BrandonText-Bold'; 
+					}
+					
+				}
+			}
+		}
+
 	}
 }
 
 .company {
 	height: 1687px;
+	@include for-phone-only {
+		height: auto;
+		margin-bottom: 50px;
+	}
 	h2 {
 		font-family: 'iCielBrawls1';
 		font-size: 50px;
@@ -2057,6 +2185,12 @@ h2 span {
 		.logos-container {
 			text-align: center;
 			width: 73%;
+			@include for-phone-only {
+				width: 95%;
+			}
+			@include for-tablet-only {
+				width: 95%;
+			}
 			margin: 0 auto;
 			margin-top: 29px;
 			display: inline-block;
@@ -2071,17 +2205,28 @@ h2 span {
 				display: inline-block;
 				position: relative;
 				float: left;
+				@include for-phone-only {
+
+				}
 				
 			}
 			.sponsor-logo {
 				height: 200px;
 				
+				@include for-phone-only {
+					height: 80px;
+				}
 				
 				img {
 					vertical-align: middle;
 					display: inline-block;
+					
 					@include for-snakktablet-portrait-only {
 						width: 80%;
+						height: auto;
+					}
+					@include for-phone-only {
+						width: 75%;
 						height: auto;
 					}
 				}
@@ -2098,9 +2243,11 @@ h2 span {
 				background: $active-color; 
 				height: 45px;
 				width: 260px;
+
 				color: white;
 				margin: 0 auto;
 				font-size: 22px;
+				
 				font-family: 'BrandonText-Bold';
 				letter-spacing: -1px;
 				margin-top: 18px;
@@ -2111,6 +2258,14 @@ h2 span {
 						width: 80%;
 						height: auto;
 						padding: 5px;
+				}
+				@include for-phone-only {
+					width: 95%;
+					.phone-break {
+						display: block;
+					}
+					font-size: 12px;
+					margin-bottom: 18px;
 				}
 			}
 			.sponsor-title:before {
@@ -2145,6 +2300,9 @@ h2 span {
 		}
 		.viewmore-button {				
 			padding: 16px 48px;
+			@include for-phone-only {
+				padding: 10px 32px;
+			}
 			left: 50%;
 			@include transformX(-50%);
 			margin-top: 27px;
@@ -2158,6 +2316,7 @@ h2 span {
 			width: 94%;
 			margin: 0 auto;
 			margin-top: 150px;
+
 			display: inline-block;
 			position: relative;
 			left: 50%;
@@ -2166,6 +2325,9 @@ h2 span {
 			.partner-item {
 				 height: 200px;
 				// background-color: green;
+				@include for-phone-only {
+					height: 70px;
+				}
 				width: (100%/5);
 				display: inline-block;
 				position: relative;
@@ -2176,6 +2338,10 @@ h2 span {
 					vertical-align: middle;
 					display: inline-block;
 					@include for-snakktablet-portrait-only {
+						width: 80%;
+						height: auto;
+					}
+					@include for-phone-only {
 						width: 80%;
 						height: auto;
 					}
@@ -2220,6 +2386,9 @@ h2 span {
 	.supporter {
 		position: relative;
 		margin-top: 27px;
+		@include for-phone-only {
+			margin-top: 0;
+		}
 		.title-button {
 			padding: 11px 72px;
     		position: absolute;
@@ -2229,6 +2398,9 @@ h2 span {
 		}
 		.viewmore-button {
 			padding: 16px 48px;
+			@include for-phone-only {
+				padding: 10px 32px;
+			}
 			left: 50%;
 			@include transformX(-50%);
 			margin-top: 22px;
@@ -2249,6 +2421,9 @@ h2 span {
 
 			.supporter-item {
 				 height: 200px;
+				  @include for-phone-only {
+					  height: 70px;
+				  }
 				// background-color: green;
 				width: (100%/5);
 				display: inline-block;
@@ -2259,7 +2434,12 @@ h2 span {
 				img {
 					vertical-align: middle;
 					display: inline-block;
+					max-width: 98%;
 					@include for-snakktablet-portrait-only {
+						width: 80%;
+						height: auto;
+					}
+					@include for-phone-only {
 						width: 80%;
 						height: auto;
 					}
@@ -2603,7 +2783,7 @@ h2 span {
 
 
 
-.mySlider {
+.mile-stone-line-mobile {
 	position: relative;
 	margin-top: 20px;
 	//width: 100%;
@@ -2612,7 +2792,7 @@ h2 span {
 	.controler {
 		z-index: 5;
 		position: absolute;
-		top:30%;
+		top:34%;
 		left:50%;
 		width: 65%;
 		height: 50px;

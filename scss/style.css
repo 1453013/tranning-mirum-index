@@ -10,7 +10,37 @@
 
   .archive-item-container-mobile {
     display: none !important; } }
-@media (max-width: 900px) and (orientation: portrait) {
+@media (min-width: 600px) and (max-width: 1199px) {
+  .header {
+    display: none; }
+
+  .header-mobile {
+    display: block; }
+
+  .mile-stone-line {
+    display: block; }
+
+  .mile-stone-line-mobile {
+    display: none; }
+
+  .jury {
+    display: none; }
+
+  .jury-mobile {
+    display: block; }
+
+  .archive-item-container {
+    display: block; }
+
+  .archive-item-container-mobile {
+    display: none !important; }
+
+  .remark-number-wrapper {
+    display: block; }
+
+  .remark-number-wrapper-mobile {
+    display: none !important; } }
+@media (max-width: 599px) {
   .header {
     display: none; }
 
@@ -33,6 +63,12 @@
     display: none !important; }
 
   .archive-item-container-mobile {
+    display: block; }
+
+  .remark-number-wrapper {
+    display: none !important; }
+
+  .remark-number-wrapper-mobile {
     display: block; } }
 
 /*# sourceMappingURL=style.css.map */

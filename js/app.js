@@ -13,8 +13,9 @@ var App = {
     this.scrollTo.init();
     this.youTuBePopUp.init(1);
     //_slider,_btnNext,_btnPrev,_speed,_auto,_autoSpeed,totalslider,loop
-    this.sliderarchive.init("archive-item-container-mobile","btnnextmarchive","btnprevmarchive",1000,false,1000,4,true);
-    this.slidermilestone.init("mile-stone-line-mobile","btnnextm","btnprevm","btnmoreinfo",1000,false,1000,6,false);
+    this.sliderarchive.init("archive-item-container-mobile","btnnextmarchive","btnprevmarchive",1000,false,1000);
+    this.slidermilestone.init("mile-stone-line-mobile","btnnextm","btnprevm","btnmoreinfo",1000,false,1000,6);
+    this.slidernumber.init("remark-number-wrapper-mobile","btnnextnumber","btnprevnumber",1000,true,8000);
     //1 =  autoplay, 0 = none;
 	}
 }
@@ -386,7 +387,7 @@ App.sliderarchive = {
   _speed:100,
   _autoSpeed: 5000,
   _auto: false,
-  init: function (_slider,_btnNext,_btnPrev,_speed,_auto,_autoSpeed,totalslider,loop){
+  init: function (_slider,_btnNext,_btnPrev,_speed,_auto,_autoSpeed){
     var self = this;
     self._this= $('.'+_slider);
     self.ul=self._this.find('ul');
@@ -438,6 +439,65 @@ App.sliderarchive = {
     
   }
 
+
+App.slidernumber = {
+  _this: {},
+  _speed:100,
+  _autoSpeed: 5000,
+  _auto: false,
+  init: function (_slider,_btnNext,_btnPrev,_speed,_auto,_autoSpeed){
+    var self = this;
+    self._this= $('.'+_slider);
+    self.ul=self._this.find('ul');
+    self.li = self._this.find('li');
+    self.btnNext=self._this.find('.'+_btnNext);
+    self.btnPrev= self._this.find('.'+_btnPrev);
+    self._speed=_speed;
+    self._autoSpeed=_autoSpeed;
+    self._auto=_auto;
+    self._slider = _slider;
+    var slideCount = self.li .length;
+    var slideWidth = window.innerWidth || document.body.clientWidth;
+    var slideHeight = self.li.height();
+    var sliderUlWidth = slideCount * slideWidth;
+    self.slideWidth = slideWidth;
+    self._this.css({ width: slideWidth, height: slideHeight });
+    self.ul.css({ width: sliderUlWidth, marginLeft: - slideWidth });
+    $('.'+self._slider+ ' ul li:last-child').prependTo(self.ul);
+
+
+    self.btnPrev.on('click',self.moveLeft);
+    self.btnNext.on('click',self.moveRight);
+    
+    if(_auto == true){
+      setInterval(self.moveRight,_autoSpeed);
+    }
+
+  },
+  moveLeft:function(){
+      var self=App.slidernumber;
+      self.ul.animate({
+          left: + self.slideWidth
+        }, self._speed, function () {
+          $('.'+self._slider+ ' ul li:last-child').prependTo(self.ul);
+          self.ul.css('left','');
+      });
+    },
+  
+  moveRight:function(){
+      var self=App.slidernumber;
+      self.ul.animate({
+          left: - self.slideWidth
+        }, self._speed, function () {
+          $('.'+self._slider+' ul li:first-child').appendTo(self.ul);
+          self.ul.css('left','');
+          
+      });
+    },
+    
+  }
+
+
 App.slidermilestone = {
   _this: {},
   _speed:100,
@@ -445,7 +505,7 @@ App.slidermilestone = {
   _auto: false,
   curSlide:0,
   _maxSlide:99,
-  init: function (_slider,_btnNext,_btnPrev,_btnMore,_speed,_auto,_autoSpeed,totalslide,loop){
+  init: function (_slider,_btnNext,_btnPrev,_btnMore,_speed,_auto,_autoSpeed,totalslide){
   var self = this;
     self._this= $('.'+_slider);
     self.ul=self._this.find('ul');
@@ -473,56 +533,16 @@ App.slidermilestone = {
 
     self.btnNext.on('click',self.moveRight);
     self.btnPrev.on('click',self.moveLeft);
-    // self.btnMore.click(function(){
-		// if ($(".extra-info").hasClass('appear')){
-		// 		self.btnMore.css('opacity','0.6');
-		// 		self.hideextrainfo;
-		// 	}
-		// 	else {
-		// 		self.btnMore.css('opacity','1.0');
-		// 		self.showextrainfo;
-		// 	} 
-    // });
     self.btnMore.on('click',self.moreinfo);
     
   },
-  // showextrainfo:function(){
-  //     var self=App.slidermilestone;
-  //     var curMilediv = self.li.eq(1);
-	// 		var extrainfo =  curMilediv.find(".extra-info");
-  //     extrainfo.addClass('appear');
-  // },
-  // hideextrainfo:function(){
-  //     var self=App.slidermilestone;
-  //     var curMilediv = self.li.eq(1);
-	// 		var extrainfo =  curMilediv.find(".extra-info");
-	// 		extrainfo.removeClass('appear');
-  // },
-  // checkcurMile:function(){
-  //     var self=App.slidermilestone;
-  //     if(self.curSlide == 0) {
-  //       self.btnPrev.css({'opacity':'0.5', 'pointer-events':'none'})
-  //     }
-	// 	  else if(self.curSlide == self.maxSlide) {
-	// 			self.btnNext.css({'opacity':'0.5', 'pointer-events':'none'})
-  //     }
-  //     else {
-  //       self.btnNext.css({'opacity':'1', 'pointer-events':'auto'})
-  //       self.btnPrev.css({'opacity':'1', 'pointer-events':'auto'})
-  //     }
-  // },
   moveLeft:function(){
         var self=App.slidermilestone;
 
-        function showextrainfo(){
-          var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
-			    var extrainfo =  curMilediv.find(".extra-info");
-          extrainfo.show();
-        }
         function hideextrainfo(){
           var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
 			    var extrainfo =  curMilediv.find(".extra-info");
-			    extrainfo.hide();
+			    extrainfo.fadeOut(self._speed - 200);
         }
         function checkcurMile(){
           if(self.curSlide == 0) {
@@ -539,8 +559,7 @@ App.slidermilestone = {
 
 
         self.curSlide = self.curSlide -1 ;
-        console.log(self.curSlide,self.maxSlide);
-				hideextrainfo();
+        console.log(self.curSlide,self.maxSlide);		
 				checkcurMile();
 				self.btnMore.css('opacity','0.7');
         self.ul.animate({
@@ -550,21 +569,15 @@ App.slidermilestone = {
 						self.ul.css('left', '');
 						
         });
-        console.log(self.curSlide);
+        hideextrainfo();
     },
   moveRight:function(){
 
         var self=App.slidermilestone;
-        //console.log($('.'+self._slider+ ' ul li').eq(1));
-        function showextrainfo(){
-          var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
-			    var extrainfo =  curMilediv.find(".extra-info");
-          extrainfo.show();
-        }
         function hideextrainfo(){
           var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
 			    var extrainfo =  curMilediv.find(".extra-info");
-			    extrainfo.hide();
+			    extrainfo.fadeOut(self._speed - 200);
         }
         function checkcurMile(){
           console.log(self.curSlide, self.maxSlide);
@@ -589,9 +602,8 @@ App.slidermilestone = {
 						self.ul.css('left', '');
         });
         hideextrainfo();
-        console.log(self.curSlide);
   },
-    moreinfo:function(){
+  moreinfo:function(){
         var self=App.slidermilestone;
         function showextrainfo(){
           var curMilediv = $('.'+self._slider+ ' ul li').eq(1);
@@ -612,7 +624,6 @@ App.slidermilestone = {
           $('.btnmoreinfo').css('opacity','1.0');
           showextrainfo();
         } 
-        console.log(self.curSlide);
     }
   
 }
