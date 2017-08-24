@@ -18,8 +18,8 @@ var App = {
     this.sliderNumber.init("remark-number-wrapper-mobile","btnnextnumber","btnprevnumber",1000,true,8000);
     this.headerMobile.init();
     this.setHeight.init();
-    this.sliderPartner.init("logos-container-partner-mobile",1000,true,2000);
-    this.sliderSupporter.init("logos-container-supporter-mobile",1000,true,2000)
+    this.sliderPartner.init("logos-container-partner-mobile",1000,true,2500);
+    this.sliderSupporter.init("logos-container-supporter-mobile",1000,true,3000);
 	}
 }
 
@@ -800,7 +800,7 @@ App.sliderSupporter = {
     }
     
     if(_auto == true){
-      setInterval(self.moveRight,_autoSpeed);
+      setInterval(self.moveRight,self._autoSpeed);
     }
 
     
@@ -818,7 +818,9 @@ App.sliderSupporter = {
     },
   
   moveRight:function(){
+      
       var self=App.sliderSupporter;
+      console.log(self._speed, self._autoSpeed);
       self.ul.animate({
           left: - self.slideWidth
         }, self._speed, function () {
