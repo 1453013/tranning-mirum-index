@@ -17,6 +17,18 @@
     .remark-number-wrapper-mobile {
         display: none !important;
     }
+    .logos-container-partner-mobile {
+        display: none;
+    }
+    .logos-container-partner {
+        display: block;
+    }
+    .logos-container-supporter-mobile {
+        display: none !important;
+    }
+    .logos-container-supporter {
+        display: block;
+    }
 }
 @include for-tablet-only  {
     .header {
@@ -48,6 +60,18 @@
     }
     .remark-number-wrapper-mobile {
         display: none !important;
+    }
+    .logos-container-partner-mobile {
+        display: none !important;
+    }
+    .logos-container-partner {
+        display: block;
+    }
+    .logos-container-supporter-mobile {
+        display: none !important;
+    }
+    .logos-container-supporter {
+        display: block;
     }
 }
 
@@ -81,5 +105,17 @@
     }
     .remark-number-wrapper-mobile {
         display: block;
+    }
+    .logos-container-partner-mobile {
+        display: block;
+    }
+    .logos-container-partner {
+        display: none !important;
+    }
+    .logos-containter-supporter-mobile {
+        display: block;
+    }
+    .logos-container-supporter {
+        display: none !important;
     }
 }

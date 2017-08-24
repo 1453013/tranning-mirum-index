@@ -13,11 +13,13 @@ var App = {
     this.scrollTo.init();
     this.youTuBePopUp.init(1);
     //_slider,_btnNext,_btnPrev,_speed,_auto,_autoSpeed,totalslider,loop
-    this.sliderArchive.init("archive-item-container-mobile","btnnextmarchive","btnprevmarchive",1000,false,1000);
-    this.sliderMileStone.init("mile-stone-line-mobile","btnnextm","btnprevm","btnmoreinfo",1000,false,1000,6);
+    this.sliderArchive.init("archive-item-container-mobile","btnnextmarchive","btnprevmarchive",1000,false,8000);
+    this.sliderMileStone.init("mile-stone-line-mobile","btnnextm","btnprevm","btnmoreinfo",1000,false,8000,6);
     this.sliderNumber.init("remark-number-wrapper-mobile","btnnextnumber","btnprevnumber",1000,true,8000);
     this.headerMobile.init();
     this.setHeight.init();
+    this.sliderPartner.init("logos-container-partner-mobile",1000,true,2000);
+    this.sliderSupporter.init("logos-container-supporter-mobile",1000,true,2000)
 	}
 }
 
@@ -407,7 +409,9 @@ App.sliderArchive = {
     self._this.css({ width: slideWidth, height: slideHeight });
     self.ul.css({ width: sliderUlWidth, marginLeft: - slideWidth });
     $('.'+self._slider+ ' ul li:last-child').prependTo(self.ul);
-
+    if ((self._this).is(":hidden")){
+      _auto = false;
+    }
 
     self.btnPrev.on('click',self.moveLeft);
     self.btnNext.on('click',self.moveRight);
@@ -465,7 +469,9 @@ App.sliderNumber = {
     self._this.css({ width: slideWidth, height: slideHeight });
     self.ul.css({ width: sliderUlWidth, marginLeft: - slideWidth });
     $('.'+self._slider+ ' ul li:last-child').prependTo(self.ul);
-
+    if ((self._this).is(":hidden")){
+      _auto = false;
+    }
 
     self.btnPrev.on('click',self.moveLeft);
     self.btnNext.on('click',self.moveRight);
@@ -529,7 +535,9 @@ App.sliderMileStone = {
     self.maxSlide = totalslide - 1;
     self.btnPrev.css({'opacity':'0.5', 'pointer-events':'none'});
     //self.curSlide = _curSlide;
-    
+    if ((self._this).is(":hidden")){
+      _auto = false;
+    }
     $('.extra-info').hide();
 
     self.btnNext.on('click',self.moveRight);
@@ -703,11 +711,119 @@ App.setHeight = {
   }
 }
 
+App.sliderPartner = {
+  _this: {},
+  _speed:100,
+  _autoSpeed: 5000,
+  _auto: false,
+  init: function (_slider,_speed,_auto,_autoSpeed){
+    var self = this;
+    self._this= $('.'+_slider);
+    self.ul=self._this.find('ul');
+    self.li = self._this.find('li');
+    self._speed=_speed;
+    self._autoSpeed=_autoSpeed;
+    self._auto=_auto;
+    self._slider = _slider;
+    var slideCount = self.li .length;
+    var slideWidth = window.innerWidth || document.body.clientWidth;
+    var slideHeight = self.li.height();
+    var sliderUlWidth = slideCount * slideWidth;
+    self.slideWidth = slideWidth;
+    self._this.css({ width: slideWidth, height: slideHeight });
+    self.ul.css({ width: sliderUlWidth, marginLeft: - slideWidth });
+    $('.'+self._slider+ ' ul li:last-child').prependTo(self.ul);
+
+    if ((self._this).is(":hidden")){
+      _auto = false;
+    }
+    
+    if(_auto == true){
+      setInterval(self.moveRight,_autoSpeed);
+    }
+
+  },
+  moveLeft:function(){
+      var self=App.sliderPartner;
+      self.ul.animate({
+          left: + self.slideWidth
+        }, self._speed, function () {
+          $('.'+self._slider+ ' ul li:last-child').prependTo(self.ul);
+          self.ul.css('left','');
+      });
+    },
+  
+  moveRight:function(){
+      var self=App.sliderPartner;
+      self.ul.animate({
+          left: - self.slideWidth
+        }, self._speed, function () {
+          $('.'+self._slider+' ul li:first-child').appendTo(self.ul);
+          self.ul.css('left','');
+          
+      });
+    },
+    
+  }
 
 
+App.sliderSupporter = {
+  _this: {},
+  _speed:100,
+  _autoSpeed: 5000,
+  _auto: false,
+  init: function (_slider,_speed,_auto,_autoSpeed){
+    var self = this;
+    self._this= $('.'+_slider);
+    self.ul=self._this.find('ul');
+    self.li = self._this.find('li');
+    self._speed=_speed;
+    self._autoSpeed=_autoSpeed;
+    self._auto=_auto;
+    self._slider = _slider;
+    var slideCount = self.li .length;
+    var slideWidth = window.innerWidth || document.body.clientWidth;
+    var slideHeight = self.li.height();
+    var sliderUlWidth = slideCount * slideWidth;
+    self.slideWidth = slideWidth;
+    self._this.css({ width: slideWidth, height: slideHeight });
+    self.ul.css({ width: sliderUlWidth, marginLeft: - slideWidth });
+    $('.'+self._slider+ ' ul li:last-child').prependTo(self.ul);
 
+    if ((self._this).is(":hidden")){
+      _auto = false;
+    }
+    
+    if(_auto == true){
+      setInterval(self.moveRight,_autoSpeed);
+    }
 
+    
+    console.log(_auto)
 
+  },
+  moveLeft:function(){
+      var self=App.sliderSupporter;
+      self.ul.animate({
+          left: + self.slideWidth
+        }, self._speed, function () {
+          $('.'+self._slider+ ' ul li:last-child').prependTo(self.ul);
+          self.ul.css('left','');
+      });
+    },
+  
+  moveRight:function(){
+      var self=App.sliderSupporter;
+      self.ul.animate({
+          left: - self.slideWidth
+        }, self._speed, function () {
+          $('.'+self._slider+' ul li:first-child').appendTo(self.ul);
+          self.ul.css('left','');
+          
+      });
+    },
+    
+  }
 
 
 
