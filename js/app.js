@@ -60,7 +60,7 @@ App.slider = {
 
 
         if (_auto == true){
-          setInterval (self.nextSlide,_autospeed);
+          setInterval (self.nextSlide,self._autospeed);
         }
         },
 
@@ -422,7 +422,7 @@ App.sliderArchive = {
     self.btnNext.on('click',self.moveRight);
     
     if(_auto == true){
-      setInterval(self.moveRight,_autoSpeed);
+      setInterval(self.moveRight,self._autoSpeed);
     }
 
   },
@@ -482,7 +482,7 @@ App.sliderNumber = {
     self.btnNext.on('click',self.moveRight);
     
     if(_auto == true){
-      setInterval(self.moveRight,_autoSpeed);
+      setInterval(self.moveRight,self._autoSpeed);
     }
 
   },
@@ -744,7 +744,7 @@ App.sliderPartner = {
     }
     
     if(_auto == true){
-      setInterval(self.moveRight,_autoSpeed);
+      setInterval(self.moveRight,self._autoSpeed);
     }
 
   },
