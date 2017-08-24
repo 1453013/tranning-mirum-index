@@ -18,7 +18,7 @@
         display: none !important;
     }
     .logos-container-partner-mobile {
-        display: none;
+        display: none !important;
     }
     .logos-container-partner {
         display: block;
@@ -73,6 +73,9 @@
     .logos-container-supporter {
         display: block;
     }
+    .side-nav {
+        display: none !important;
+    }
 }
 
 @include for-phone-only {
@@ -116,6 +119,9 @@
         display: block;
     }
     .logos-container-supporter {
+        display: none !important;
+    }
+    .side-nav {
         display: none !important;
     }
 }

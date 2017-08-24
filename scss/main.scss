@@ -391,6 +391,7 @@ $awardboxsizemobilde: 250px;
 	color: white;
 	font-family: 'BrandonText-Regular';
 	height: 400px;
+	overflow: hidden;
 	@include for-phone-only {
 		height: auto;
 		padding-bottom: 10px;
@@ -1534,10 +1535,11 @@ h2 span {
 			padding-left: 39px;
 			padding-right: 20px;
 			position: absolute;
-			height: 330px ;
+			height: 320px ;
 			overflow: hidden;
 			@include for-phone-only {
 				top:33%;
+				height: 330px;
 			}
 				h3{
 				font-size: 30px;
@@ -3096,6 +3098,90 @@ h2 {
 		display: block;
 	}
 }
+
+
+.main-content {
+	position: relative;
+	height: auto;
+	padding-bottom: 21px;
+	.big-banner {
+		margin-top: 100px;
+		background-image: url(../img/gallery-bg.png);
+		background-size: 100% 100%;
+		height: 250px;
+		position: relative;
+		@include for-tablet-only {
+			height: 133px;
+		}
+		@include for-phone-only {
+			height: 80px;
+		}
+		h2 {
+			font-size: 50px;
+			font-family: "iCielBrawls1";
+			color: white;
+			position: absolute;
+			left: 50%;
+			top: 23%;
+			@include transformX(-50%);
+			letter-spacing: -1px;
+			@include for-tablet-only {
+				top:11%;
+			}
+			@include for-phone-only {
+				top: 4%;
+			}
+		}
+	}
+	.news {
+		position: relative;
+		display: inline-block;
+		width: 89%;
+		left: 50%;
+		@include transformX(-50%);
+		padding-top: 76px;
+		.news-item-wrapper {
+			width: 25%;
+			display: inline-block;
+			float: left;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			@include for-phone-only {
+				width: 100%;
+			}
+			.news-item {
+			img {
+				height: 303px;
+				width: 303px;
+				display:block;
+				margin:auto;
+				max-width: 100%;
+				height: auto;
+			}
+			h3 {
+				font-size: 22px;
+				text-transform: uppercase;
+				text-align: center;
+				//line-height: auto;
+				margin-top: 30px;
+				cursor: pointer;
+				white-space: nowrap;
+				@include for-tablet-only {
+					font-size: 10px;
+				}
+			}
+			h3:hover {
+				color: $active-color;
+			}
+			padding-left: 5px;
+    		padding-right: 5px;
+			padding-bottom: 32px
+		}
+		}
+	}
+}
+
 
 
 

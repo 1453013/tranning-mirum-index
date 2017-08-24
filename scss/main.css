@@ -49,7 +49,7 @@ html, body {
     display: none !important; }
 
   .logos-container-partner-mobile {
-    display: none; }
+    display: none !important; }
 
   .logos-container-partner {
     display: block; }
@@ -100,7 +100,10 @@ html, body {
     display: none !important; }
 
   .logos-container-supporter {
-    display: block; } }
+    display: block; }
+
+  .side-nav {
+    display: none !important; } }
 @media (max-width: 599px) {
   .header {
     display: none; }
@@ -142,6 +145,9 @@ html, body {
     display: block; }
 
   .logos-container-supporter {
+    display: none !important; }
+
+  .side-nav {
     display: none !important; } }
 .header {
   position: fixed;
@@ -405,7 +411,8 @@ html, body {
   background-color: #464646;
   color: white;
   font-family: 'BrandonText-Regular';
-  height: 400px; }
+  height: 400px;
+  overflow: hidden; }
   @media (max-width: 599px) {
     .footer {
       height: auto;
@@ -1359,11 +1366,12 @@ h2 span {
       padding-left: 39px;
       padding-right: 20px;
       position: absolute;
-      height: 330px;
+      height: 320px;
       overflow: hidden; }
       @media (max-width: 599px) {
         .jury .jury-item .jury-info, .jury-mobile .jury-item .jury-info {
-          top: 33%; } }
+          top: 33%;
+          height: 330px; } }
       .jury .jury-item .jury-info h3, .jury-mobile .jury-item .jury-info h3 {
         font-size: 30px;
         font-family: 'BrandonText-Bold';
@@ -2742,6 +2750,86 @@ h2 span {
     .tablet-brk {
       display: block; } }
 
+.main-content {
+  position: relative;
+  height: auto;
+  padding-bottom: 21px; }
+  .main-content .big-banner {
+    margin-top: 100px;
+    background-image: url(../img/gallery-bg.png);
+    background-size: 100% 100%;
+    height: 250px;
+    position: relative; }
+    @media (min-width: 600px) and (max-width: 1199px) {
+      .main-content .big-banner {
+        height: 133px; } }
+    @media (max-width: 599px) {
+      .main-content .big-banner {
+        height: 80px; } }
+    .main-content .big-banner h2 {
+      font-size: 50px;
+      font-family: "iCielBrawls1";
+      color: white;
+      position: absolute;
+      left: 50%;
+      top: 23%;
+      transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      letter-spacing: -1px; }
+      @media (min-width: 600px) and (max-width: 1199px) {
+        .main-content .big-banner h2 {
+          top: 11%; } }
+      @media (max-width: 599px) {
+        .main-content .big-banner h2 {
+          top: 4%; } }
+  .main-content .news {
+    position: relative;
+    display: inline-block;
+    width: 89%;
+    left: 50%;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    padding-top: 76px; }
+    .main-content .news .news-item-wrapper {
+      width: 25%;
+      display: inline-block;
+      float: left;
+      margin: 0;
+      padding: 0;
+      position: relative; }
+      @media (max-width: 599px) {
+        .main-content .news .news-item-wrapper {
+          width: 100%; } }
+      .main-content .news .news-item-wrapper .news-item {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 32px; }
+        .main-content .news .news-item-wrapper .news-item img {
+          height: 303px;
+          width: 303px;
+          display: block;
+          margin: auto;
+          max-width: 100%;
+          height: auto; }
+        .main-content .news .news-item-wrapper .news-item h3 {
+          font-size: 22px;
+          text-transform: uppercase;
+          text-align: center;
+          margin-top: 30px;
+          cursor: pointer;
+          white-space: nowrap; }
+          @media (min-width: 600px) and (max-width: 1199px) {
+            .main-content .news .news-item-wrapper .news-item h3 {
+              font-size: 10px; } }
+        .main-content .news .news-item-wrapper .news-item h3:hover {
+          color: #e95154; }
+
 @media (min-width: 1200px) {
   .header-mobile {
     display: none; }
@@ -2759,7 +2847,7 @@ h2 span {
     display: none !important; }
 
   .logos-container-partner-mobile {
-    display: none; }
+    display: none !important; }
 
   .logos-container-partner {
     display: block; }
@@ -2810,7 +2898,10 @@ h2 span {
     display: none !important; }
 
   .logos-container-supporter {
-    display: block; } }
+    display: block; }
+
+  .side-nav {
+    display: none !important; } }
 @media (max-width: 599px) {
   .header {
     display: none; }
@@ -2852,6 +2943,9 @@ h2 span {
     display: block; }
 
   .logos-container-supporter {
+    display: none !important; }
+
+  .side-nav {
     display: none !important; } }
 
 /*# sourceMappingURL=main.css.map */

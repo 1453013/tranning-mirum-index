@@ -15,7 +15,7 @@
     display: none !important; }
 
   .logos-container-partner-mobile {
-    display: none; }
+    display: none !important; }
 
   .logos-container-partner {
     display: block; }
@@ -66,7 +66,10 @@
     display: none !important; }
 
   .logos-container-supporter {
-    display: block; } }
+    display: block; }
+
+  .side-nav {
+    display: none !important; } }
 @media (max-width: 599px) {
   .header {
     display: none; }
@@ -108,6 +111,9 @@
     display: block; }
 
   .logos-container-supporter {
+    display: none !important; }
+
+  .side-nav {
     display: none !important; } }
 
 /*# sourceMappingURL=style.css.map */
