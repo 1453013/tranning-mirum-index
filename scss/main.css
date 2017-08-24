@@ -1359,8 +1359,11 @@ h2 span {
       padding-left: 39px;
       padding-right: 20px;
       position: absolute;
-      height: 320px;
+      height: 330px;
       overflow: hidden; }
+      @media (max-width: 599px) {
+        .jury .jury-item .jury-info, .jury-mobile .jury-item .jury-info {
+          top: 33%; } }
       .jury .jury-item .jury-info h3, .jury-mobile .jury-item .jury-info h3 {
         font-size: 30px;
         font-family: 'BrandonText-Bold';

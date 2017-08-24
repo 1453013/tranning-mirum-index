@@ -200,6 +200,10 @@ App.juryMoreInfoButton = {
       var juryDescShort;
       var juryDescFull;
 
+      var topHeight =  $('.jury-info').css("top");
+      var Height = $('.jury-info').css("height");
+
+     
       $(".jury-item").hover(
       function() {
         viewMoreBtn = $(this).find('.more-info');
@@ -226,6 +230,7 @@ App.juryMoreInfoButton = {
 
       }, 
       function() {
+        
         viewMoreBtn = $(this).find('.more-info');
         viewLessBtn = $(this).find('.less-info'); 
         viewMoreBtn.removeClass('hide');
@@ -239,8 +244,8 @@ App.juryMoreInfoButton = {
         juryDescFull= juryInfo.find('.jury-desc').find('.jury-desc-full');
 
         juryInfo.animate({
-            top:"50%",
-            height:"320px",
+            top: topHeight,
+            height:Height,
         },1500);
 
         juryDescFull.fadeOut(1500, function() {

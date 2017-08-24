@@ -1534,8 +1534,11 @@ h2 span {
 			padding-left: 39px;
 			padding-right: 20px;
 			position: absolute;
-			height: 320px ;
+			height: 330px ;
 			overflow: hidden;
+			@include for-phone-only {
+				top:33%;
+			}
 				h3{
 				font-size: 30px;
 				font-family: 'BrandonText-Bold';
