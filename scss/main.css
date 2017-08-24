@@ -1386,7 +1386,9 @@ h2 span {
         font-family: 'BrandonText-Regular';
         text-transform: uppercase; }
       .jury .jury-item .jury-info .jury-desc, .jury-mobile .jury-item .jury-info .jury-desc {
-        margin-top: -3px; }
+        margin-top: -3px;
+        max-height: 75%;
+        overflow-y: scroll; }
         .jury .jury-item .jury-info .jury-desc p, .jury-mobile .jury-item .jury-info .jury-desc p {
           font-size: 20px;
           font-family: 'BrandonText-Regular';
@@ -2829,6 +2831,144 @@ h2 span {
               font-size: 10px; } }
         .main-content .news .news-item-wrapper .news-item h3:hover {
           color: #e95154; }
+
+.main-content-lastest .big-slider-lastest {
+  width: 100%;
+  margin-top: 100px;
+  overflow: hidden;
+  height: 536px;
+  position: relative; }
+  .main-content-lastest .big-slider-lastest .controler {
+    z-index: 5;
+    position: absolute;
+    left: 50%;
+    height: 800px;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%); }
+    .main-content-lastest .big-slider-lastest .controler .btnprev, .main-content-lastest .big-slider-lastest .controler .btnnext {
+      display: inline-block;
+      position: relative;
+      float: left;
+      opacity: 0;
+      height: 100%;
+      width: 50px; }
+    .main-content-lastest .big-slider-lastest .controler .btnnext {
+      float: right; }
+  .main-content-lastest .big-slider-lastest .btnprev {
+    z-index: 5;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 50px;
+    background: white;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, black, white);
+    /*Safari 5.1-6*/
+    background: -o-linear-gradient(right, black, white);
+    /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right, black, white);
+    /*Fx 3.6-15*/
+    background: linear-gradient(to right, black, white);
+    /*Standard*/
+    opacity: 0;
+    padding: 0;
+    border: none; }
+  .main-content-lastest .big-slider-lastest .btnprev:hover {
+    opacity: 0.2; }
+  .main-content-lastest .big-slider-lastest .btnnext {
+    z-index: 5;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    background: white;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(right, black, white);
+    /*Safari 5.1-6*/
+    background: -o-linear-gradient(left, black, white);
+    /*Opera 11.1-12*/
+    background: -moz-linear-gradient(left, black, white);
+    /*Fx 3.6-15*/
+    background: linear-gradient(to left, black, white);
+    /*Standard*/
+    opacity: 0;
+    padding: 0;
+    border: none; }
+  .main-content-lastest .big-slider-lastest .btnnext:hover {
+    opacity: 0.2; }
+  .main-content-lastest .big-slider-lastest ol {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 5;
+    left: 54%;
+    top: 82%; }
+    .main-content-lastest .big-slider-lastest ol li {
+      display: inline-block;
+      height: 9px;
+      width: 9px;
+      background-image: url(../img/prevbtn.png);
+      background-size: 100% 100%;
+      cursor: pointer;
+      margin-left: 6px; }
+      @media (max-width: 900px) and (orientation: portrait) {
+        .main-content-lastest .big-slider-lastest ol li {
+          height: 15px;
+          width: 15px; } }
+    .main-content-lastest .big-slider-lastest ol li.active {
+      background-image: url(../img/nextbtn.png); }
+  .main-content-lastest .big-slider-lastest .main-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    float: left; }
+    .main-content-lastest .big-slider-lastest .main-slider .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+      .main-content-lastest .big-slider-lastest .main-slider .slide .image {
+        float: left;
+        width: 50%;
+        height: 100%; }
+        .main-content-lastest .big-slider-lastest .main-slider .slide .image img {
+          max-width: 100%;
+          height: 100%; }
+      .main-content-lastest .big-slider-lastest .main-slider .slide .caption {
+        float: left;
+        width: 50%;
+        height: 100%;
+        background: #e95154;
+        position: relative; }
+        .main-content-lastest .big-slider-lastest .main-slider .slide .caption .day {
+          display: block;
+          font-size: 22px;
+          color: white;
+          font-family: 'BrandonText-Regular';
+          position: absolute;
+          left: 9%;
+          top: 14%; }
+        .main-content-lastest .big-slider-lastest .main-slider .slide .caption .title {
+          display: block;
+          font-size: 28px;
+          text-transform: uppercase;
+          color: white;
+          position: absolute;
+          left: 9%;
+          top: 29%;
+          max-width: 80%;
+          line-height: 34px; }
+        .main-content-lastest .big-slider-lastest .main-slider .slide .caption .viewmore-button {
+          background: white;
+          color: #e95154;
+          top: 59%;
+          left: 9%;
+          padding: 16px 38px; }
+        .main-content-lastest .big-slider-lastest .main-slider .slide .caption .viewmore-button:after {
+          border: 2px solid white; }
 
 @media (min-width: 1200px) {
   .header-mobile {

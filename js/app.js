@@ -6,6 +6,7 @@ $(document).ready(function(){
 var App = {
 	init : function(){
     this.slider.init("big-slider","main-slider","slide","btnnext","btnprev",500,false,8000,3,1);
+    this.sliderLastest.init("big-slider-lastest","main-slider","slide","btnnext","btnprev",500,false,5000,3,1);
     this.juryMoreInfoButton.init();
     this.winnerItemMouseHold.init();
     this.beginTrainingButton.init();
@@ -834,3 +835,99 @@ App.sliderSupporter = {
 
 
 
+App.sliderLastest = {
+  _this: {},
+  main:{},
+  slide:{},
+  btnNext:{},
+  btnPrev:{},
+  curSlide: 1,
+  maxSlide: 3,
+  _speed:100,
+  _autoSpeed: 5000,
+  _auto: false,
+     init: function (_slider,_mainSlider,_slideItem,_btnNext,_btnPrev,_speed,_auto,_autoSpeed,totalslide,firstslide) {
+        var self = this;
+        self._this = $('.'+_slider);
+        self.main= self._this.find('.'+_mainSlider);
+        self.slide= self.main.find('.'+_slideItem);
+        self.btnNext= self._this.find('.'+_btnNext);
+        self.btnPrev= self._this.find('.'+_btnPrev);
+        self.dotsNav=self._this.find('ol');
+        self.li=self.dotsNav.find('li');
+        self._speed=_speed;
+        self._autoSpeed=_autoSpeed;
+        self._auto=_auto;
+        
+
+        $(self.slide).first().addClass('activeSlide');
+	
+        $(self.slide).hide();
+
+        $('.activeSlide').show();
+        
+        self.btnNext.on('click',self.nextSlide);
+        self.btnPrev.on('click',self.prevSlide);
+        self.li.on('click',self.toDotsNav);
+
+
+        if (_auto == true){
+          setInterval (self.nextSlide,self._autospeed);
+        }
+        },
+
+        nextSlide:function(){
+          var self= App.sliderLastest;
+          console.log(self);
+          self.li.removeClass("active");
+          $('.activeSlide').removeClass('activeSlide').addClass('oldActive');
+          if($('.oldActive').is(':last-child')){
+                  $(self.slide).first().addClass('activeSlide');
+                  self.curSlide =  1;
+                  
+          }
+          else {
+                  $('.oldActive').next().addClass('activeSlide');
+                  self.curSlide = self.curSlide + 1;
+            }
+          self.li.eq(self.curSlide-1).addClass("active");
+          $('.oldActive').removeClass('oldActive');
+          $(self.slide).fadeOut(self._speed);
+          $('.activeSlide').fadeIn(self._speed);
+        },
+
+        prevSlide:function(){
+          var self= App.sliderLastest;
+          self.li.removeClass("active");
+
+          $('.activeSlide').removeClass('activeSlide').addClass('oldActive');
+          if($('.oldActive').is(':first-child')){
+                  $(self.slide).last().addClass('activeSlide');
+                  self.curSlide =  self.maxSlide;
+          }
+          else {
+                  $('.oldActive').prev().addClass('activeSlide');
+                  self.curSlide = self.curSlide - 1;
+          }
+          self.li.eq(self.curSlide-1).addClass("active");
+          $('.oldActive').removeClass('oldActive');
+          $(self.slide).fadeOut(self._speed);
+          $('.activeSlide').fadeIn(self._speed);
+          
+        },
+        
+        toDotsNav: function (){
+          var self= App.sliderLastest;
+            var index = $(this).index() + 1;
+            self.curSlide = index;
+            self.li.removeClass("active");
+            self.li.eq(index-1).addClass("active");
+            //$("#dots_"+ index).addClass("active");
+            $('.activeSlide').fadeOut(self._speed);
+            self.slide.eq(index-1).fadeIn(self._speed);   
+            //$("#slide_" + index).fadeIn(500);        
+            $(".slide").removeClass("activeSlide");
+            self.slide.eq(index-1).addClass("activeSlide");
+            //$("#slide_" + index).addClass("activeslide");
+        }
+}

@@ -1558,6 +1558,8 @@ h2 span {
 			}
 			.jury-desc { 
 				margin-top: -3px;
+				max-height: 75%;
+    			overflow-y: scroll;
 
 				p{
 				font-size: 20px;
@@ -3182,7 +3184,151 @@ h2 {
 	}
 }
 
+.main-content-lastest {
+	.big-slider-lastest {
+	width: 100%;
+	margin-top: 100px;
+	overflow: hidden;
+	height: 536px;
+	position: relative;
+	.controler {
+		z-index: 5;
+		position: absolute;
+		//width: 100%;
+		left:50%;
+		height: 800px;
+		//width: 88px;
+		@include transformX(-50%);
+			.btnprev, .btnnext {
+				display: inline-block;
+				position: relative;
+				float:left;
+				opacity: 0;
+				height: 100%;
+				
+				width: 50px;
+				
+			}
+			.btnnext {
+				float: right;
+			}
 
+
+	}
+	.btnprev {
+		z-index: 5;
+		position: absolute;
+		left:0;
+		height: 100%;
+		width: 50px;
+		@include gradienttransparencytoright(white);
+		opacity: 0;
+		padding: 0;
+		border: none;
+	}
+	.btnprev:hover {
+		opacity: 0.2;
+	}
+	.btnnext {
+		z-index: 5;
+		position: absolute;
+		right:0;
+		height: 100%;
+		width: 50px;
+		@include gradienttransparencytoleft(white);
+		opacity: 0;
+		padding: 0;
+		border: none;
+	}
+	.btnnext:hover {
+		opacity: 0.2;
+	}
+		ol {
+			padding: 0;
+			margin: 0;
+			position: absolute;
+			z-index: 5;
+			left: 54%;
+    		top: 82%;
+
+			li {
+				display: inline-block;
+				height: 9px;
+				width: 9px;
+				@include for-tablet-and-phone-only {
+					height: 15px;
+					width: 15px;
+				}
+				background-image: url(../img/prevbtn.png);
+				background-size: 100% 100%;
+				cursor: pointer;
+				margin-left: 6px;
+			}
+			li.active {
+				background-image: url(../img/nextbtn.png);
+			}
+		}
+		.main-slider{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow:hidden;
+		float: left;
+			.slide{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+				.image {
+					float: left;
+					width: 50%;
+					height: 100%;
+					img {
+						max-width: 100%;
+						height: 100%;
+					}
+				}
+				.caption {
+					float: left;
+					width: 50%;
+					height: 100%;
+					background: $active-color;
+					position: relative;
+					.day {
+						display: block;
+						font-size: 22px;
+						color: white;
+						font-family: 'BrandonText-Regular';
+						position: absolute;
+						left: 9%;
+    					top: 14%;
+					}
+					.title{
+						display: block;
+						font-size: 28px;
+						text-transform: uppercase;
+						color: white;
+						position: absolute;
+						left: 9%;
+						top:29%;
+						max-width: 80%;
+						line-height: 34px;
+					}
+					.viewmore-button  {
+						background: white;
+						color: $active-color;
+						top:59%;
+						left: 9%;
+						padding: 16px 38px;
+					}
+					.viewmore-button:after{
+						border: 2px solid white;
+					}
+				}
+			}
+		}
+	}
+
+}
 
 
 @import 'style';
