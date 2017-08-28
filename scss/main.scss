@@ -1101,18 +1101,21 @@ h2 span {
 		background-image: url(../img/milebg.png);
 		left: 50%;
 		@include for-snakktablet-portrait-only {
-			@include transformscale (0.5);
-			left: -31%;
+			@include transformscaleX(0.5,-50%);
+			transform-origin: center left;
+			left: 50%;
 			top: -15%;
 		}
 		@include for-tablet-portrait-only {
-			@include transformscale (0.7);
-			left: -13%;
+			@include transformscaleX(0.7,-50%);
+			transform-origin: center left;
+			left: 50%;
     		top: 3%;
 		}
 		@include for-tablet-landscape-only {
-			@include transformscale (0.7);
-			left: -13%;
+			@include transformscaleX(0.7,-50%);
+			transform-origin: center left;
+			left: 50%;
     		top: 3%;
 		}
 		@include transformX(-50%);
@@ -1827,9 +1830,11 @@ h2 span {
 						font-size: 15px !important;
 						margin: 0 0 0 0;
 						line-height: 18px;
-						@include for-snakktablet-portrait-only {
-							font-size: 10px !important;
+						@include for-tablet-only {
+							font-size: 12px !important;
+							line-height: 14px;
 						}
+
 					}
 				}
 				.archive-item-seemore {
@@ -2063,7 +2068,7 @@ h2 span {
 					display: block;
 					line-height: 0;
 					margin-bottom: 52px;
-					@include for-snakktablet-portrait-only {
+					@include for-tablet-only {
 						font-size: 85px;
 					}
 					@include for-phone-only {
@@ -2076,6 +2081,9 @@ h2 span {
 					margin-top: 10px;
 					font-size: 24px;
 					font-family: 'BrandonText-Bold'; 
+					@include for-tablet-only {
+						font-size: 19px;
+					}
 				}
 				
 			}
@@ -3329,6 +3337,123 @@ h2 {
 	}
 
 }
+.image-banner {
+	margin-top: 100px;
+	width: 100%;
+	height: 350px;
+	img {
+		max-width: 100%;
+		height: 100%;
+	}
+}
 
+.main-content-detail {
+	position: relative;
+	padding-bottom: 62px;
+	h2 {
+		font-size: 30px;
+		text-align: center;
+		text-transform: uppercase;
+		margin: 0 auto;
+		margin-top: 54px;
+		display: table;
+		width: 60%;
+		margin-bottom: 33px;
+	}
+	.day {
+		text-align: center;
+		font-family: 'BrandonText-Regular';
+		display: table;
+		margin: 0 auto;
+		font-size: 22px;
+	}
+	.social-share {
+		float: left;
+		display: inline-block;
+		position: absolute;
+    	top: 7.5%;
+    	left: 68%;
+		span {
+			float: left;
+			display: inline-block;
+			font-size: 22px;
+			font-family: 'BrandonText-Regular';
+		}
+		.shareicon {
+			height: 40px;
+			width: 40px;
+			display: inline-block;
+			float: left;
+			margin-left: 9px; 
+		}
+		.fb {
+				background-image: url(../img/fbshare.png);
+			}
+		.gp {
+			background-image: url(../img/gpshare.png);
+		}
+		.in {
+			background-image: url(../img/inshare.png);
+		}
+	}
+	.detail {
+		margin: 0 auto;
+		margin-top: 100px;
+		width: 66%;
+	p {
+		font-family: 'BrandonText-Regular';
+		font-size: 20px;
+		text-align: center;
+		line-height: 24px;
+		margin-left: 4px;
+		margin-bottom: 53px;
+		margin-top: 51px;
+	}
+	img {
+		margin-left: 4px;
+	}
+	}
+}
+.related-news {
+	height: 626px;
+	background-color: $gray-color;
+	position: relative;
+	span {
+		font-family: "iCielBrawls1";
+		font-size: 50px;
+		text-align: center;
+		display: table;
+		margin: 0 auto;
+		padding-top: 45px;
+		letter-spacing: -2px;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		margin-top: 43px;
+		position: absolute;
+		left: 50%;
+		@include transformX(-50%);
+		width: 89%;
+		li{
+			width: 25%;
+			display: inline-block;
+			float: left;
+			height: 303px;
+			.content {
+				margin-left: 12px;
+				margin-right: 12px;
+				span {
+					text-align: center;
+					font-size: 22px;
+					font-family: 'BrandonText-Bold';
+					text-transform: uppercase;
+					padding-top: 27px;
+				}
+			}
+		}
+	}
+}
 
 @import 'style';

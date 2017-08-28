@@ -1000,30 +1000,33 @@ h2 span {
     -moz-transform: translateX(-50%); }
     @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
       .mile-stone .mile-stone-line {
-        transform: scale(0.5);
-        -ms-transform: scale(0.5);
-        -webkit-transform: scale(0.5);
-        -o-transform: scale(0.5);
-        -moz-transform: scale(0.5);
-        left: -31%;
+        transform: scale(0.5) translateX(-50%);
+        -ms-transform: scale(0.5) translateX(-50%);
+        -webkit-transform: scale(0.5) translateX(-50%);
+        -o-transform: scale(0.5) translateX(-50%);
+        -moz-transform: scale(0.5) translateX(-50%);
+        transform-origin: center left;
+        left: 50%;
         top: -15%; } }
     @media (min-width: 900px) and (max-width: 1199px) and (orientation: portrait) {
       .mile-stone .mile-stone-line {
-        transform: scale(0.7);
-        -ms-transform: scale(0.7);
-        -webkit-transform: scale(0.7);
-        -o-transform: scale(0.7);
-        -moz-transform: scale(0.7);
-        left: -13%;
+        transform: scale(0.7) translateX(-50%);
+        -ms-transform: scale(0.7) translateX(-50%);
+        -webkit-transform: scale(0.7) translateX(-50%);
+        -o-transform: scale(0.7) translateX(-50%);
+        -moz-transform: scale(0.7) translateX(-50%);
+        transform-origin: center left;
+        left: 50%;
         top: 3%; } }
     @media (min-width: 900px) and (max-width: 1199px) and (orientation: landscape) {
       .mile-stone .mile-stone-line {
-        transform: scale(0.7);
-        -ms-transform: scale(0.7);
-        -webkit-transform: scale(0.7);
-        -o-transform: scale(0.7);
-        -moz-transform: scale(0.7);
-        left: -13%;
+        transform: scale(0.7) translateX(-50%);
+        -ms-transform: scale(0.7) translateX(-50%);
+        -webkit-transform: scale(0.7) translateX(-50%);
+        -o-transform: scale(0.7) translateX(-50%);
+        -moz-transform: scale(0.7) translateX(-50%);
+        transform-origin: center left;
+        left: 50%;
         top: 3%; } }
     .mile-stone .mile-stone-line ul {
       padding-left: 168px;
@@ -1600,9 +1603,10 @@ h2 span {
               font-size: 15px !important;
               margin: 0 0 0 0;
               line-height: 18px; }
-              @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+              @media (min-width: 600px) and (max-width: 1199px) {
                 .archive .tab_content .archive-item-container .archive-item-wrapper .archive-item .archive-item-desc p {
-                  font-size: 10px !important; } }
+                  font-size: 12px !important;
+                  line-height: 14px; } }
           .archive .tab_content .archive-item-container .archive-item-wrapper .archive-item .archive-item-seemore {
             height: 54px;
             background-image: url(../img/seemore.png);
@@ -1792,7 +1796,7 @@ h2 span {
           display: block;
           line-height: 0;
           margin-bottom: 52px; }
-          @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+          @media (min-width: 600px) and (max-width: 1199px) {
             .archive .remark-number .remark-number-wrapper .remark-number-item .number {
               font-size: 85px; } }
           @media (max-width: 599px) {
@@ -1803,6 +1807,9 @@ h2 span {
           margin-top: 10px;
           font-size: 24px;
           font-family: 'BrandonText-Bold'; }
+          @media (min-width: 600px) and (max-width: 1199px) {
+            .archive .remark-number .remark-number-wrapper .remark-number-item .desc {
+              font-size: 19px; } }
       .archive .remark-number .remark-number-wrapper .remark-number-item:before {
         content: "";
         position: absolute;
@@ -2969,6 +2976,110 @@ h2 span {
           padding: 16px 38px; }
         .main-content-lastest .big-slider-lastest .main-slider .slide .caption .viewmore-button:after {
           border: 2px solid white; }
+
+.image-banner {
+  margin-top: 100px;
+  width: 100%;
+  height: 350px; }
+  .image-banner img {
+    max-width: 100%;
+    height: 100%; }
+
+.main-content-detail {
+  position: relative;
+  padding-bottom: 62px; }
+  .main-content-detail h2 {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-top: 54px;
+    display: table;
+    width: 60%;
+    margin-bottom: 33px; }
+  .main-content-detail .day {
+    text-align: center;
+    font-family: 'BrandonText-Regular';
+    display: table;
+    margin: 0 auto;
+    font-size: 22px; }
+  .main-content-detail .social-share {
+    float: left;
+    display: inline-block;
+    position: absolute;
+    top: 7.5%;
+    left: 68%; }
+    .main-content-detail .social-share span {
+      float: left;
+      display: inline-block;
+      font-size: 22px;
+      font-family: 'BrandonText-Regular'; }
+    .main-content-detail .social-share .shareicon {
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      float: left;
+      margin-left: 9px; }
+    .main-content-detail .social-share .fb {
+      background-image: url(../img/fbshare.png); }
+    .main-content-detail .social-share .gp {
+      background-image: url(../img/gpshare.png); }
+    .main-content-detail .social-share .in {
+      background-image: url(../img/inshare.png); }
+  .main-content-detail .detail {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 66%; }
+    .main-content-detail .detail p {
+      font-family: 'BrandonText-Regular';
+      font-size: 20px;
+      text-align: center;
+      line-height: 24px;
+      margin-left: 4px;
+      margin-bottom: 53px;
+      margin-top: 51px; }
+    .main-content-detail .detail img {
+      margin-left: 4px; }
+
+.related-news {
+  height: 626px;
+  background-color: #ebebeb;
+  position: relative; }
+  .related-news span {
+    font-family: "iCielBrawls1";
+    font-size: 50px;
+    text-align: center;
+    display: table;
+    margin: 0 auto;
+    padding-top: 45px;
+    letter-spacing: -2px; }
+  .related-news ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 43px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    width: 89%; }
+    .related-news ul li {
+      width: 25%;
+      display: inline-block;
+      float: left;
+      height: 303px; }
+      .related-news ul li .content {
+        margin-left: 12px;
+        margin-right: 12px; }
+        .related-news ul li .content span {
+          text-align: center;
+          font-size: 22px;
+          font-family: 'BrandonText-Bold';
+          text-transform: uppercase;
+          padding-top: 27px; }
 
 @media (min-width: 1200px) {
   .header-mobile {

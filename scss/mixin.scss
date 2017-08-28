@@ -114,6 +114,16 @@
   -moz-transform:rotate($degree) translate($xpixel, $ypixel);
 }
 
+
+@mixin transformscaleX($scale,$xpercent) {
+  transform: scale($scale) translateX($xpercent);
+  -ms-transform: scale($scale) translateX($xpercent);
+  -webkit-transform: scale($scale) translateX($xpercent);
+  -o-transform: scale($scale) translateX($xpercent);
+  -moz-transform: scale($scale) translateX($xpercent);
+}
+
+
 @mixin stroketext($width, $color) {
    -webkit-text-stroke-width: $width;
    -webkit-text-stroke-color: $color;
