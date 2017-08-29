@@ -2602,7 +2602,8 @@ h2 span {
 			40%, 59% { margin-left:-200%; }
 			60%, 79% { margin-left:-300%;}
 			80%, 99% {margin-left:-400%;}
-			100% { margin-left:0;}
+			100% {margin-left:0;}
+			//100% { margin-left:-401%;}
 			}
 			@-moz-keyframes css-slider {
 			0%, 19% {margin-left:0}
@@ -2610,7 +2611,8 @@ h2 span {
 			40%, 59% { margin-left:-200%; }
 			60%, 79% { margin-left:-300%;}
 			80%, 99% {margin-left:-400%;}
-			100% { margin-left:0;}
+			100% {margin-left:0;}
+			//100% { margin-left:-401%;}
 			}
 			@-ms-keyframes css-slider {
 			0%, 19% {margin-left:0}
@@ -2618,7 +2620,8 @@ h2 span {
 			40%, 59% { margin-left:-200%; }
 			60%, 79% { margin-left:-300%;}
 			80%, 99% {margin-left:-400%;}
-			100% { margin-left:0;}
+			100% {margin-left:0;}
+			//100% { margin-left:-401%;}
 			}
 			@keyframes css-slider {
 			0%, 19% {margin-left:0}
@@ -2626,7 +2629,8 @@ h2 span {
 			40%, 59% { margin-left:-200%; }
 			60%, 79% { margin-left:-300%;}
 			80%, 99% {margin-left:-400%;}
-			100% { margin-left:0;}
+			//100% { margin-left:-401%;}
+			100% {margin-left:0;}
 			}
 		}
 	}
@@ -2852,38 +2856,6 @@ h2 span {
 	}
 			li:hover .partner-pos {
 				display: block;
-			}
-			@-webkit-keyframes css-slider {
-			0%, 19% {margin-left:0}
-			20%, 39% { margin-left:-100%; }
-			40%, 59% { margin-left:-200%; }
-			60%, 79% { margin-left:-300%;}
-			80%, 99% {margin-left:-400%;}
-			100% { margin-left:0;}
-			}
-			@-moz-keyframes css-slider {
-			0%, 19% {margin-left:0}
-			20%, 39% { margin-left:-100%; }
-			40%, 59% { margin-left:-200%; }
-			60%, 79% { margin-left:-300%;}
-			80%, 99% {margin-left:-400%;}
-			100% { margin-left:0;}
-			}
-			@-ms-keyframes css-slider {
-			0%, 19% {margin-left:0}
-			20%, 39% { margin-left:-100%; }
-			40%, 59% { margin-left:-200%; }
-			60%, 79% { margin-left:-300%;}
-			80%, 99% {margin-left:-400%;}
-			100% { margin-left:0;}
-			}
-			@keyframes css-slider {
-			0%, 19% {margin-left:0}
-			20%, 39% { margin-left:-100%; }
-			40%, 59% { margin-left:-200%; }
-			60%, 79% { margin-left:-300%;}
-			80%, 99% {margin-left:-400%;}
-			100% { margin-left:0;}
 			}
 		}
 		
