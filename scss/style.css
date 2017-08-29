@@ -102,7 +102,7 @@
     display: block; }
 
   .logos-container-partner-mobile {
-    display: block; }
+    display: inline-block; }
 
   .logos-container-partner {
     display: none !important; }
