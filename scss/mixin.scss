@@ -167,6 +167,28 @@
   background: linear-gradient(to left, black,$color); /*Standard*/
 }
 
+@mixin animation($name,$duration,$timing,$iteration) {
+  animation: $name $duration $timing $iteration;
+  -webkit-animation: $name $duration $timing $iteration;
+  -moz-animation: $name $duration $timing $iteration;
+  -ms-animation: $name $duration $timing $iteration;
+  -o-animation: $name $duration $timing $iteration;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
 
 @mixin for-phone-only {
   @media (max-width: 599px) { @content; }
