@@ -40,12 +40,25 @@ App.slider = {
         self.slide= self.main.find('.'+_slideItem);
         self.btnNext= self._this.find('.'+_btnNext);
         self.btnPrev= self._this.find('.'+_btnPrev);
-        self.dotsNav=self._this.find('ol');
-        self.li=self.dotsNav.find('li');
+
         self._speed=_speed;
         self._autoSpeed=_autoSpeed;
         self._auto=_auto;
+        self.maxSlide = totalslide;
         
+        var list = document.createElement('ol');
+        self._this.append(list);
+
+        for ( var i=0;i<totalslide;i++) {
+           var listItem=document.createElement('li');
+           list.appendChild(listItem);
+        }
+
+        self.dotsNav=self._this.find('ol');
+        self.li=self.dotsNav.find('li');
+
+        self.li.eq(0).addClass("active");
+
 
         $(self.slide).first().addClass('activeSlide');
 	
